@@ -23,6 +23,7 @@ namespace Sis_Vendas_Mega
             txtCodigo.Clear();
             txtNome.Clear();
             txtNome.Focus();
+            txtNome.Select();
         }
 
         public void Insert(EemployeeViewModel viewModel)

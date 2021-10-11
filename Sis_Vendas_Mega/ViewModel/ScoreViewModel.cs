@@ -8,6 +8,7 @@ namespace Sis_Vendas_Mega.ViewModel
         public DateTime OutLanch { get; set; }
         public DateTime ReturnLunch { get; set; }
         public DateTime DepartureTime { get; set; }
+        public TimeSpan? Worked { get; set; }
         public int EmployeeId { get; set; }
     }
 }

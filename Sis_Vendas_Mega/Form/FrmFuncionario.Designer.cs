@@ -92,6 +92,7 @@ namespace Sis_Vendas_Mega
             // 
             this.txtCodigo.Location = new System.Drawing.Point(9, 43);
             this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.ReadOnly = true;
             this.txtCodigo.Size = new System.Drawing.Size(98, 20);
             this.txtCodigo.TabIndex = 5;
             this.txtCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

@@ -8,6 +8,7 @@ namespace Sis_Vendas_Mega.Model
         public DateTime? OutLanch { get; private set; }
         public DateTime? ReturnLunch { get; private set; }
         public DateTime? DepartureTime { get; private set; }
+        public TimeSpan? Worked { get; private set; }
         public int EmployeeId { get; private set; }
         public virtual Employee Employee { get; private set; }
 
@@ -27,9 +28,10 @@ namespace Sis_Vendas_Mega.Model
             ReturnLunch = returnLanch;
         }
 
-        public void UpdateDepartureTime(DateTime? departureTime)
+        public void UpdateDepartureTime(DateTime? departureTime, TimeSpan? worked)
         {
             DepartureTime = departureTime;
+            Worked = worked;
         }
     }
 }

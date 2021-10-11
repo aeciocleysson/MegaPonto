@@ -7,10 +7,11 @@ namespace Sis_Vendas_Mega.Data
     public class DataContext : DbContext
     {
         public DataContext(DbContextOptions<DbContext> options) : base(options) { }
+        
         public DataContext() { }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<Model.Score> Scores { get; set; } 
+        public DbSet<Model.Score> Scores { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -100,17 +100,17 @@ namespace Sis_Vendas_Mega
                 if (scoreDepartureTime != null)
                 {
                     viewModel.DepartureTime = Convert.ToDateTime(lblHoraAtual.Text);
+                    viewModel.Worked = (viewModel.DepartureTime - scoreDepartureTime.EntryTime);
                     viewModel.Id = scoreDepartureTime.Id;
-
-
+                    
                     var result = _context.Scores.Find(viewModel.Id);
 
-                    result.UpdateDepartureTime(departureTime: viewModel.DepartureTime);
+                    result.UpdateDepartureTime(departureTime: viewModel.DepartureTime,
+                        worked: viewModel.Worked);
 
                     _context.Scores.Update(result);
                     _context.SaveChanges();
 
-                    var x = scoreDepartureTime.DepartureTime;
                     GetAll();
                     ClearFields();
                 }
@@ -141,7 +141,8 @@ namespace Sis_Vendas_Mega
                     Entrada = s.EntryTime,
                     SaidaAlmoço = s.OutLanch,
                     RetornoAlmoço = s.ReturnLunch,
-                    Saida = s.DepartureTime
+                    Saida = s.DepartureTime,
+                    Total = s.Worked
                 }).OrderBy(o => o.Data)
                 .ToList();
 
