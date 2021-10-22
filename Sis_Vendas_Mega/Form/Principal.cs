@@ -45,6 +45,6 @@ namespace Sis_Vendas_Mega
             var score = new Score();
             score.MdiParent = this;
             score.Show();
-        }       
+        }
     }
 }

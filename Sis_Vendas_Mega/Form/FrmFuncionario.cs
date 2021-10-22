@@ -15,7 +15,6 @@ namespace Sis_Vendas_Mega
             InitializeComponent();
             ClearFields();
             GetAll();
-          
         }
 
         private void ClearFields()
@@ -67,6 +66,12 @@ namespace Sis_Vendas_Mega
                 .ToList();
 
             dgvEmployees.DataSource = employees;
+
+            dgvEmployees.Columns[0].HeaderText = "Código";
+            dgvEmployees.Columns[1].HeaderText = "Nome";
+            dgvEmployees.Columns[2].HeaderText = "Dt Cadastro";
+            dgvEmployees.Columns[3].HeaderText = "Dt Atualização";
+            dgvEmployees.Columns[1].Width = 300;
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)

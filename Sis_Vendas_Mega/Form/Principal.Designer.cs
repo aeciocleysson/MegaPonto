@@ -250,7 +250,7 @@
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F9;
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 

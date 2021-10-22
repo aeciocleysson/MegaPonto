@@ -175,5 +175,10 @@ namespace Sis_Vendas_Mega
                 }
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            ClearFields();
+        }
     }
 }

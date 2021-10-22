@@ -68,6 +68,9 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
@@ -338,11 +341,6 @@
     <Compile Include="Form\Score.Designer.cs">
       <DependentUpon>Score.cs</DependentUpon>
     </Compile>
-    <Compile Include="Service References\ApiCorreios\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\EemployeeViewModel.cs" />
     <Compile Include="ViewModel\ScoreViewModel.cs" />
@@ -365,6 +363,8 @@
       <DependentUpon>Score.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Sis_Vendas_Mega.Model.Employee.datasource" />
+    <None Include="Properties\DataSources\Sis_Vendas_Mega.Model.Score.datasource" />
     <None Include="Properties\DataSources\Sis_Vendas_Mega.Relatorio.Entity.DadosRelatorio.datasource" />
     <None Include="Properties\DataSources\Sis_Vendas_Mega.Relatorios.DadosRelatorioMestre.datasource" />
     <None Include="Properties\DataSources\Sis_Vendas_Mega.Report.Entity.DadosRelatorio.datasource" />
@@ -379,172 +379,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Service References\ApiCorreios\AtendeClienteService.wsdl" />
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.atualizaPagamentoNaEntregaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.atualizaRemessaAgrupadaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.bloquearObjetoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.buscaClienteResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.buscaContratoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.buscaDataAtualResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.buscaOpcoesResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.buscaPagamentoEntregaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.buscaServicosAdicionaisAtivosResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.buscaServicosResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.buscaServicosValorDeclaradoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.buscaServicosXServicosAdicionaisResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.buscaTarifaValeResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.calculaTarifaServicoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.cancelarObjetoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.cancelarPedidoScolResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.clienteERP.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.consultaCEPResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.contratoERP.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.dimensaoTO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.embalagemLRSMaster.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.enderecoERP.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.fechaPlpResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.fechaPlpVariosServicosResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.geraDigitoVerificadorEtiquetasResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.getStatusCartaoPostagemResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.getStatusPLPResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.integrarUsuarioScolResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.mensagemParametrizadaTO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.obterClienteAtualizacaoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.obterEmbalagemLRSResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.obterMensagemParametrizadaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.pesquisarDimensoesServicoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.pesquisarEmbalagensPorServicoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.pesquisarParametrosPorDescricaoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.pesquisarServicosAdicionaisResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.retornoCancelamento.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.servicoAdicionalTO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.servicoAdicionalXML.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.servicoERP.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.solicitaEtiquetasResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.solicitaPLPResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.solicitarPostagemScolResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.solicitaXmlPlpResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.statusCartao.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.statusPlp.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.tipoEmbalagem.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.valePostal.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.validaEtiquetaPLPResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.validaPlpResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.validarPostagemReversaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.validarPostagemSimultaneaResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.verificaDisponibilidadeServicoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.verificaModalTransporteResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ApiCorreios\Sis_Vendas_Mega.ApiCorreios.VerificaSeTodosObjetosCanceladosResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -571,21 +405,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ApiCorreios\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ApiCorreios\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ApiCorreios\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ApiCorreios\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
