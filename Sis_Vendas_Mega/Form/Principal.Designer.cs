@@ -193,8 +193,10 @@
             // CadatrarUsuario
             // 
             this.CadatrarUsuario.Name = "CadatrarUsuario";
+            this.CadatrarUsuario.ShortcutKeys = System.Windows.Forms.Keys.F3;
             this.CadatrarUsuario.Size = new System.Drawing.Size(189, 24);
             this.CadatrarUsuario.Text = "Usuario";
+            this.CadatrarUsuario.Click += new System.EventHandler(this.CadatrarUsuario_Click);
             // 
             // servicos
             // 
@@ -210,7 +212,7 @@
             // 
             this.scoreEntry.Name = "scoreEntry";
             this.scoreEntry.ShortcutKeys = System.Windows.Forms.Keys.F6;
-            this.scoreEntry.Size = new System.Drawing.Size(148, 24);
+            this.scoreEntry.Size = new System.Drawing.Size(180, 24);
             this.scoreEntry.Text = "Ponto";
             this.scoreEntry.Click += new System.EventHandler(this.scoreEntry_Click);
             // 
@@ -228,13 +230,13 @@
             this.menuManutencao.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.manutencaoUsuario});
             this.menuManutencao.Name = "menuManutencao";
-            this.menuManutencao.Size = new System.Drawing.Size(180, 24);
+            this.menuManutencao.Size = new System.Drawing.Size(167, 24);
             this.menuManutencao.Text = "Manutenção";
             // 
             // manutencaoUsuario
             // 
             this.manutencaoUsuario.Name = "manutencaoUsuario";
-            this.manutencaoUsuario.Size = new System.Drawing.Size(180, 24);
+            this.manutencaoUsuario.Size = new System.Drawing.Size(141, 24);
             this.manutencaoUsuario.Text = "Usuários";
             // 
             // menu_sair

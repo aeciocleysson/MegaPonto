@@ -46,5 +46,12 @@ namespace Sis_Vendas_Mega
             score.MdiParent = this;
             score.Show();
         }
+
+        private void CadatrarUsuario_Click(object sender, EventArgs e)
+        {
+            var user = new FrmUser();
+            user.MdiParent = this;
+            user.Show();
+        }
     }
 }

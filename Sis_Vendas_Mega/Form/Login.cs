@@ -26,12 +26,12 @@ namespace Sis_Vendas_Mega
             }
             else
             {
-                var user = _context.Usuarios.FirstOrDefault(c => c.Login == txtUsuario.Text.Trim() && c.Senha == txtSenha.Text.Trim());
+                var user = _context.Usuarios.FirstOrDefault(c => c.Login == txtUsuario.Text.Trim() && c.Senha == txtSenha.Text.Trim().ToLower());
                 var principal = new FrmPrincipal();
 
                 if (user != null)
                 {
-                    if (user.Login == txtUsuario.Text.Trim() && user.Senha == txtSenha.Text.Trim())
+                    if (user.Login == txtUsuario.Text.Trim() && user.Senha == txtSenha.Text.Trim().ToLower())
                     {
                         switch (user.Tipo)
                         {

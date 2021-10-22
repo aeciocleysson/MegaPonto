@@ -84,6 +84,7 @@
             // txtSenha
             // 
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSenha.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.Location = new System.Drawing.Point(67, 291);
             this.txtSenha.Name = "txtSenha";
@@ -124,9 +125,11 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Image = global::Sis_Vendas_Mega.Properties.Resources.usuario;
             this.pictureBox2.Location = new System.Drawing.Point(171, 53);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(139, 130);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             // 
