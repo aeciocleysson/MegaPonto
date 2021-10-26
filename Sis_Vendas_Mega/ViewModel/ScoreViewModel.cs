@@ -10,5 +10,6 @@ namespace Sis_Vendas_Mega.ViewModel
         public DateTime DepartureTime { get; set; }
         public TimeSpan? Worked { get; set; }
         public int EmployeeId { get; set; }
+        public int Code { get; set; }
     }
 }

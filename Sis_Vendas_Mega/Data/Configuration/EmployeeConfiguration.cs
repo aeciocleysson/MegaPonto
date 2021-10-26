@@ -14,6 +14,7 @@ namespace Sis_Vendas_Mega.Data.Configuration
             builder.Property(w => w.Name)
                    .HasMaxLength(50)
                    .IsRequired();
+            builder.Property(w => w.Code);
 
             builder.HasIndex(w => w.Id);
         }

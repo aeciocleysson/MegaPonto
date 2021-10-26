@@ -15,6 +15,7 @@ namespace Sis_Vendas_Mega.Data.Configuration
             builder.Property(w => w.ReturnLunch);
             builder.Property(w => w.DepartureTime);
             builder.Property(w => w.Worked);
+            builder.Property(w => w.Code);
 
             builder.HasOne(p => p.Employee).WithMany(p => p.Scores).HasForeignKey(p => p.EmployeeId);
 

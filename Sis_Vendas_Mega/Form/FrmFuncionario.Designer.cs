@@ -38,6 +38,8 @@ namespace Sis_Vendas_Mega
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvEmployees = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtCode = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
             this.SuspendLayout();
@@ -49,12 +51,14 @@ namespace Sis_Vendas_Mega
             this.groupBox1.Controls.Add(this.btnSair);
             this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtCode);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dgvEmployees);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(776, 317);
+            this.groupBox1.Size = new System.Drawing.Size(776, 348);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -134,16 +138,35 @@ namespace Sis_Vendas_Mega
             // 
             this.dgvEmployees.BackgroundColor = System.Drawing.Color.White;
             this.dgvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmployees.Location = new System.Drawing.Point(6, 100);
+            this.dgvEmployees.Location = new System.Drawing.Point(6, 135);
             this.dgvEmployees.Name = "dgvEmployees";
             this.dgvEmployees.Size = new System.Drawing.Size(764, 207);
             this.dgvEmployees.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(7, 74);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(34, 19);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Code";
+            // 
+            // txtCode
+            // 
+            this.txtCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCode.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCode.Location = new System.Drawing.Point(10, 96);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(316, 23);
+            this.txtCode.TabIndex = 1;
             // 
             // FrmFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 341);
+            this.ClientSize = new System.Drawing.Size(800, 372);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.Name = "FrmFuncionario";
@@ -167,5 +190,7 @@ namespace Sis_Vendas_Mega
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button brnCancelar;
         private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.TextBox txtCode;
+        private System.Windows.Forms.Label label3;
     }
 }

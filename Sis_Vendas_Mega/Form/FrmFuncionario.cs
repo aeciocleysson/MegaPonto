@@ -32,8 +32,9 @@ namespace Sis_Vendas_Mega
             if (!string.IsNullOrEmpty(txtNome.Text))
             {
                 viewModel.Name = txtNome.Text;
+                viewModel.Code = Convert.ToInt32(txtCode.Text);
 
-                var model = new Employee(name: viewModel.Name);
+                var model = new Employee(name: viewModel.Name, code: viewModel.Code);
 
                 _context.Employees.Add(model);
                 _context.SaveChanges();

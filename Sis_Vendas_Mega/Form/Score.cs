@@ -36,21 +36,23 @@ namespace Sis_Vendas_Mega
 
         public void InsertInput(int code)
         {
-            var employee = _context.Employees.SingleOrDefault(w => w.Id == code);
+            var employee = _context.Employees.SingleOrDefault(w => w.Code == code);
 
             if (!string.IsNullOrEmpty(txtCodeEmployee.Text.Trim()) && employee != null)
             {
                 var viewModel = new ScoreViewModel();
 
-                var scoreEntryTime = _context.Scores.Any(a => a.EmployeeId == employee.Id && a.Inserted == date);
+                var scoreEntryTime = _context.Scores.Any(a => a.EmployeeId == employee.Id && a.Code == employee.Code && a.Inserted == date);
 
                 if (!scoreEntryTime)
                 {
                     viewModel.EntryTime = Convert.ToDateTime(lblHoraAtual.Text);
-                    viewModel.EmployeeId = Convert.ToInt32(txtCodeEmployee.Text);
+                    viewModel.EmployeeId = employee.Id;
+                    viewModel.Code = employee.Code;
 
                     var model = new Model.Score(entryTime: viewModel.EntryTime,
-                        employeeId: viewModel.EmployeeId);
+                        employeeId: viewModel.EmployeeId,
+                        code: viewModel.Code);
 
                     _context.Add(model);
                     _context.SaveChanges();
@@ -77,12 +79,13 @@ namespace Sis_Vendas_Mega
                     return;
                 }
 
-                var scoreReturnLanch = _context.Scores.Where(a => a.EmployeeId == employee.Id && a.Inserted == date && a.ReturnLunch == null).SingleOrDefault();
+                var scoreReturnLanch = _context.Scores.Where(a => a.EmployeeId == employee.Id && a.Code == employee.Code && a.Inserted == date && a.ReturnLunch == null).SingleOrDefault();
 
                 if (scoreReturnLanch != null)
                 {
                     viewModel.ReturnLunch = Convert.ToDateTime(lblHoraAtual.Text);
                     viewModel.Id = scoreReturnLanch.Id;
+                    viewModel.Code = scoreReturnLanch.Code;
 
                     var result = _context.Scores.Find(viewModel.Id);
 
@@ -95,7 +98,7 @@ namespace Sis_Vendas_Mega
                     return;
                 }
 
-                var scoreDepartureTime = _context.Scores.Where(a => a.EmployeeId == employee.Id && a.Inserted == date && a.DepartureTime == null).SingleOrDefault();
+                var scoreDepartureTime = _context.Scores.Where(a => a.EmployeeId == employee.Id && a.Code == employee.Code && a.Inserted == date && a.DepartureTime == null).SingleOrDefault();
 
                 if (scoreDepartureTime != null)
                 {

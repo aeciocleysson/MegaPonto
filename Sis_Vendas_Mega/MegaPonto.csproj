@@ -10,7 +10,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sis_Vendas_Mega</RootNamespace>
-    <AssemblyName>Sis_Vendas_Mega</AssemblyName>
+    <AssemblyName>MegaPonto</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -27,10 +27,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ProductName>SisVendasMega</ProductName>
+    <ProductName>Mega Ponto</ProductName>
     <PublisherName>aecio</PublisherName>
     <SuiteName>sisvendas</SuiteName>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -66,6 +66,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>relogio-ponto.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -324,6 +327,14 @@
     <Compile Include="Migrations\20211010234842_v1.0.1.designer.cs">
       <DependentUpon>20211010234842_v1.0.1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20211025235448_v1.0.2.cs" />
+    <Compile Include="Migrations\20211025235448_v1.0.2.designer.cs">
+      <DependentUpon>20211025235448_v1.0.2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20211026025553_v1.0.3.cs" />
+    <Compile Include="Migrations\20211026025553_v1.0.3.designer.cs">
+      <DependentUpon>20211026025553_v1.0.3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\DataContextModelSnapshot.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Score.cs" />
@@ -419,6 +430,7 @@
   <ItemGroup>
     <Content Include="Img\Score.png" />
     <Content Include="Img\usuario.png" />
+    <Content Include="relogio-ponto.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

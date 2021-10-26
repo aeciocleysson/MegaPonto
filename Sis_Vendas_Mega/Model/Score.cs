@@ -10,11 +10,13 @@ namespace Sis_Vendas_Mega.Model
         public DateTime? DepartureTime { get; private set; }
         public TimeSpan? Worked { get; private set; }
         public int EmployeeId { get; private set; }
+        public int Code { get; private set; }
         public virtual Employee Employee { get; private set; }
 
-        public Score(int employeeId, DateTime? entryTime)
+        public Score(int employeeId, int code, DateTime? entryTime)
         {
             EmployeeId = employeeId;
+            Code = code;
             EntryTime = entryTime;
         }
 
@@ -32,6 +34,7 @@ namespace Sis_Vendas_Mega.Model
         {
             DepartureTime = departureTime;
             Worked = worked;
+            UpdateAt = DateTime.Now;
         }
     }
 }
