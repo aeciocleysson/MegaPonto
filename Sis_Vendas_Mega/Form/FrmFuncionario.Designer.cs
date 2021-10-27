@@ -35,17 +35,21 @@ namespace Sis_Vendas_Mega
             this.btnSair = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvEmployees = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtCode = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtFunction = new System.Windows.Forms.TextBox();
+            this.btnListFunction = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnListFunction);
             this.groupBox1.Controls.Add(this.btnSalvar);
             this.groupBox1.Controls.Add(this.brnCancelar);
             this.groupBox1.Controls.Add(this.btnSair);
@@ -53,6 +57,8 @@ namespace Sis_Vendas_Mega
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtCode);
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtFunction);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dgvEmployees);
@@ -65,7 +71,7 @@ namespace Sis_Vendas_Mega
             // btnSalvar
             // 
             this.btnSalvar.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(533, 43);
+            this.btnSalvar.Location = new System.Drawing.Point(533, 106);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 2;
@@ -76,7 +82,7 @@ namespace Sis_Vendas_Mega
             // brnCancelar
             // 
             this.brnCancelar.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brnCancelar.Location = new System.Drawing.Point(614, 43);
+            this.brnCancelar.Location = new System.Drawing.Point(614, 106);
             this.brnCancelar.Name = "brnCancelar";
             this.brnCancelar.Size = new System.Drawing.Size(75, 23);
             this.brnCancelar.TabIndex = 3;
@@ -87,7 +93,7 @@ namespace Sis_Vendas_Mega
             // btnSair
             // 
             this.btnSair.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(695, 43);
+            this.btnSair.Location = new System.Drawing.Point(695, 106);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 23);
             this.btnSair.TabIndex = 4;
@@ -114,6 +120,25 @@ namespace Sis_Vendas_Mega
             this.label2.Size = new System.Drawing.Size(43, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "Código";
+            // 
+            // txtCode
+            // 
+            this.txtCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCode.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCode.Location = new System.Drawing.Point(10, 96);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(316, 23);
+            this.txtCode.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(7, 74);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(34, 19);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Code";
             // 
             // txtNome
             // 
@@ -143,24 +168,35 @@ namespace Sis_Vendas_Mega
             this.dgvEmployees.Size = new System.Drawing.Size(764, 207);
             this.dgvEmployees.TabIndex = 0;
             // 
-            // label3
+            // label4
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(7, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 19);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Code";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(432, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 19);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Função";
             // 
-            // txtCode
+            // txtFunction
             // 
-            this.txtCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCode.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCode.Location = new System.Drawing.Point(10, 96);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(316, 23);
-            this.txtCode.TabIndex = 1;
+            this.txtFunction.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtFunction.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFunction.Location = new System.Drawing.Point(435, 43);
+            this.txtFunction.Name = "txtFunction";
+            this.txtFunction.Size = new System.Drawing.Size(254, 23);
+            this.txtFunction.TabIndex = 1;
+            // 
+            // btnListFunction
+            // 
+            this.btnListFunction.Font = new System.Drawing.Font("Bahnschrift Condensed", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListFunction.Location = new System.Drawing.Point(689, 43);
+            this.btnListFunction.Name = "btnListFunction";
+            this.btnListFunction.Size = new System.Drawing.Size(65, 23);
+            this.btnListFunction.TabIndex = 2;
+            this.btnListFunction.Text = "Buscar";
+            this.btnListFunction.UseVisualStyleBackColor = true;
+            this.btnListFunction.Click += new System.EventHandler(this.btnListFunction_Click);
             // 
             // FrmFuncionario
             // 
@@ -192,5 +228,8 @@ namespace Sis_Vendas_Mega
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnListFunction;
+        private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.TextBox txtFunction;
     }
 }

@@ -9,18 +9,18 @@ namespace Sis_Vendas_Mega.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Employee",
+                name: "Function",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Inserted = table.Column<DateTime>(nullable: false),
                     UpdateAt = table.Column<DateTime>(nullable: true),
-                    Name = table.Column<string>(maxLength: 50, nullable: false)
+                    Description = table.Column<string>(maxLength: 30, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Employee", x => x.Id);
+                    table.PrimaryKey("PK_Function", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -42,6 +42,29 @@ namespace Sis_Vendas_Mega.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Employee",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Inserted = table.Column<DateTime>(nullable: false),
+                    UpdateAt = table.Column<DateTime>(nullable: true),
+                    Name = table.Column<string>(maxLength: 50, nullable: false),
+                    Code = table.Column<int>(nullable: false),
+                    FunctionId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Employee", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Employee_Function_FunctionId",
+                        column: x => x.FunctionId,
+                        principalTable: "Function",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Score",
                 columns: table => new
                 {
@@ -53,7 +76,9 @@ namespace Sis_Vendas_Mega.Migrations
                     OutLanch = table.Column<DateTime>(nullable: true),
                     ReturnLunch = table.Column<DateTime>(nullable: true),
                     DepartureTime = table.Column<DateTime>(nullable: true),
-                    EmployeeId = table.Column<int>(nullable: false)
+                    Worked = table.Column<TimeSpan>(nullable: true),
+                    EmployeeId = table.Column<int>(nullable: false),
+                    Code = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -67,9 +92,19 @@ namespace Sis_Vendas_Mega.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Employee_FunctionId",
+                table: "Employee",
+                column: "FunctionId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Employee_Id",
                 table: "Employee",
                 column: "Id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Function_Description",
+                table: "Function",
+                column: "Description");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Score_EmployeeId",
@@ -102,6 +137,9 @@ namespace Sis_Vendas_Mega.Migrations
 
             migrationBuilder.DropTable(
                 name: "Employee");
+
+            migrationBuilder.DropTable(
+                name: "Function");
         }
     }
 }

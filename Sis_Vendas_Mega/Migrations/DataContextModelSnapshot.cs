@@ -29,6 +29,9 @@ namespace Sis_Vendas_Mega.Migrations
                     b.Property<int>("Code")
                         .HasColumnType("integer");
 
+                    b.Property<int>("FunctionId")
+                        .HasColumnType("integer");
+
                     b.Property<DateTime>("Inserted")
                         .HasColumnType("timestamp without time zone");
 
@@ -42,9 +45,36 @@ namespace Sis_Vendas_Mega.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("FunctionId");
+
                     b.HasIndex("Id");
 
                     b.ToTable("Employee");
+                });
+
+            modelBuilder.Entity("Sis_Vendas_Mega.Model.Function", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("character varying(30)")
+                        .HasMaxLength(30);
+
+                    b.Property<DateTime>("Inserted")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime?>("UpdateAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Description");
+
+                    b.ToTable("Function");
                 });
 
             modelBuilder.Entity("Sis_Vendas_Mega.Model.Score", b =>
@@ -125,6 +155,15 @@ namespace Sis_Vendas_Mega.Migrations
                     b.HasIndex("Nome");
 
                     b.ToTable("Usuario");
+                });
+
+            modelBuilder.Entity("Sis_Vendas_Mega.Model.Employee", b =>
+                {
+                    b.HasOne("Sis_Vendas_Mega.Model.Function", "Function")
+                        .WithMany("Employees")
+                        .HasForeignKey("FunctionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Sis_Vendas_Mega.Model.Score", b =>

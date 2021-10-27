@@ -17,6 +17,7 @@ namespace Sis_Vendas_Mega.Data.Configuration
             builder.Property(w => w.Code);
 
             builder.HasIndex(w => w.Id);
+            builder.HasOne(w => w.Function).WithMany(w => w.Employees).HasForeignKey(w => w.FunctionId);
         }
     }
 }

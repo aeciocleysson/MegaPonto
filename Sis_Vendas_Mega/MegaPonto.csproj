@@ -295,10 +295,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Configuration\EmployeeConfiguration.cs" />
+    <Compile Include="Data\Configuration\FunctionConfiguration.cs" />
     <Compile Include="Data\Configuration\ScoreConfiguration.cs" />
     <Compile Include="Data\Configuration\UsuarioConfiguration.cs" />
     <Compile Include="Data\DataContext.cs" />
-    <Compile Include="FormCloseButtonDisabler.cs" />
+    <Compile Include="FrmListFunction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListFunction.Designer.cs">
+      <DependentUpon>FrmListFunction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\FormCloseButtonDisabler.cs" />
     <Compile Include="Form\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -317,26 +324,21 @@
     <Compile Include="Form\FrmUser.Designer.cs">
       <DependentUpon>FrmUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\FrmFunction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmFunction.Designer.cs">
+      <DependentUpon>FrmFunction.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Infrastructure\BaseModel.cs" />
-    <Compile Include="Migrations\20211008021538_v1.0.0.cs" />
-    <Compile Include="Migrations\20211008021538_v1.0.0.designer.cs">
-      <DependentUpon>20211008021538_v1.0.0.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20211010234842_v1.0.1.cs" />
-    <Compile Include="Migrations\20211010234842_v1.0.1.designer.cs">
-      <DependentUpon>20211010234842_v1.0.1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20211025235448_v1.0.2.cs" />
-    <Compile Include="Migrations\20211025235448_v1.0.2.designer.cs">
-      <DependentUpon>20211025235448_v1.0.2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20211026025553_v1.0.3.cs" />
-    <Compile Include="Migrations\20211026025553_v1.0.3.designer.cs">
-      <DependentUpon>20211026025553_v1.0.3.cs</DependentUpon>
+    <Compile Include="Migrations\20211027023814_v1.0.0.cs" />
+    <Compile Include="Migrations\20211027023814_v1.0.0.designer.cs">
+      <DependentUpon>20211027023814_v1.0.0.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DataContextModelSnapshot.cs" />
     <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\Function.cs" />
     <Compile Include="Model\Score.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Form\Principal.cs">
@@ -360,6 +362,7 @@
     </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\EemployeeViewModel.cs" />
+    <Compile Include="ViewModel\FunctionViewModel.cs" />
     <Compile Include="ViewModel\ScoreViewModel.cs" />
     <Compile Include="ViewModel\UsuarioViewModel.cs" />
     <EmbeddedResource Include="Form\FrmFuncionario.resx">
@@ -373,6 +376,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmFunction.resx">
+      <DependentUpon>FrmFunction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListFunction.resx">
+      <DependentUpon>FrmListFunction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

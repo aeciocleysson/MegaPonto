@@ -55,6 +55,7 @@
             this.manutencaoUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_sair = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroFuncao = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -176,7 +177,8 @@
             // 
             this.menuCadastrar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrarFuncionario,
-            this.CadatrarUsuario});
+            this.CadatrarUsuario,
+            this.cadastroFuncao});
             this.menuCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuCadastrar.Name = "menuCadastrar";
             this.menuCadastrar.Size = new System.Drawing.Size(91, 24);
@@ -256,6 +258,14 @@
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
+            // cadastroFuncao
+            // 
+            this.cadastroFuncao.Name = "cadastroFuncao";
+            this.cadastroFuncao.ShortcutKeys = System.Windows.Forms.Keys.F4;
+            this.cadastroFuncao.Size = new System.Drawing.Size(189, 24);
+            this.cadastroFuncao.Text = "Função";
+            this.cadastroFuncao.Click += new System.EventHandler(this.cadastroFuncao_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,6 +316,7 @@
         public System.Windows.Forms.ToolStripMenuItem manutencaoUsuario;
         private System.Windows.Forms.ToolStripMenuItem cadastrarFuncionario;
         private System.Windows.Forms.ToolStripMenuItem CadatrarUsuario;
+        private System.Windows.Forms.ToolStripMenuItem cadastroFuncao;
     }
 }
 

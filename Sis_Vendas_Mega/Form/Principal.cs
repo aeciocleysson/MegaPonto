@@ -53,5 +53,12 @@ namespace Sis_Vendas_Mega
             user.MdiParent = this;
             user.Show();
         }
+
+        private void cadastroFuncao_Click(object sender, EventArgs e)
+        {
+            var function = new FrmFunction();
+            function.MdiParent = this;
+            function.Show();
+        }
     }
 }

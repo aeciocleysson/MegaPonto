@@ -34,7 +34,9 @@ namespace Sis_Vendas_Mega
                 viewModel.Name = txtNome.Text;
                 viewModel.Code = Convert.ToInt32(txtCode.Text);
 
-                var model = new Employee(name: viewModel.Name, code: viewModel.Code);
+                var model = new Employee(name: viewModel.Name,
+                    code: viewModel.Code,
+                    functionId: viewModel.FunctionId);
 
                 _context.Employees.Add(model);
                 _context.SaveChanges();
@@ -89,6 +91,24 @@ namespace Sis_Vendas_Mega
         private void btnSair_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        public void SelectFunction()
+        {
+            var functions = new FrmListFunction();
+            functions.ShowDialog();
+
+            if (functions.DialogResult == DialogResult.OK)
+            {
+                var dataGrid = functions.gvFunctions.Rows[functions.gvFunctions.CurrentRow.Index];
+
+                txtFunction.Text = dataGrid.Cells[1].Value.ToString();
+            }
+        }
+
+        private void btnListFunction_Click(object sender, EventArgs e)
+        {
+            SelectFunction();
         }
     }
 }
