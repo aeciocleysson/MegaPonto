@@ -299,10 +299,10 @@
     <Compile Include="Data\Configuration\ScoreConfiguration.cs" />
     <Compile Include="Data\Configuration\UsuarioConfiguration.cs" />
     <Compile Include="Data\DataContext.cs" />
-    <Compile Include="FrmListFunction.cs">
+    <Compile Include="Form\FrmListFunction.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmListFunction.Designer.cs">
+    <Compile Include="Form\FrmListFunction.Designer.cs">
       <DependentUpon>FrmListFunction.cs</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\FormCloseButtonDisabler.cs" />
@@ -336,6 +336,10 @@
     <Compile Include="Migrations\20211027023814_v1.0.0.designer.cs">
       <DependentUpon>20211027023814_v1.0.0.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20211028000935_v1.0.1.cs" />
+    <Compile Include="Migrations\20211028000935_v1.0.1.designer.cs">
+      <DependentUpon>20211028000935_v1.0.1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\DataContextModelSnapshot.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Function.cs" />
@@ -361,7 +365,7 @@
       <DependentUpon>Score.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
-    <Compile Include="ViewModel\EemployeeViewModel.cs" />
+    <Compile Include="ViewModel\EmployeeViewModel.cs" />
     <Compile Include="ViewModel\FunctionViewModel.cs" />
     <Compile Include="ViewModel\ScoreViewModel.cs" />
     <Compile Include="ViewModel\UsuarioViewModel.cs" />
@@ -380,7 +384,7 @@
     <EmbeddedResource Include="Form\FrmFunction.resx">
       <DependentUpon>FrmFunction.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmListFunction.resx">
+    <EmbeddedResource Include="Form\FrmListFunction.resx">
       <DependentUpon>FrmListFunction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -437,6 +441,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Img\barcode.png" />
     <Content Include="Img\Score.png" />
     <Content Include="Img\usuario.png" />
     <Content Include="relogio-ponto.ico" />

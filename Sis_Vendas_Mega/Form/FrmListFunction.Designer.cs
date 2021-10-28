@@ -41,6 +41,7 @@ namespace Sis_Vendas_Mega
             this.gvFunctions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvFunctions.Location = new System.Drawing.Point(12, 51);
             this.gvFunctions.Name = "gvFunctions";
+            this.gvFunctions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvFunctions.Size = new System.Drawing.Size(382, 150);
             this.gvFunctions.TabIndex = 0;
             this.gvFunctions.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvFunctions_CellDoubleClick);

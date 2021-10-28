@@ -48,6 +48,7 @@
             this.menuCadastrar = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarFuncionario = new System.Windows.Forms.ToolStripMenuItem();
             this.CadatrarUsuario = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroFuncao = new System.Windows.Forms.ToolStripMenuItem();
             this.servicos = new System.Windows.Forms.ToolStripMenuItem();
             this.scoreEntry = new System.Windows.Forms.ToolStripMenuItem();
             this.menuUtilitario = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +56,6 @@
             this.manutencaoUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_sair = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastroFuncao = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -169,7 +169,7 @@
             this.menu_sair});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(922, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(922, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -179,16 +179,16 @@
             this.cadastrarFuncionario,
             this.CadatrarUsuario,
             this.cadastroFuncao});
-            this.menuCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuCadastrar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuCadastrar.Name = "menuCadastrar";
-            this.menuCadastrar.Size = new System.Drawing.Size(91, 24);
+            this.menuCadastrar.Size = new System.Drawing.Size(76, 20);
             this.menuCadastrar.Text = "Cadastrar";
             // 
             // cadastrarFuncionario
             // 
             this.cadastrarFuncionario.Name = "cadastrarFuncionario";
             this.cadastrarFuncionario.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.cadastrarFuncionario.Size = new System.Drawing.Size(189, 24);
+            this.cadastrarFuncionario.Size = new System.Drawing.Size(180, 22);
             this.cadastrarFuncionario.Text = "Funcionário";
             this.cadastrarFuncionario.Click += new System.EventHandler(this.cadastrarFuncionario_Click);
             // 
@@ -196,25 +196,33 @@
             // 
             this.CadatrarUsuario.Name = "CadatrarUsuario";
             this.CadatrarUsuario.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.CadatrarUsuario.Size = new System.Drawing.Size(189, 24);
+            this.CadatrarUsuario.Size = new System.Drawing.Size(180, 22);
             this.CadatrarUsuario.Text = "Usuario";
             this.CadatrarUsuario.Click += new System.EventHandler(this.CadatrarUsuario_Click);
+            // 
+            // cadastroFuncao
+            // 
+            this.cadastroFuncao.Name = "cadastroFuncao";
+            this.cadastroFuncao.ShortcutKeys = System.Windows.Forms.Keys.F4;
+            this.cadastroFuncao.Size = new System.Drawing.Size(180, 22);
+            this.cadastroFuncao.Text = "Função";
+            this.cadastroFuncao.Click += new System.EventHandler(this.cadastroFuncao_Click);
             // 
             // servicos
             // 
             this.servicos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.scoreEntry});
-            this.servicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.servicos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.servicos.Name = "servicos";
             this.servicos.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.servicos.Size = new System.Drawing.Size(81, 24);
+            this.servicos.Size = new System.Drawing.Size(69, 20);
             this.servicos.Text = "Serviços";
             // 
             // scoreEntry
             // 
             this.scoreEntry.Name = "scoreEntry";
             this.scoreEntry.ShortcutKeys = System.Windows.Forms.Keys.F6;
-            this.scoreEntry.Size = new System.Drawing.Size(180, 24);
+            this.scoreEntry.Size = new System.Drawing.Size(180, 22);
             this.scoreEntry.Text = "Ponto";
             this.scoreEntry.Click += new System.EventHandler(this.scoreEntry_Click);
             // 
@@ -222,9 +230,9 @@
             // 
             this.menuUtilitario.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuManutencao});
-            this.menuUtilitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuUtilitario.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuUtilitario.Name = "menuUtilitario";
-            this.menuUtilitario.Size = new System.Drawing.Size(86, 24);
+            this.menuUtilitario.Size = new System.Drawing.Size(74, 20);
             this.menuUtilitario.Text = "Utilitários";
             // 
             // menuManutencao
@@ -232,39 +240,31 @@
             this.menuManutencao.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.manutencaoUsuario});
             this.menuManutencao.Name = "menuManutencao";
-            this.menuManutencao.Size = new System.Drawing.Size(167, 24);
+            this.menuManutencao.Size = new System.Drawing.Size(180, 22);
             this.menuManutencao.Text = "Manutenção";
             // 
             // manutencaoUsuario
             // 
             this.manutencaoUsuario.Name = "manutencaoUsuario";
-            this.manutencaoUsuario.Size = new System.Drawing.Size(141, 24);
+            this.manutencaoUsuario.Size = new System.Drawing.Size(127, 22);
             this.manutencaoUsuario.Text = "Usuários";
             // 
             // menu_sair
             // 
             this.menu_sair.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sairToolStripMenuItem});
-            this.menu_sair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menu_sair.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menu_sair.Name = "menu_sair";
-            this.menu_sair.Size = new System.Drawing.Size(49, 24);
+            this.menu_sair.Size = new System.Drawing.Size(43, 20);
             this.menu_sair.Text = "Sair";
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F9;
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
-            // 
-            // cadastroFuncao
-            // 
-            this.cadastroFuncao.Name = "cadastroFuncao";
-            this.cadastroFuncao.ShortcutKeys = System.Windows.Forms.Keys.F4;
-            this.cadastroFuncao.Size = new System.Drawing.Size(189, 24);
-            this.cadastroFuncao.Text = "Função";
-            this.cadastroFuncao.Click += new System.EventHandler(this.cadastroFuncao_Click);
             // 
             // FrmPrincipal
             // 

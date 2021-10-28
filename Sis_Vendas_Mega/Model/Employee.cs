@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Sis_Vendas_Mega.Model
 {
@@ -16,9 +17,20 @@ namespace Sis_Vendas_Mega.Model
             FunctionId = functionId;
         }
 
-        public Employee()
-        {
+        public Employee() { }
 
+        public void Update(string name, int functionId, int code)
+        {
+            Name = name;
+            FunctionId = functionId;
+            Code = code;
+            UpdateAt = DateTime.Now;
+        }
+
+        public void Delete(int isDelete)
+        {
+            IsDelete = isDelete;
+            UpdateAt = DateTime.Now;
         }
     }
 }
