@@ -49,6 +49,7 @@ namespace Sis_Vendas_Mega
             // 
             // btnSair
             // 
+            this.btnSair.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.Location = new System.Drawing.Point(319, 22);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 23);
@@ -60,10 +61,10 @@ namespace Sis_Vendas_Mega
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(157, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 23);
+            this.label1.Size = new System.Drawing.Size(91, 24);
             this.label1.TabIndex = 2;
             this.label1.Text = "Funções";
             // 

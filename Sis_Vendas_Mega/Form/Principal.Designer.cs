@@ -54,6 +54,7 @@
             this.menuUtilitario = new System.Windows.Forms.ToolStripMenuItem();
             this.menuManutencao = new System.Windows.Forms.ToolStripMenuItem();
             this.manutencaoUsuario = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroMensal = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_sair = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
@@ -188,7 +189,7 @@
             // 
             this.cadastrarFuncionario.Name = "cadastrarFuncionario";
             this.cadastrarFuncionario.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.cadastrarFuncionario.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarFuncionario.Size = new System.Drawing.Size(166, 22);
             this.cadastrarFuncionario.Text = "Funcionário";
             this.cadastrarFuncionario.Click += new System.EventHandler(this.cadastrarFuncionario_Click);
             // 
@@ -196,7 +197,7 @@
             // 
             this.CadatrarUsuario.Name = "CadatrarUsuario";
             this.CadatrarUsuario.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.CadatrarUsuario.Size = new System.Drawing.Size(180, 22);
+            this.CadatrarUsuario.Size = new System.Drawing.Size(166, 22);
             this.CadatrarUsuario.Text = "Usuario";
             this.CadatrarUsuario.Click += new System.EventHandler(this.CadatrarUsuario_Click);
             // 
@@ -204,7 +205,7 @@
             // 
             this.cadastroFuncao.Name = "cadastroFuncao";
             this.cadastroFuncao.ShortcutKeys = System.Windows.Forms.Keys.F4;
-            this.cadastroFuncao.Size = new System.Drawing.Size(180, 22);
+            this.cadastroFuncao.Size = new System.Drawing.Size(166, 22);
             this.cadastroFuncao.Text = "Função";
             this.cadastroFuncao.Click += new System.EventHandler(this.cadastroFuncao_Click);
             // 
@@ -222,14 +223,15 @@
             // 
             this.scoreEntry.Name = "scoreEntry";
             this.scoreEntry.ShortcutKeys = System.Windows.Forms.Keys.F6;
-            this.scoreEntry.Size = new System.Drawing.Size(180, 22);
+            this.scoreEntry.Size = new System.Drawing.Size(133, 22);
             this.scoreEntry.Text = "Ponto";
             this.scoreEntry.Click += new System.EventHandler(this.scoreEntry_Click);
             // 
             // menuUtilitario
             // 
             this.menuUtilitario.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuManutencao});
+            this.menuManutencao,
+            this.registroMensal});
             this.menuUtilitario.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuUtilitario.Name = "menuUtilitario";
             this.menuUtilitario.Size = new System.Drawing.Size(74, 20);
@@ -249,6 +251,13 @@
             this.manutencaoUsuario.Size = new System.Drawing.Size(127, 22);
             this.manutencaoUsuario.Text = "Usuários";
             // 
+            // registroMensal
+            // 
+            this.registroMensal.Name = "registroMensal";
+            this.registroMensal.Size = new System.Drawing.Size(180, 22);
+            this.registroMensal.Text = "Registro Mensal";
+            this.registroMensal.Click += new System.EventHandler(this.registroMensal_Click);
+            // 
             // menu_sair
             // 
             this.menu_sair.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -262,7 +271,7 @@
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F9;
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -317,6 +326,7 @@
         private System.Windows.Forms.ToolStripMenuItem cadastrarFuncionario;
         private System.Windows.Forms.ToolStripMenuItem CadatrarUsuario;
         private System.Windows.Forms.ToolStripMenuItem cadastroFuncao;
+        private System.Windows.Forms.ToolStripMenuItem registroMensal;
     }
 }
 

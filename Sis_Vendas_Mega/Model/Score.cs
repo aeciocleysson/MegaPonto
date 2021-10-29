@@ -20,6 +20,11 @@ namespace Sis_Vendas_Mega.Model
             EntryTime = entryTime;
         }
 
+        public Score()
+        {
+
+        }
+
         public void UpdateOutLanch(DateTime? outLanch)
         {
             OutLanch = outLanch;

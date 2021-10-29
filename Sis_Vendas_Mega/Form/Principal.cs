@@ -60,5 +60,12 @@ namespace Sis_Vendas_Mega
             function.MdiParent = this;
             function.Show();
         }
+
+        private void registroMensal_Click(object sender, EventArgs e)
+        {
+            var registro = new FrmListScore();
+            registro.MdiParent = this;
+            registro.Show();
+        }
     }
 }

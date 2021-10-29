@@ -305,6 +305,18 @@
     <Compile Include="Form\FrmListFunction.Designer.cs">
       <DependentUpon>FrmListFunction.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\FrmListScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmListScore.Designer.cs">
+      <DependentUpon>FrmListScore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FrmListEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmListEmployees.Designer.cs">
+      <DependentUpon>FrmListEmployees.cs</DependentUpon>
+    </Compile>
     <Compile Include="Infrastructure\FormCloseButtonDisabler.cs" />
     <Compile Include="Form\Login.cs">
       <SubType>Form</SubType>
@@ -386,6 +398,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FrmListFunction.resx">
       <DependentUpon>FrmListFunction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmListScore.resx">
+      <DependentUpon>FrmListScore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmListEmployees.resx">
+      <DependentUpon>FrmListEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
