@@ -30,7 +30,7 @@
     <ProductName>Mega Ponto</ProductName>
     <PublisherName>aecio</PublisherName>
     <SuiteName>sisvendas</SuiteName>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -71,9 +71,6 @@
     <ApplicationIcon>relogio-ponto.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
@@ -376,6 +373,12 @@
     <Compile Include="Form\Score.Designer.cs">
       <DependentUpon>Score.cs</DependentUpon>
     </Compile>
+    <Compile Include="Relatorio\FrmRelatorioMensal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorio\FrmRelatorioMensal.Designer.cs">
+      <DependentUpon>FrmRelatorioMensal.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\EmployeeViewModel.cs" />
     <Compile Include="ViewModel\FunctionViewModel.cs" />
@@ -413,6 +416,10 @@
     <EmbeddedResource Include="Form\Score.resx">
       <DependentUpon>Score.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\FrmRelatorioMensal.resx">
+      <DependentUpon>FrmRelatorioMensal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\RelatorioMensal.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Sis_Vendas_Mega.Model.Employee.datasource" />
     <None Include="Properties\DataSources\Sis_Vendas_Mega.Model.Score.datasource" />

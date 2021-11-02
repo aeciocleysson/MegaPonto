@@ -107,6 +107,7 @@ namespace Sis_Vendas_Mega
             this.btnPrinter.TabIndex = 8;
             this.btnPrinter.Text = "Imprimir";
             this.btnPrinter.UseVisualStyleBackColor = true;
+            this.btnPrinter.Click += new System.EventHandler(this.btnPrinter_Click);
             // 
             // btnEmployees
             // 
@@ -229,16 +230,16 @@ namespace Sis_Vendas_Mega
         private System.Windows.Forms.DataGridView dgvScoreMonth;
         private System.Windows.Forms.Button btnEmployees;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dpDtFim;
-        private System.Windows.Forms.DateTimePicker dpDtInicio;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnPrinter;
         private System.Windows.Forms.Button btnPesquisar;
+        public System.Windows.Forms.DateTimePicker dpDtInicio;
+        public System.Windows.Forms.DateTimePicker dpDtFim;
+        public System.Windows.Forms.TextBox txtName;
     }
 }

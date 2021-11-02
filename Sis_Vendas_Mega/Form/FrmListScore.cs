@@ -1,9 +1,8 @@
 ﻿using Sis_Vendas_Mega.Data;
-using Sis_Vendas_Mega.Model;
+using Sis_Vendas_Mega.Relatorio;
 using System;
-using System.Globalization;
+using System.Data;
 using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace Sis_Vendas_Mega
@@ -34,19 +33,6 @@ namespace Sis_Vendas_Mega
 
                 txtCode.Text = dataGrid.Cells[0].Value.ToString();
                 txtName.Text = dataGrid.Cells[1].Value.ToString();
-            }
-        }
-
-        private static string TranslateDay(string dayInStringFormat, string culture)
-        {
-            try
-            {
-                return CultureInfo.CreateSpecificCulture(culture).DateTimeFormat
-                    .GetDayName((DayOfWeek)Enum.Parse(typeof(DayOfWeek), dayInStringFormat));
-            }
-            catch (Exception)
-            {
-                return null;
             }
         }
 
@@ -117,18 +103,39 @@ namespace Sis_Vendas_Mega
 
             GetById(score.EmployeeId, score.Inserted, score.Inserted);
         }
-    }
 
-    public static class DateTimeExtension
-    {
-        public static string GetDayOfWeek(this DateTime uiDateTime, CultureInfo culture = null)
+        private void btnPrinter_Click(object sender, EventArgs e)
         {
-            if (culture == null)
+            var data =  GerarDadosRelatorio();
+
+            var relat = new FrmRelatorioMensal(data);
+            relat.ShowDialog();
+        }
+
+        private DataTable GerarDadosRelatorio()
+        {
+            var dt = new DataTable();
+
+            dt.Columns.Add("Inserted");
+            dt.Columns.Add("Employee");
+            dt.Columns.Add("EntryTime");
+            dt.Columns.Add("OutLanch");
+            dt.Columns.Add("ReturnLunch");
+            dt.Columns.Add("DepartureTime");
+            dt.Columns.Add("Worked");
+
+            foreach (DataGridViewRow item in dgvScoreMonth.Rows)
             {
-                culture = Thread.CurrentThread.CurrentUICulture;
+                dt.Rows.Add(item.Cells["Inserted"].Value.ToString().Substring(0,10),
+                            item.Cells["Name"].Value.ToString(),
+                            item.Cells["EntryTime"].Value.ToString().Substring(10),
+                            item.Cells["OutLanch"].Value.ToString().Substring(10),
+                            item.Cells["ReturnLunch"].Value.ToString().Substring(10),
+                            item.Cells["DepartureTime"].Value.ToString().Substring(10),
+                            item.Cells["Worked"].Value.ToString());
             }
 
-            return culture.DateTimeFormat.GetDayName(uiDateTime.DayOfWeek);
+            return dt;
         }
     }
 }
