@@ -901,7 +901,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>dtInicio</rd:DefaultName>
-              <Top>2.08731cm</Top>
+              <Top>1.76981cm</Top>
               <Left>2.68402cm</Left>
               <Height>0.49416cm</Height>
               <Width>1.66158cm</Width>
@@ -935,7 +935,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox11</rd:DefaultName>
-              <Top>2.10142cm</Top>
+              <Top>1.78392cm</Top>
               <Left>0.44979cm</Left>
               <Height>0.49416cm</Height>
               <Width>2.22131cm</Width>
@@ -967,7 +967,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>dtFim</rd:DefaultName>
-              <Top>2.08731cm</Top>
+              <Top>1.76981cm</Top>
               <Left>4.96665cm</Left>
               <Height>0.49416cm</Height>
               <Width>2.28833cm</Width>
@@ -999,7 +999,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox15</rd:DefaultName>
-              <Top>2.10142cm</Top>
+              <Top>1.78392cm</Top>
               <Left>4.45143cm</Left>
               <Height>0.49416cm</Height>
               <Width>0.31943cm</Width>
@@ -1038,6 +1038,38 @@
                 </Border>
               </Style>
             </Line>
+            <Textbox Name="Textbox3">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=First(Fields!Employee.Value, "DataSetFechamentoMensal")</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox3</rd:DefaultName>
+              <Top>1.29328cm</Top>
+              <Left>1.61468cm</Left>
+              <Height>0.44125cm</Height>
+              <Width>2.5cm</Width>
+              <ZIndex>10</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
           </ReportItems>
           <Style>
             <Border>

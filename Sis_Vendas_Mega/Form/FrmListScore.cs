@@ -1,6 +1,7 @@
 ﻿using Sis_Vendas_Mega.Data;
 using Sis_Vendas_Mega.Relatorio;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -57,12 +58,16 @@ namespace Sis_Vendas_Mega
                           s.OutLanch,
                           s.ReturnLunch,
                           s.DepartureTime,
-                          s.Worked
+                          Worked = Convert.ToDouble(s.Worked.ToString().Replace(":", ""))
                       })
                       .OrderBy(o => o.Inserted)
                       .ToList();
 
                 dgvScoreMonth.DataSource = employee;
+
+                var totalTrabalhado = employee.Sum(w => w.Worked);
+
+                TimeSpan ts = TimeSpan.FromSeconds(totalTrabalhado);
 
                 dgvScoreMonth.Columns[0].HeaderText = "Dia";
                 dgvScoreMonth.Columns[1].HeaderText = "Desc";
@@ -79,6 +84,10 @@ namespace Sis_Vendas_Mega
                 dgvScoreMonth.Columns[5].Width = 135;
                 dgvScoreMonth.Columns[6].Width = 135;
                 dgvScoreMonth.Columns[7].Width = 135;
+
+                dgvScoreMonth.Columns[2].Visible = false;
+
+                txtTotalTrabalhado.Text = Convert.ToString(ts);
             }
             else
             {
@@ -106,7 +115,7 @@ namespace Sis_Vendas_Mega
 
         private void btnPrinter_Click(object sender, EventArgs e)
         {
-            var data =  GerarDadosRelatorio();
+            var data = GerarDadosRelatorio();
 
             var relat = new FrmRelatorioMensal(data);
             relat.ShowDialog();
@@ -126,7 +135,7 @@ namespace Sis_Vendas_Mega
 
             foreach (DataGridViewRow item in dgvScoreMonth.Rows)
             {
-                dt.Rows.Add(item.Cells["Inserted"].Value.ToString().Substring(0,10),
+                dt.Rows.Add(item.Cells["Inserted"].Value.ToString().Substring(0, 10),
                             item.Cells["Name"].Value.ToString(),
                             item.Cells["EntryTime"].Value.ToString().Substring(10),
                             item.Cells["OutLanch"].Value.ToString().Substring(10),

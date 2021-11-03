@@ -44,12 +44,16 @@ namespace Sis_Vendas_Mega
             this.dpDtFim = new System.Windows.Forms.DateTimePicker();
             this.dpDtInicio = new System.Windows.Forms.DateTimePicker();
             this.dgvScoreMonth = new System.Windows.Forms.DataGridView();
+            this.txtTotalTrabalhado = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvScoreMonth)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtTotalTrabalhado);
             this.groupBox1.Controls.Add(this.btnPesquisar);
             this.groupBox1.Controls.Add(this.btnClose);
             this.groupBox1.Controls.Add(this.btnCancel);
@@ -204,8 +208,27 @@ namespace Sis_Vendas_Mega
             this.dgvScoreMonth.Location = new System.Drawing.Point(6, 115);
             this.dgvScoreMonth.Name = "dgvScoreMonth";
             this.dgvScoreMonth.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvScoreMonth.Size = new System.Drawing.Size(1166, 389);
+            this.dgvScoreMonth.Size = new System.Drawing.Size(1166, 350);
             this.dgvScoreMonth.TabIndex = 0;
+            // 
+            // txtTotalTrabalhado
+            // 
+            this.txtTotalTrabalhado.Location = new System.Drawing.Point(95, 477);
+            this.txtTotalTrabalhado.Name = "txtTotalTrabalhado";
+            this.txtTotalTrabalhado.ReadOnly = true;
+            this.txtTotalTrabalhado.Size = new System.Drawing.Size(100, 20);
+            this.txtTotalTrabalhado.TabIndex = 10;
+            this.txtTotalTrabalhado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(6, 480);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(86, 14);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Total trabalhado:";
             // 
             // FrmListScore
             // 
@@ -227,10 +250,8 @@ namespace Sis_Vendas_Mega
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgvScoreMonth;
         private System.Windows.Forms.Button btnEmployees;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -241,5 +262,9 @@ namespace Sis_Vendas_Mega
         public System.Windows.Forms.DateTimePicker dpDtInicio;
         public System.Windows.Forms.DateTimePicker dpDtFim;
         public System.Windows.Forms.TextBox txtName;
+        public System.Windows.Forms.TextBox txtCode;
+        public System.Windows.Forms.DataGridView dgvScoreMonth;
+        private System.Windows.Forms.TextBox txtTotalTrabalhado;
+        private System.Windows.Forms.Label label5;
     }
 }
