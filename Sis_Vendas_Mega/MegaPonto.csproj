@@ -349,6 +349,10 @@
     <Compile Include="Migrations\20211028000935_v1.0.1.designer.cs">
       <DependentUpon>20211028000935_v1.0.1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20211105024430_v1.0.2.cs" />
+    <Compile Include="Migrations\20211105024430_v1.0.2.designer.cs">
+      <DependentUpon>20211105024430_v1.0.2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\DataContextModelSnapshot.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Function.cs" />

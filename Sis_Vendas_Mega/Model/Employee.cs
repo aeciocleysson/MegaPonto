@@ -6,24 +6,26 @@ namespace Sis_Vendas_Mega.Model
     public class Employee : BaseModel
     {
         public string Name { get; private set; }
-        public int Code { get; private set; }
+        public long Code { get; private set; }
         public int FunctionId { get; private set; }
+        public string DataNascimento { get; private set; }
         public Function Function { get; private set; }
         public virtual List<Score> Scores { get; set; } = new List<Score>();
-        public Employee(string name, int code, int functionId)
+        public Employee(string name, long code, int functionId, string dataNascimento)
         {
             Name = name;
             Code = code;
             FunctionId = functionId;
+            DataNascimento = dataNascimento;
         }
 
         public Employee() { }
 
-        public void Update(string name, int functionId, int code)
+        public void Update(string name, int functionId, string dataNascimento)
         {
             Name = name;
             FunctionId = functionId;
-            Code = code;
+            DataNascimento = dataNascimento;
             UpdateAt = DateTime.Now;
         }
 

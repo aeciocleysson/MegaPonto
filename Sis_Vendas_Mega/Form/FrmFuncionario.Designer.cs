@@ -38,19 +38,20 @@ namespace Sis_Vendas_Mega
             this.txtCodeFunction = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCode = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtFunction = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvEmployees = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.mtbDataNascimento = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.mtbDataNascimento);
             this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.btnListFunction);
             this.groupBox1.Controls.Add(this.btnSalvar);
@@ -59,8 +60,7 @@ namespace Sis_Vendas_Mega
             this.groupBox1.Controls.Add(this.txtCodeFunction);
             this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtCode);
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtFunction);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtNome);
@@ -68,13 +68,13 @@ namespace Sis_Vendas_Mega
             this.groupBox1.Controls.Add(this.dgvEmployees);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(776, 348);
+            this.groupBox1.Size = new System.Drawing.Size(837, 438);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(614, 106);
+            this.btnDelete.Location = new System.Drawing.Point(675, 105);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 6;
@@ -96,7 +96,7 @@ namespace Sis_Vendas_Mega
             // btnSalvar
             // 
             this.btnSalvar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(452, 106);
+            this.btnSalvar.Location = new System.Drawing.Point(513, 105);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
             this.btnSalvar.TabIndex = 2;
@@ -107,7 +107,7 @@ namespace Sis_Vendas_Mega
             // brnCancelar
             // 
             this.brnCancelar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brnCancelar.Location = new System.Drawing.Point(533, 106);
+            this.brnCancelar.Location = new System.Drawing.Point(594, 105);
             this.brnCancelar.Name = "brnCancelar";
             this.brnCancelar.Size = new System.Drawing.Size(75, 23);
             this.brnCancelar.TabIndex = 3;
@@ -118,7 +118,7 @@ namespace Sis_Vendas_Mega
             // btnSair
             // 
             this.btnSair.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(695, 106);
+            this.btnSair.Location = new System.Drawing.Point(756, 105);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 23);
             this.btnSair.TabIndex = 4;
@@ -155,25 +155,6 @@ namespace Sis_Vendas_Mega
             this.label2.Size = new System.Drawing.Size(48, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Código";
-            // 
-            // txtCode
-            // 
-            this.txtCode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCode.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCode.Location = new System.Drawing.Point(10, 96);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(316, 22);
-            this.txtCode.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(7, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 16);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Code";
             // 
             // txtFunction
             // 
@@ -218,18 +199,38 @@ namespace Sis_Vendas_Mega
             // 
             this.dgvEmployees.BackgroundColor = System.Drawing.Color.White;
             this.dgvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmployees.Location = new System.Drawing.Point(6, 135);
+            this.dgvEmployees.Location = new System.Drawing.Point(6, 134);
             this.dgvEmployees.Name = "dgvEmployees";
             this.dgvEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmployees.Size = new System.Drawing.Size(764, 207);
+            this.dgvEmployees.Size = new System.Drawing.Size(825, 298);
             this.dgvEmployees.TabIndex = 0;
             this.dgvEmployees.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployees_CellDoubleClick);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(7, 68);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(108, 16);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Data Nascimento";
+            // 
+            // mtbDataNascimento
+            // 
+            this.mtbDataNascimento.Location = new System.Drawing.Point(7, 87);
+            this.mtbDataNascimento.Mask = "00/00/0000";
+            this.mtbDataNascimento.Name = "mtbDataNascimento";
+            this.mtbDataNascimento.Size = new System.Drawing.Size(100, 20);
+            this.mtbDataNascimento.TabIndex = 7;
+            this.mtbDataNascimento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mtbDataNascimento.ValidatingType = typeof(System.DateTime);
             // 
             // FrmFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 372);
+            this.ClientSize = new System.Drawing.Size(861, 462);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.Name = "FrmFuncionario";
@@ -253,12 +254,12 @@ namespace Sis_Vendas_Mega
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button brnCancelar;
         private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.TextBox txtCode;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnListFunction;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.TextBox txtFunction;
         private System.Windows.Forms.TextBox txtCodeFunction;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.MaskedTextBox mtbDataNascimento;
+        private System.Windows.Forms.Label label5;
     }
 }

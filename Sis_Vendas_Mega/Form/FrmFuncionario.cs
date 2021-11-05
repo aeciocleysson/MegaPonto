@@ -24,7 +24,6 @@ namespace Sis_Vendas_Mega
             txtNome.Focus();
             txtCodeFunction.Clear();
             txtFunction.Clear();
-            txtCode.Clear();
             txtNome.Select();
         }
 
@@ -32,16 +31,18 @@ namespace Sis_Vendas_Mega
         {
             _context = new DataContext();
 
-            if (string.IsNullOrEmpty(txtCode.Text))
+            if (string.IsNullOrEmpty(txtCodigo.Text))
             {
-                if (!string.IsNullOrEmpty(txtNome.Text) && !string.IsNullOrEmpty(txtCodeFunction.Text) && !string.IsNullOrEmpty(txtCode.Text))
+                if (!string.IsNullOrEmpty(txtNome.Text) && !string.IsNullOrEmpty(txtCodeFunction.Text) && !string.IsNullOrEmpty(mtbDataNascimento.Text))
                 {
                     viewModel.Name = txtNome.Text;
-                    viewModel.Code = Convert.ToInt32(txtCode.Text.Replace(".", "").Replace(",", ""));
+                    viewModel.Code = Convert.ToInt64($"{mtbDataNascimento.Text.Replace("/", "")}{DateTime.Today.ToString("dd/MM/yy").Replace("/", "")}");
+                    viewModel.DataNascimento = mtbDataNascimento.Text;
                     viewModel.FunctionId = Convert.ToInt32(txtCodeFunction.Text);
 
                     var model = new Employee(name: viewModel.Name,
                         code: viewModel.Code,
+                        dataNascimento: viewModel.DataNascimento,
                         functionId: viewModel.FunctionId);
 
                     _context.Employees.Add(model);
@@ -60,18 +61,18 @@ namespace Sis_Vendas_Mega
             }
             else
             {
-                if (!string.IsNullOrEmpty(txtNome.Text) && !string.IsNullOrEmpty(txtCodeFunction.Text) && !string.IsNullOrEmpty(txtCode.Text))
+                if (!string.IsNullOrEmpty(txtNome.Text) && !string.IsNullOrEmpty(txtCodeFunction.Text) && !string.IsNullOrEmpty(mtbDataNascimento.Text))
                 {
                     viewModel.Id = Convert.ToInt32(txtCodigo.Text);
                     viewModel.Name = txtNome.Text;
-                    viewModel.Code = Convert.ToInt32(txtCode.Text.Replace(".", "").Replace(",", ""));
+                    viewModel.DataNascimento = mtbDataNascimento.Text;
                     viewModel.FunctionId = Convert.ToInt32(txtCodeFunction.Text);
 
                     var model = _context.Employees.Find(viewModel.Id);
 
                     model.Update(name: viewModel.Name,
                          functionId: viewModel.FunctionId,
-                         code: viewModel.Code);
+                         dataNascimento: viewModel.DataNascimento);
 
                     _context.Employees.Update(model);
                     _context.SaveChanges();
@@ -196,7 +197,6 @@ namespace Sis_Vendas_Mega
                 txtNome.Text = row.Cells[1].Value.ToString();
                 txtCodeFunction.Text = row.Cells[2].Value.ToString();
                 txtFunction.Text = row.Cells[3].Value.ToString();
-                txtCode.Text = row.Cells[4].Value.ToString();
             }
         }
 

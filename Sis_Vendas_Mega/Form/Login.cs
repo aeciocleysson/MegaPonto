@@ -35,8 +35,10 @@ namespace Sis_Vendas_Mega
                     {
                         switch (user.Tipo)
                         {
+                            case "Vendedor":
                             case "VENDEDOR":
-                                principal.manutencaoUsuario.Visible = false;
+                                principal.menuUtilitario.Visible = false;
+                                principal.menuCadastrar.Visible = false;
                                 break;
                         }
 

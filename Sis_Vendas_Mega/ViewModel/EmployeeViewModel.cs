@@ -3,8 +3,9 @@
     public class EmployeeViewModel : BaseViewModel
     {
         public string Name { get; set; }
-        public int Code { get; set; }
+        public long Code { get; set; }
         public int FunctionId { get; set; }
+        public string DataNascimento { get; set; }
         public int IsDelete { get; set; }
     }
 }

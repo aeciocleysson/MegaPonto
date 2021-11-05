@@ -34,7 +34,7 @@ namespace Sis_Vendas_Mega
             txtCodeEmployee.Select();
         }
 
-        public void InsertInput(int code)
+        public void InsertInput(long code)
         {
             var employee = _context.Employees.SingleOrDefault(w => w.Code == code);
 
@@ -162,13 +162,13 @@ namespace Sis_Vendas_Mega
 
         private void txtCodeEmployee_KeyPress(object sender, KeyPressEventArgs e)
         {
-            int isNumber;
+            long isNumber;
 
             if (e.KeyChar == 13)
             {
-                if (int.TryParse(txtCodeEmployee.Text, out isNumber))
+                if (long.TryParse(txtCodeEmployee.Text, out isNumber))
                 {
-                    InsertInput(Convert.ToInt32(txtCodeEmployee.Text));
+                    InsertInput(Convert.ToInt64(txtCodeEmployee.Text));
                 }
                 else
                 {
