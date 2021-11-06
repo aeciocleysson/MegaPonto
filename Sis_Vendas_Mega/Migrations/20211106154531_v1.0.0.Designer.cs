@@ -10,7 +10,7 @@ using Sis_Vendas_Mega.Data;
 namespace Sis_Vendas_Mega.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20211027023814_v1.0.0")]
+    [Migration("20211106154531_v1.0.0")]
     partial class v100
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,14 +28,22 @@ namespace Sis_Vendas_Mega.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<int>("Code")
-                        .HasColumnType("integer");
+                    b.Property<long>("Code")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("DataNascimento")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("text")
+                        .HasDefaultValue("01/01/1990");
 
                     b.Property<int>("FunctionId")
                         .HasColumnType("integer");
 
                     b.Property<DateTime>("Inserted")
                         .HasColumnType("timestamp without time zone");
+
+                    b.Property<int>("IsDelete")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -69,6 +77,9 @@ namespace Sis_Vendas_Mega.Migrations
                     b.Property<DateTime>("Inserted")
                         .HasColumnType("timestamp without time zone");
 
+                    b.Property<int>("IsDelete")
+                        .HasColumnType("integer");
+
                     b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("timestamp without time zone");
 
@@ -86,8 +97,8 @@ namespace Sis_Vendas_Mega.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<int>("Code")
-                        .HasColumnType("integer");
+                    b.Property<long>("Code")
+                        .HasColumnType("bigint");
 
                     b.Property<DateTime?>("DepartureTime")
                         .HasColumnType("timestamp without time zone");
@@ -100,6 +111,9 @@ namespace Sis_Vendas_Mega.Migrations
 
                     b.Property<DateTime>("Inserted")
                         .HasColumnType("timestamp without time zone");
+
+                    b.Property<int>("IsDelete")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime?>("OutLanch")
                         .HasColumnType("timestamp without time zone");
@@ -131,6 +145,9 @@ namespace Sis_Vendas_Mega.Migrations
 
                     b.Property<DateTime>("Inserted")
                         .HasColumnType("timestamp without time zone");
+
+                    b.Property<int>("IsDelete")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Login")
                         .HasColumnType("character varying(20)")

@@ -16,6 +16,7 @@ namespace Sis_Vendas_Mega.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Inserted = table.Column<DateTime>(nullable: false),
                     UpdateAt = table.Column<DateTime>(nullable: true),
+                    IsDelete = table.Column<int>(nullable: false),
                     Description = table.Column<string>(maxLength: 30, nullable: false)
                 },
                 constraints: table =>
@@ -31,6 +32,7 @@ namespace Sis_Vendas_Mega.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Inserted = table.Column<DateTime>(nullable: false),
                     UpdateAt = table.Column<DateTime>(nullable: true),
+                    IsDelete = table.Column<int>(nullable: false),
                     Nome = table.Column<string>(maxLength: 60, nullable: true),
                     Tipo = table.Column<string>(nullable: true),
                     Login = table.Column<string>(maxLength: 20, nullable: true),
@@ -49,9 +51,11 @@ namespace Sis_Vendas_Mega.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Inserted = table.Column<DateTime>(nullable: false),
                     UpdateAt = table.Column<DateTime>(nullable: true),
+                    IsDelete = table.Column<int>(nullable: false),
                     Name = table.Column<string>(maxLength: 50, nullable: false),
-                    Code = table.Column<int>(nullable: false),
-                    FunctionId = table.Column<int>(nullable: false)
+                    Code = table.Column<long>(nullable: false),
+                    FunctionId = table.Column<int>(nullable: false),
+                    DataNascimento = table.Column<string>(nullable: true, defaultValue: "01/01/1990")
                 },
                 constraints: table =>
                 {
@@ -72,13 +76,14 @@ namespace Sis_Vendas_Mega.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Inserted = table.Column<DateTime>(nullable: false),
                     UpdateAt = table.Column<DateTime>(nullable: true),
+                    IsDelete = table.Column<int>(nullable: false),
                     EntryTime = table.Column<DateTime>(nullable: true),
                     OutLanch = table.Column<DateTime>(nullable: true),
                     ReturnLunch = table.Column<DateTime>(nullable: true),
                     DepartureTime = table.Column<DateTime>(nullable: true),
                     Worked = table.Column<TimeSpan>(nullable: true),
                     EmployeeId = table.Column<int>(nullable: false),
-                    Code = table.Column<int>(nullable: false)
+                    Code = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {

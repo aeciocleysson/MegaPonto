@@ -51,7 +51,7 @@
             this.btnLogar.Name = "btnLogar";
             this.btnLogar.Size = new System.Drawing.Size(379, 48);
             this.btnLogar.TabIndex = 3;
-            this.btnLogar.Text = "Login";
+            this.btnLogar.Text = "Entrar";
             this.btnLogar.UseVisualStyleBackColor = false;
             this.btnLogar.Click += new System.EventHandler(this.btnLogar_Click);
             // 
@@ -65,7 +65,7 @@
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(379, 48);
             this.btnSair.TabIndex = 4;
-            this.btnSair.Text = "Sair";
+            this.btnSair.Text = "Cancelar";
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 

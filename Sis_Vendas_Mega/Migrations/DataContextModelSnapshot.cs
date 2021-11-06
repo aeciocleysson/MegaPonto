@@ -30,7 +30,9 @@ namespace Sis_Vendas_Mega.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("DataNascimento")
-                        .HasColumnType("text");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("text")
+                        .HasDefaultValue("01/01/1990");
 
                     b.Property<int>("FunctionId")
                         .HasColumnType("integer");

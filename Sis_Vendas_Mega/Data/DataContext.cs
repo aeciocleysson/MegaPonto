@@ -16,7 +16,7 @@ namespace Sis_Vendas_Mega.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=localhost;Database=MegaPonto;Username=postgres;Password=3103");
+            optionsBuilder.UseNpgsql("Host=localhost;Database=DbMegaPonto;Username=postgres;Password=3103");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -25,6 +25,7 @@ namespace Sis_Vendas_Mega
             txtCodeFunction.Clear();
             txtFunction.Clear();
             txtNome.Select();
+            mtbDataNascimento.Clear();
         }
 
         public void Insert(EmployeeViewModel viewModel)
@@ -33,7 +34,8 @@ namespace Sis_Vendas_Mega
 
             if (string.IsNullOrEmpty(txtCodigo.Text))
             {
-                if (!string.IsNullOrEmpty(txtNome.Text) && !string.IsNullOrEmpty(txtCodeFunction.Text) && !string.IsNullOrEmpty(mtbDataNascimento.Text))
+                if (!string.IsNullOrEmpty(txtNome.Text) && !string.IsNullOrEmpty(txtCodeFunction.Text) &&
+                    !string.IsNullOrEmpty(mtbDataNascimento.Text))
                 {
                     viewModel.Name = txtNome.Text;
                     viewModel.Code = Convert.ToInt64($"{mtbDataNascimento.Text.Replace("/", "")}{DateTime.Today.ToString("dd/MM/yy").Replace("/", "")}");
@@ -54,7 +56,7 @@ namespace Sis_Vendas_Mega
                 }
                 else
                 {
-                    MessageBox.Show("O Nome, Função e Código são obrigatórios!", "Alerta", MessageBoxButtons.OK,
+                    MessageBox.Show("O Nome, Função e data Nascimento são obrigatórios!", "Alerta", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                     GetAll();
                 }
@@ -83,7 +85,7 @@ namespace Sis_Vendas_Mega
                 }
                 else
                 {
-                    MessageBox.Show("O Nome, Função e Código são obrigatórios!", "Alerta", MessageBoxButtons.OK,
+                    MessageBox.Show("O Nome, Função e Data de Nascimento são obrigatórios!", "Alerta", MessageBoxButtons.OK,
                      MessageBoxIcon.Error);
                     GetAll();
                 }
@@ -100,11 +102,11 @@ namespace Sis_Vendas_Mega
                 {
                     s.Id,
                     s.Name,
+                    s.DataNascimento,
                     s.FunctionId,
                     s.Function.Description,
                     s.Code,
-                    s.Inserted,
-                    s.UpdateAt
+                    s.Inserted
                 }).OrderBy(o => o.Name)
                 .ToList();
 
@@ -112,13 +114,12 @@ namespace Sis_Vendas_Mega
 
             dgvEmployees.Columns[0].HeaderText = "Código";
             dgvEmployees.Columns[1].HeaderText = "Nome";
-            dgvEmployees.Columns[2].HeaderText = "Cód. Função";
-            dgvEmployees.Columns[3].HeaderText = "Função";
-            dgvEmployees.Columns[4].HeaderText = "QR Code";
-            dgvEmployees.Columns[5].HeaderText = "Dt. Cadastro";
-            dgvEmployees.Columns[6].HeaderText = "Dt. Atualização";
+            dgvEmployees.Columns[2].HeaderText = "Dt. Nascimento";
+            dgvEmployees.Columns[3].HeaderText = "Cd. Função";
+            dgvEmployees.Columns[4].HeaderText = "Função";
+            dgvEmployees.Columns[5].HeaderText = "Matricula";
+            dgvEmployees.Columns[6].HeaderText = "Dt. Cadastro";
             dgvEmployees.Columns[1].Width = 300;
-            dgvEmployees.Columns[3].Width = 250;
         }
 
         public void Delete(EmployeeViewModel viewModel)
@@ -195,8 +196,9 @@ namespace Sis_Vendas_Mega
 
                 txtCodigo.Text = row.Cells[0].Value.ToString();
                 txtNome.Text = row.Cells[1].Value.ToString();
-                txtCodeFunction.Text = row.Cells[2].Value.ToString();
-                txtFunction.Text = row.Cells[3].Value.ToString();
+                mtbDataNascimento.Text = row.Cells[2].Value.ToString();
+                txtCodeFunction.Text = row.Cells[3].Value.ToString();
+                txtFunction.Text = row.Cells[4].Value.ToString();
             }
         }
 

@@ -37,6 +37,7 @@ namespace Sis_Vendas_Mega
                         {
                             case "Vendedor":
                             case "VENDEDOR":
+                            case "vendedor":
                                 principal.menuUtilitario.Visible = false;
                                 principal.menuCadastrar.Visible = false;
                                 break;
@@ -47,7 +48,7 @@ namespace Sis_Vendas_Mega
                     }
                     else
                     {
-                        MessageBox.Show("Login ou Senha inválido!", "Alerta", MessageBoxButtons.OK, 
+                        MessageBox.Show("Login ou Senha inválido!", "Alerta", MessageBoxButtons.OK,
                         MessageBoxIcon.None);
                     }
                 }
@@ -87,7 +88,5 @@ namespace Sis_Vendas_Mega
         }
 
         #endregion
-
     }
 }
-
