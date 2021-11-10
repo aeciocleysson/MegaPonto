@@ -86,10 +86,11 @@ namespace Sis_Vendas_Mega
                     viewModel.ReturnLunch = Convert.ToDateTime(lblHoraAtual.Text);
                     viewModel.Id = scoreReturnLanch.Id;
                     viewModel.Code = scoreReturnLanch.Code;
+                    viewModel.FullRange = (viewModel.ReturnLunch - scoreReturnLanch.OutLanch);
 
                     var result = _context.Scores.Find(viewModel.Id);
 
-                    result.UpdateReturnLanch(returnLanch: viewModel.ReturnLunch);
+                    result.UpdateReturnLanch(returnLanch: viewModel.ReturnLunch, fullRange: viewModel.FullRange);
 
                     _context.Scores.Update(result);
                     _context.SaveChanges();
@@ -103,9 +104,9 @@ namespace Sis_Vendas_Mega
                 if (scoreDepartureTime != null)
                 {
                     viewModel.DepartureTime = Convert.ToDateTime(lblHoraAtual.Text);
-                    viewModel.Worked = (viewModel.DepartureTime - scoreDepartureTime.EntryTime);
+                    viewModel.Worked = (viewModel.DepartureTime - scoreDepartureTime.EntryTime - scoreDepartureTime.FullRange);
                     viewModel.Id = scoreDepartureTime.Id;
-                    
+
                     var result = _context.Scores.Find(viewModel.Id);
 
                     result.UpdateDepartureTime(departureTime: viewModel.DepartureTime,
@@ -131,7 +132,7 @@ namespace Sis_Vendas_Mega
                 ClearFields();
             }
         }
-      
+
         public void GetAll()
         {
             var employees = _context.Scores
@@ -144,6 +145,7 @@ namespace Sis_Vendas_Mega
                     Entrada = s.EntryTime,
                     SaidaAlmoço = s.OutLanch,
                     RetornoAlmoço = s.ReturnLunch,
+                    Intervalo = s.FullRange,
                     Saida = s.DepartureTime,
                     Total = s.Worked
                 }).OrderBy(o => o.Data)

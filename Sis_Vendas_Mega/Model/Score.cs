@@ -8,6 +8,7 @@ namespace Sis_Vendas_Mega.Model
         public DateTime? OutLanch { get; private set; }
         public DateTime? ReturnLunch { get; private set; }
         public DateTime? DepartureTime { get; private set; }
+        public TimeSpan? FullRange { get; private set; }
         public TimeSpan? Worked { get; private set; }
         public int EmployeeId { get; private set; }
         public long Code { get; private set; }
@@ -30,9 +31,10 @@ namespace Sis_Vendas_Mega.Model
             OutLanch = outLanch;
         }
 
-        public void UpdateReturnLanch(DateTime? returnLanch)
+        public void UpdateReturnLanch(DateTime? returnLanch, TimeSpan? fullRange)
         {
             ReturnLunch = returnLanch;
+            FullRange = fullRange;
         }
 
         public void UpdateDepartureTime(DateTime? departureTime, TimeSpan? worked)

@@ -35,19 +35,19 @@ namespace Sis_Vendas_Mega
             this.timerAtual = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblDateDay = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtCodeEmployee = new System.Windows.Forms.TextBox();
             this.dgvScore = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvScore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvScore)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHoraAtual
@@ -75,7 +75,7 @@ namespace Sis_Vendas_Mega
             this.groupBox1.Controls.Add(this.lblHoraAtual);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(867, 426);
+            this.groupBox1.Size = new System.Drawing.Size(978, 455);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -89,6 +89,16 @@ namespace Sis_Vendas_Mega
             this.label1.Size = new System.Drawing.Size(218, 42);
             this.label1.TabIndex = 10;
             this.label1.Text = "Mega Ponto";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(872, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 63);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
             // lblDateDay
             // 
@@ -108,61 +118,9 @@ namespace Sis_Vendas_Mega
             this.groupBox2.Controls.Add(this.txtCodeEmployee);
             this.groupBox2.Location = new System.Drawing.Point(12, 73);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(842, 60);
+            this.groupBox2.Size = new System.Drawing.Size(960, 60);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(760, 25);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 5;
-            this.btnClose.Text = "Sair";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(680, 25);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 6;
-            this.btnCancel.Text = "Cancelar";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // txtCodeEmployee
-            // 
-            this.txtCodeEmployee.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodeEmployee.Location = new System.Drawing.Point(109, 22);
-            this.txtCodeEmployee.Name = "txtCodeEmployee";
-            this.txtCodeEmployee.Size = new System.Drawing.Size(142, 26);
-            this.txtCodeEmployee.TabIndex = 1;
-            this.txtCodeEmployee.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtCodeEmployee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodeEmployee_KeyPress);
-            // 
-            // dgvScore
-            // 
-            this.dgvScore.BackgroundColor = System.Drawing.Color.White;
-            this.dgvScore.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvScore.Location = new System.Drawing.Point(12, 142);
-            this.dgvScore.Name = "dgvScore";
-            this.dgvScore.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvScore.Size = new System.Drawing.Size(842, 267);
-            this.dgvScore.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(747, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 63);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -174,11 +132,54 @@ namespace Sis_Vendas_Mega
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
+            // btnClose
+            // 
+            this.btnClose.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(875, 25);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 5;
+            this.btnClose.Text = "Sair";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(795, 25);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 6;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // txtCodeEmployee
+            // 
+            this.txtCodeEmployee.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodeEmployee.Location = new System.Drawing.Point(109, 22);
+            this.txtCodeEmployee.Multiline = true;
+            this.txtCodeEmployee.Name = "txtCodeEmployee";
+            this.txtCodeEmployee.Size = new System.Drawing.Size(179, 24);
+            this.txtCodeEmployee.TabIndex = 1;
+            this.txtCodeEmployee.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCodeEmployee.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodeEmployee_KeyPress);
+            // 
+            // dgvScore
+            // 
+            this.dgvScore.BackgroundColor = System.Drawing.Color.White;
+            this.dgvScore.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvScore.Location = new System.Drawing.Point(12, 142);
+            this.dgvScore.Name = "dgvScore";
+            this.dgvScore.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvScore.Size = new System.Drawing.Size(960, 307);
+            this.dgvScore.TabIndex = 2;
+            // 
             // Score
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(891, 450);
+            this.ClientSize = new System.Drawing.Size(1002, 479);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.Name = "Score";
@@ -186,11 +187,11 @@ namespace Sis_Vendas_Mega
             this.Text = "Ponto";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvScore)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvScore)).EndInit();
             this.ResumeLayout(false);
 
         }

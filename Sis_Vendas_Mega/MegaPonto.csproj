@@ -30,7 +30,7 @@
     <ProductName>Mega Ponto</ProductName>
     <PublisherName>aecio</PublisherName>
     <SuiteName>sisvendas</SuiteName>
-    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -295,6 +295,7 @@
     <Compile Include="Data\Configuration\FunctionConfiguration.cs" />
     <Compile Include="Data\Configuration\ScoreConfiguration.cs" />
     <Compile Include="Data\Configuration\UsuarioConfiguration.cs" />
+    <Compile Include="Data\ConnectionStringNpgsql.cs" />
     <Compile Include="Data\DataContext.cs" />
     <Compile Include="Form\FrmListFunction.cs">
       <SubType>Form</SubType>
@@ -344,6 +345,10 @@
     <Compile Include="Migrations\20211106154531_v1.0.0.cs" />
     <Compile Include="Migrations\20211106154531_v1.0.0.designer.cs">
       <DependentUpon>20211106154531_v1.0.0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20211110015226_v1.0.1.cs" />
+    <Compile Include="Migrations\20211110015226_v1.0.1.designer.cs">
+      <DependentUpon>20211110015226_v1.0.1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DataContextModelSnapshot.cs" />
     <Compile Include="Model\Employee.cs" />

@@ -1,9 +1,10 @@
 ﻿using Sis_Vendas_Mega.Data;
 using Sis_Vendas_Mega.Relatorio;
 using System;
-using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Sis_Vendas_Mega
@@ -52,31 +53,29 @@ namespace Sis_Vendas_Mega
                       .Select(s => new
                       {
                           s.Inserted,
-                          s.Inserted.DayOfWeek,
+                          Dia = s.Inserted.ToString("dddd", new CultureInfo("pt-BR")),
                           s.Employee.Name,
                           s.EntryTime,
                           s.OutLanch,
                           s.ReturnLunch,
+                          s.FullRange,
                           s.DepartureTime,
-                          Worked = Convert.ToDouble(s.Worked.ToString().Replace(":", ""))
+                          s.Worked
                       })
                       .OrderBy(o => o.Inserted)
                       .ToList();
 
                 dgvScoreMonth.DataSource = employee;
 
-                var totalTrabalhado = employee.Sum(w => w.Worked);
-
-                TimeSpan ts = TimeSpan.FromSeconds(totalTrabalhado);
-
-                dgvScoreMonth.Columns[0].HeaderText = "Dia";
-                dgvScoreMonth.Columns[1].HeaderText = "Desc";
-                dgvScoreMonth.Columns[2].HeaderText = "Funcionário";
+                dgvScoreMonth.Columns[0].HeaderText = "Data";
+                dgvScoreMonth.Columns[1].HeaderText = "Dia";
+                dgvScoreMonth.Columns[2].HeaderText = "Funcionário(a)";
                 dgvScoreMonth.Columns[3].HeaderText = "Entrada";
                 dgvScoreMonth.Columns[4].HeaderText = "Saida Almoço";
                 dgvScoreMonth.Columns[5].HeaderText = "Retorno Almoço";
-                dgvScoreMonth.Columns[6].HeaderText = "Saída";
-                dgvScoreMonth.Columns[7].HeaderText = "Total";
+                dgvScoreMonth.Columns[6].HeaderText = "Intervalo";
+                dgvScoreMonth.Columns[7].HeaderText = "Saída";
+                dgvScoreMonth.Columns[8].HeaderText = "Total";
 
                 dgvScoreMonth.Columns[2].Width = 250;
                 dgvScoreMonth.Columns[3].Width = 135;
@@ -84,10 +83,11 @@ namespace Sis_Vendas_Mega
                 dgvScoreMonth.Columns[5].Width = 135;
                 dgvScoreMonth.Columns[6].Width = 135;
                 dgvScoreMonth.Columns[7].Width = 135;
+                dgvScoreMonth.Columns[8].Width = 135;
 
                 dgvScoreMonth.Columns[2].Visible = false;
 
-                txtTotalTrabalhado.Text = Convert.ToString(ts);
+                //txtTotalTrabalhado.Text = Convert.ToString(ts);
             }
             else
             {
