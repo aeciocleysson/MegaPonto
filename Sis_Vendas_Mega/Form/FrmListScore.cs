@@ -4,7 +4,6 @@ using System;
 using System.Data;
 using System.Globalization;
 using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace Sis_Vendas_Mega
@@ -16,6 +15,8 @@ namespace Sis_Vendas_Mega
         {
             InitializeComponent();
             _context = new DataContext();
+            DAL acesso = new DAL();
+            acesso.GetTodosRegistros();
         }
 
         public void ClearFilds()

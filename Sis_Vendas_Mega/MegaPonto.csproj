@@ -296,6 +296,7 @@
     <Compile Include="Data\Configuration\ScoreConfiguration.cs" />
     <Compile Include="Data\Configuration\UsuarioConfiguration.cs" />
     <Compile Include="Data\ConnectionStringNpgsql.cs" />
+    <Compile Include="Data\DAL.cs" />
     <Compile Include="Data\DataContext.cs" />
     <Compile Include="Form\FrmListFunction.cs">
       <SubType>Form</SubType>

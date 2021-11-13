@@ -25,6 +25,7 @@ namespace Sis_Vendas_Mega.Data
             modelBuilder.ApplyConfiguration(new ScoreConfiguration());
             modelBuilder.ApplyConfiguration(new FunctionConfiguration());
 
+           // modelBuilder.HasDefaultSchema("DbMegaPonto");
             base.OnModelCreating(modelBuilder);
         }
     }
