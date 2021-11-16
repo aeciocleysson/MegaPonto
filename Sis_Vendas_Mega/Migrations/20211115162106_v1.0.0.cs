@@ -1,6 +1,6 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Sis_Vendas_Mega.Migrations
 {
@@ -13,7 +13,7 @@ namespace Sis_Vendas_Mega.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Inserted = table.Column<DateTime>(nullable: false),
                     UpdateAt = table.Column<DateTime>(nullable: true),
                     IsDelete = table.Column<int>(nullable: false),
@@ -29,7 +29,7 @@ namespace Sis_Vendas_Mega.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Inserted = table.Column<DateTime>(nullable: false),
                     UpdateAt = table.Column<DateTime>(nullable: true),
                     IsDelete = table.Column<int>(nullable: false),
@@ -48,7 +48,7 @@ namespace Sis_Vendas_Mega.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Inserted = table.Column<DateTime>(nullable: false),
                     UpdateAt = table.Column<DateTime>(nullable: true),
                     IsDelete = table.Column<int>(nullable: false),
@@ -73,7 +73,7 @@ namespace Sis_Vendas_Mega.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Inserted = table.Column<DateTime>(nullable: false),
                     UpdateAt = table.Column<DateTime>(nullable: true),
                     IsDelete = table.Column<int>(nullable: false),
@@ -81,6 +81,7 @@ namespace Sis_Vendas_Mega.Migrations
                     OutLanch = table.Column<DateTime>(nullable: true),
                     ReturnLunch = table.Column<DateTime>(nullable: true),
                     DepartureTime = table.Column<DateTime>(nullable: true),
+                    FullRange = table.Column<TimeSpan>(nullable: true),
                     Worked = table.Column<TimeSpan>(nullable: true),
                     EmployeeId = table.Column<int>(nullable: false),
                     Code = table.Column<long>(nullable: false)

@@ -16,7 +16,7 @@ namespace Sis_Vendas_Mega.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=localhost;Database=DbMegaPonto;Username=postgres;Password=3103");
+            optionsBuilder.UseMySql("Host=localhost;Database=DbErpMega;Username=root;Password=3103");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -25,7 +25,6 @@ namespace Sis_Vendas_Mega.Data
             modelBuilder.ApplyConfiguration(new ScoreConfiguration());
             modelBuilder.ApplyConfiguration(new FunctionConfiguration());
 
-           // modelBuilder.HasDefaultSchema("DbMegaPonto");
             base.OnModelCreating(modelBuilder);
         }
     }

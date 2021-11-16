@@ -1,4 +1,5 @@
 ﻿using Sis_Vendas_Mega.Data;
+using Sis_Vendas_Mega.Data.DAL;
 using Sis_Vendas_Mega.Relatorio;
 using System;
 using System.Data;
@@ -15,8 +16,6 @@ namespace Sis_Vendas_Mega
         {
             InitializeComponent();
             _context = new DataContext();
-            DAL acesso = new DAL();
-            acesso.GetTodosRegistros();
         }
 
         public void ClearFilds()
@@ -88,7 +87,8 @@ namespace Sis_Vendas_Mega
 
                 dgvScoreMonth.Columns[2].Visible = false;
 
-                //txtTotalTrabalhado.Text = Convert.ToString(ts);
+                var result = new ListScoreDal();
+                txtSaldoMes.Text = result.ListarUsuarios(id, dtInicio, dtFim).Rows[0][0].ToString();
             }
             else
             {
