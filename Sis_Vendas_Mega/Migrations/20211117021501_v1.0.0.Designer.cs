@@ -9,7 +9,7 @@ using Sis_Vendas_Mega.Data;
 namespace Sis_Vendas_Mega.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20211115162106_v1.0.0")]
+    [Migration("20211117021501_v1.0.0")]
     partial class v100
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

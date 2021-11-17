@@ -12,6 +12,7 @@ namespace Sis_Vendas_Mega
         private DataContext _context;
         public FrmFuncionario()
         {
+            _context = new DataContext();
             InitializeComponent();
             ClearFields();
             GetAll();
@@ -30,7 +31,8 @@ namespace Sis_Vendas_Mega
 
         public void Insert(EmployeeViewModel viewModel)
         {
-            _context = new DataContext();
+            Random randNum = new Random();
+            var startCode = randNum.Next(100, 500);
 
             if (string.IsNullOrEmpty(txtCodigo.Text))
             {
@@ -38,7 +40,7 @@ namespace Sis_Vendas_Mega
                     !string.IsNullOrEmpty(mtbDataNascimento.Text))
                 {
                     viewModel.Name = txtNome.Text;
-                    viewModel.Code = Convert.ToInt64($"{mtbDataNascimento.Text.Replace("/", "")}{DateTime.Today.ToString("dd/MM/yy").Replace("/", "")}");
+                    viewModel.Code = Convert.ToInt64($"{mtbDataNascimento.Text.Replace("/", "").Substring(0, 4)}{startCode}");
                     viewModel.DataNascimento = mtbDataNascimento.Text;
                     viewModel.FunctionId = Convert.ToInt32(txtCodeFunction.Text);
 
@@ -94,8 +96,6 @@ namespace Sis_Vendas_Mega
 
         public void GetAll()
         {
-            _context = new DataContext();
-
             var employees = _context.Employees
                 .Where(w => w.IsDelete == 0)
                 .Select(s => new

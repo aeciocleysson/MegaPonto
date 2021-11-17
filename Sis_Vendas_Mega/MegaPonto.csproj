@@ -373,9 +373,9 @@
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Infrastructure\BaseModel.cs" />
-    <Compile Include="Migrations\20211115162106_v1.0.0.cs" />
-    <Compile Include="Migrations\20211115162106_v1.0.0.designer.cs">
-      <DependentUpon>20211115162106_v1.0.0.cs</DependentUpon>
+    <Compile Include="Migrations\20211117021501_v1.0.0.cs" />
+    <Compile Include="Migrations\20211117021501_v1.0.0.designer.cs">
+      <DependentUpon>20211117021501_v1.0.0.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DataContextModelSnapshot.cs" />
     <Compile Include="Model\Employee.cs" />
