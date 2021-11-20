@@ -40,6 +40,8 @@ namespace Sis_Vendas_Mega
 
         public void GetById(int id, DateTime dtInicio, DateTime dtFim)
         {
+            string x = "00:00:01";
+
             if (!string.IsNullOrEmpty(txtCode.Text))
             {
                 id = Convert.ToInt32(txtCode.Text);
@@ -88,7 +90,7 @@ namespace Sis_Vendas_Mega
                 dgvScoreMonth.Columns[2].Visible = false;
 
                 var result = new ListScoreDal();
-                txtSaldoMes.Text = result.ListarUsuarios(id, dtInicio, dtFim).Rows[0][0].ToString();
+                txtSaldoMes.Text = result.ListarUsuarios(id, dtInicio, dtFim).Rows[0]["WORKED"].ToString();
             }
             else
             {

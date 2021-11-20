@@ -13,7 +13,7 @@ namespace Sis_Vendas_Mega.Data.DAL
         {
             try
             {
-                connection = new MySqlConnection("Host=localhost;Database=DbErpMega;Username=root;Password=3103");
+                connection = new MySqlConnection("Host=192.168.0.19;Database=DbErpMega;Username=mega;Password=mega@3212");
                 connection.Open();
 
                 string sql = $"SELECT TIME_FORMAT(SUM(WORKED), '%T') AS WORKED FROM Score WHERE EMPLOYEEID = {id} AND INSERTED BETWEEN '{inicio.ToString("yyyy-MM-dd")}' AND '{fim.ToString("yyyy-MM-dd")}'";

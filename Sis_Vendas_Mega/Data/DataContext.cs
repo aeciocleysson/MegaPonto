@@ -16,7 +16,7 @@ namespace Sis_Vendas_Mega.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql("Host=localhost;Database=DbErpMega;Username=root;Password=3103");
+            optionsBuilder.UseMySql("Host=192.168.0.19;Database=DbErpMega;Username=mega;Password=mega@3212");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

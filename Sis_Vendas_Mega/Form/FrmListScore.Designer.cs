@@ -30,6 +30,12 @@ namespace Sis_Vendas_Mega
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtSaldoNegativo = new System.Windows.Forms.TextBox();
+            this.txtSaldoPositivo = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtSaldoMes = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -44,12 +50,6 @@ namespace Sis_Vendas_Mega
             this.dpDtFim = new System.Windows.Forms.DateTimePicker();
             this.dpDtInicio = new System.Windows.Forms.DateTimePicker();
             this.dgvScoreMonth = new System.Windows.Forms.DataGridView();
-            this.txtSaldoMes = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtSaldoPositivo = new System.Windows.Forms.TextBox();
-            this.txtSaldoNegativo = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvScoreMonth)).BeginInit();
             this.SuspendLayout();
@@ -81,6 +81,60 @@ namespace Sis_Vendas_Mega
             this.groupBox1.Size = new System.Drawing.Size(1178, 510);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(1083, 226);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(80, 13);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Saldo Negativo";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1083, 176);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 13);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Saldo Positivo";
+            // 
+            // txtSaldoNegativo
+            // 
+            this.txtSaldoNegativo.Location = new System.Drawing.Point(1082, 242);
+            this.txtSaldoNegativo.Name = "txtSaldoNegativo";
+            this.txtSaldoNegativo.ReadOnly = true;
+            this.txtSaldoNegativo.Size = new System.Drawing.Size(90, 20);
+            this.txtSaldoNegativo.TabIndex = 13;
+            this.txtSaldoNegativo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtSaldoPositivo
+            // 
+            this.txtSaldoPositivo.Location = new System.Drawing.Point(1083, 192);
+            this.txtSaldoPositivo.Name = "txtSaldoPositivo";
+            this.txtSaldoPositivo.ReadOnly = true;
+            this.txtSaldoPositivo.Size = new System.Drawing.Size(90, 20);
+            this.txtSaldoPositivo.TabIndex = 13;
+            this.txtSaldoPositivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(1083, 127);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Saldo Mensal";
+            // 
+            // txtSaldoMes
+            // 
+            this.txtSaldoMes.Location = new System.Drawing.Point(1083, 143);
+            this.txtSaldoMes.Name = "txtSaldoMes";
+            this.txtSaldoMes.ReadOnly = true;
+            this.txtSaldoMes.Size = new System.Drawing.Size(90, 20);
+            this.txtSaldoMes.TabIndex = 11;
+            this.txtSaldoMes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnPesquisar
             // 
@@ -218,60 +272,6 @@ namespace Sis_Vendas_Mega
             this.dgvScoreMonth.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvScoreMonth.Size = new System.Drawing.Size(1071, 379);
             this.dgvScoreMonth.TabIndex = 0;
-            // 
-            // txtSaldoMes
-            // 
-            this.txtSaldoMes.Location = new System.Drawing.Point(1083, 143);
-            this.txtSaldoMes.Name = "txtSaldoMes";
-            this.txtSaldoMes.ReadOnly = true;
-            this.txtSaldoMes.Size = new System.Drawing.Size(90, 20);
-            this.txtSaldoMes.TabIndex = 11;
-            this.txtSaldoMes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1083, 127);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 13);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Saldo Mensal";
-            // 
-            // txtSaldoPositivo
-            // 
-            this.txtSaldoPositivo.Location = new System.Drawing.Point(1083, 192);
-            this.txtSaldoPositivo.Name = "txtSaldoPositivo";
-            this.txtSaldoPositivo.ReadOnly = true;
-            this.txtSaldoPositivo.Size = new System.Drawing.Size(90, 20);
-            this.txtSaldoPositivo.TabIndex = 13;
-            this.txtSaldoPositivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtSaldoNegativo
-            // 
-            this.txtSaldoNegativo.Location = new System.Drawing.Point(1082, 242);
-            this.txtSaldoNegativo.Name = "txtSaldoNegativo";
-            this.txtSaldoNegativo.ReadOnly = true;
-            this.txtSaldoNegativo.Size = new System.Drawing.Size(90, 20);
-            this.txtSaldoNegativo.TabIndex = 13;
-            this.txtSaldoNegativo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1083, 176);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 13);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Saldo Positivo";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1083, 226);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 13);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Saldo Negativo";
             // 
             // FrmListScore
             // 
