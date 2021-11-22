@@ -11,6 +11,7 @@ namespace Sis_Vendas_Mega.Model
         public string DataNascimento { get; private set; }
         public Function Function { get; private set; }
         public virtual List<Score> Scores { get; set; } = new List<Score>();
+        public virtual List<LogScore> LogScores { get; set; } = new List<LogScore>();
         public Employee(string name, long code, int functionId, string dataNascimento)
         {
             Name = name;

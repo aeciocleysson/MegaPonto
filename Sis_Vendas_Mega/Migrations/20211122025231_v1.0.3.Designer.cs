@@ -9,8 +9,8 @@ using Sis_Vendas_Mega.Data;
 namespace Sis_Vendas_Mega.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20211118002823_v1.0.0")]
-    partial class v100
+    [Migration("20211122025231_v1.0.3")]
+    partial class v103
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -86,6 +86,69 @@ namespace Sis_Vendas_Mega.Migrations
                     b.ToTable("Function");
                 });
 
+            modelBuilder.Entity("Sis_Vendas_Mega.Model.Hours", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<TimeSpan>("Entry")
+                        .HasColumnType("time(6)");
+
+                    b.Property<TimeSpan>("Exit")
+                        .HasColumnType("time(6)");
+
+                    b.Property<DateTime>("Inserted")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("IsDelete")
+                        .HasColumnType("int");
+
+                    b.Property<TimeSpan>("Lunch")
+                        .HasColumnType("time(6)");
+
+                    b.Property<TimeSpan>("TotalMonth")
+                        .HasColumnType("time(6)");
+
+                    b.Property<TimeSpan>("TotalWeek")
+                        .HasColumnType("time(6)");
+
+                    b.Property<DateTime?>("UpdateAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Hours");
+                });
+
+            modelBuilder.Entity("Sis_Vendas_Mega.Model.LogScore", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Inserted")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("IsDelete")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Log")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("UpdateAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.ToTable("LogScore");
+                });
+
             modelBuilder.Entity("Sis_Vendas_Mega.Model.Score", b =>
                 {
                     b.Property<int>("Id")
@@ -95,16 +158,16 @@ namespace Sis_Vendas_Mega.Migrations
                     b.Property<long>("Code")
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime?>("DepartureTime")
+                    b.Property<DateTime>("DepartureTime")
                         .HasColumnType("datetime(6)");
 
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("EntryTime")
+                    b.Property<DateTime>("EntryTime")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<TimeSpan?>("FullRange")
+                    b.Property<TimeSpan>("FullRange")
                         .HasColumnType("time(6)");
 
                     b.Property<DateTime>("Inserted")
@@ -113,16 +176,19 @@ namespace Sis_Vendas_Mega.Migrations
                     b.Property<int>("IsDelete")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("OutLanch")
+                    b.Property<long>("Minutes")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("OutLanch")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<DateTime?>("ReturnLunch")
+                    b.Property<DateTime>("ReturnLunch")
                         .HasColumnType("datetime(6)");
 
                     b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<TimeSpan?>("Worked")
+                    b.Property<TimeSpan>("Worked")
                         .HasColumnType("time(6)");
 
                     b.HasKey("Id");
@@ -178,6 +244,15 @@ namespace Sis_Vendas_Mega.Migrations
                     b.HasOne("Sis_Vendas_Mega.Model.Function", "Function")
                         .WithMany("Employees")
                         .HasForeignKey("FunctionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Sis_Vendas_Mega.Model.LogScore", b =>
+                {
+                    b.HasOne("Sis_Vendas_Mega.Model.Employee", "Employee")
+                        .WithMany("LogScores")
+                        .HasForeignKey("EmployeeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

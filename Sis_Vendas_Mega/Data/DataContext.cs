@@ -13,6 +13,8 @@ namespace Sis_Vendas_Mega.Data
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Model.Score> Scores { get; set; }
         public DbSet<Function> Functions { get; set; }
+        public DbSet<Hours> Hours { get; set; }
+        public DbSet<LogScore> LogScores { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -24,6 +26,8 @@ namespace Sis_Vendas_Mega.Data
             modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
             modelBuilder.ApplyConfiguration(new ScoreConfiguration());
             modelBuilder.ApplyConfiguration(new FunctionConfiguration());
+            modelBuilder.ApplyConfiguration(new HoursConfiguration());
+            modelBuilder.ApplyConfiguration(new LogScoreConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

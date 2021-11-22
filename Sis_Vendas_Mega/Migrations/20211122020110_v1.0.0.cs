@@ -25,6 +25,26 @@ namespace Sis_Vendas_Mega.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Hours",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Inserted = table.Column<DateTime>(nullable: false),
+                    UpdateAt = table.Column<DateTime>(nullable: true),
+                    IsDelete = table.Column<int>(nullable: false),
+                    Entry = table.Column<TimeSpan>(nullable: false),
+                    Lunch = table.Column<TimeSpan>(nullable: false),
+                    Exit = table.Column<TimeSpan>(nullable: false),
+                    TotalWeek = table.Column<TimeSpan>(nullable: false),
+                    TotalMonth = table.Column<TimeSpan>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Hours", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Usuario",
                 columns: table => new
                 {
@@ -77,14 +97,15 @@ namespace Sis_Vendas_Mega.Migrations
                     Inserted = table.Column<DateTime>(nullable: false),
                     UpdateAt = table.Column<DateTime>(nullable: true),
                     IsDelete = table.Column<int>(nullable: false),
-                    EntryTime = table.Column<DateTime>(nullable: true),
-                    OutLanch = table.Column<DateTime>(nullable: true),
-                    ReturnLunch = table.Column<DateTime>(nullable: true),
-                    DepartureTime = table.Column<DateTime>(nullable: true),
-                    FullRange = table.Column<TimeSpan>(nullable: true),
-                    Worked = table.Column<TimeSpan>(nullable: true),
                     EmployeeId = table.Column<int>(nullable: false),
-                    Code = table.Column<long>(nullable: false)
+                    Code = table.Column<long>(nullable: false),
+                    EntryTime = table.Column<DateTime>(nullable: false),
+                    OutLanch = table.Column<DateTime>(nullable: false),
+                    ReturnLunch = table.Column<DateTime>(nullable: false),
+                    DepartureTime = table.Column<DateTime>(nullable: false),
+                    FullRange = table.Column<TimeSpan>(nullable: false),
+                    Worked = table.Column<TimeSpan>(nullable: false),
+                    Minutes = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -135,6 +156,9 @@ namespace Sis_Vendas_Mega.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Hours");
+
             migrationBuilder.DropTable(
                 name: "Score");
 

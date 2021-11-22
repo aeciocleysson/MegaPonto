@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Sis_Vendas_Mega.Data;
 
 namespace Sis_Vendas_Mega.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20211122020628_v1.0.1")]
+    partial class v101
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -119,34 +121,6 @@ namespace Sis_Vendas_Mega.Migrations
                     b.ToTable("Hours");
                 });
 
-            modelBuilder.Entity("Sis_Vendas_Mega.Model.LogScore", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("EmployeeId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("Inserted")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("IsDelete")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Log")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("UpdateAt")
-                        .HasColumnType("datetime(6)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("EmployeeId");
-
-                    b.ToTable("LogScore");
-                });
-
             modelBuilder.Entity("Sis_Vendas_Mega.Model.Score", b =>
                 {
                     b.Property<int>("Id")
@@ -242,15 +216,6 @@ namespace Sis_Vendas_Mega.Migrations
                     b.HasOne("Sis_Vendas_Mega.Model.Function", "Function")
                         .WithMany("Employees")
                         .HasForeignKey("FunctionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Sis_Vendas_Mega.Model.LogScore", b =>
-                {
-                    b.HasOne("Sis_Vendas_Mega.Model.Employee", "Employee")
-                        .WithMany("LogScores")
-                        .HasForeignKey("EmployeeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

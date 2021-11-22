@@ -9,7 +9,7 @@ namespace Sis_Vendas_Mega.Data.DAL
         public MySqlConnection connection;
         public MySqlCommand Cmd;
 
-        public DataTable ListarUsuarios(int id, DateTime inicio, DateTime fim)
+        public DataTable GetAllScoreEmployee(int id, DateTime inicio, DateTime fim)
         {
             try
             {

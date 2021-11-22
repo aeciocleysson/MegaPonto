@@ -90,7 +90,7 @@ namespace Sis_Vendas_Mega
                 dgvScoreMonth.Columns[2].Visible = false;
 
                 var result = new ListScoreDal();
-                txtSaldoMes.Text = result.ListarUsuarios(id, dtInicio, dtFim).Rows[0]["WORKED"].ToString();
+                txtSaldoMes.Text = result.GetAllScoreEmployee(id, dtInicio, dtFim).Rows[0]["WORKED"].ToString();
             }
             else
             {
