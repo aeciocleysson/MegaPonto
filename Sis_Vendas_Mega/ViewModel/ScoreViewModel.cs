@@ -12,6 +12,6 @@ namespace Sis_Vendas_Mega.ViewModel
         public TimeSpan Worked { get; set; }
         public int EmployeeId { get; set; }
         public long Code { get; set; }
-        public long Minutes { get; set; }
+        public double Minutes { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace Sis_Vendas_Mega.Data.Configuration
             builder.Property(w => w.Worked);
             builder.Property(w => w.Code);
             builder.Property(w => w.FullRange);
-            builder.Property(w => w.Minutes);
+            builder.Property(w => w.Minutes).HasColumnType("double(12,2)");
 
             builder.HasOne(p => p.Employee).WithMany(p => p.Scores).HasForeignKey(p => p.EmployeeId);
 

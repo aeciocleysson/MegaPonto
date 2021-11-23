@@ -73,8 +73,10 @@ namespace Sis_Vendas_Mega
                     return;
                 }
 
+                var logScore = _context.LogScores.Where(w => w.EmployeeId == employee.Id && w.Inserted == DateTime.Today).Max(w => w.Log);
+
                 var scoreOutLanch = _context.Scores.Where(a => a.EmployeeId == employee.Id && a.Code == employee.Code && a.Inserted == date &&
-                                                          a.OutLanch != DateTime.Now).SingleOrDefault();
+                                                          a.OutLanch != DateTime.Now && logScore == 1).SingleOrDefault();
 
                 if (scoreOutLanch != null)
                 {
@@ -85,14 +87,24 @@ namespace Sis_Vendas_Mega
 
                     result.UpdateOutLanch(outLanch: viewModel.OutLanch);
 
+                    logViewModel.Log = (int)StatusLog.ELog.SaidaAlmoco;
+                    logViewModel.EmployeeId = employee.Id;
+
+                    var logModel = new LogScore(log: logViewModel.Log, employeeId: logViewModel.EmployeeId);
+
                     _context.Scores.Update(result);
                     _context.SaveChanges();
+
+                    _context.Add(logModel);
+                    _context.SaveChanges();
+
                     GetAll();
                     ClearFields();
                     return;
                 }
 
-                var scoreReturnLanch = _context.Scores.Where(a => a.EmployeeId == employee.Id && a.Code == employee.Code && a.Inserted == date && a.ReturnLunch != DateTime.Now).SingleOrDefault();
+                var scoreReturnLanch = _context.Scores.Where(a => a.EmployeeId == employee.Id && a.Code == employee.Code && a.Inserted == date && 
+                                                             a.ReturnLunch != DateTime.Now && logScore == 2).SingleOrDefault();
 
                 if (scoreReturnLanch != null)
                 {
@@ -105,14 +117,24 @@ namespace Sis_Vendas_Mega
 
                     result.UpdateReturnLanch(returnLanch: viewModel.ReturnLunch, fullRange: viewModel.FullRange);
 
+                    logViewModel.Log = (int)StatusLog.ELog.RetornoAlmoco;
+                    logViewModel.EmployeeId = employee.Id;
+
+                    var logModel = new LogScore(log: logViewModel.Log, employeeId: logViewModel.EmployeeId);
+
                     _context.Scores.Update(result);
                     _context.SaveChanges();
+
+                    _context.Add(logModel);
+                    _context.SaveChanges();
+
                     GetAll();
                     ClearFields();
                     return;
                 }
 
-                var scoreDepartureTime = _context.Scores.Where(a => a.EmployeeId == employee.Id && a.Code == employee.Code && a.Inserted == date).SingleOrDefault();
+                var scoreDepartureTime = _context.Scores.Where(a => a.EmployeeId == employee.Id && a.Code == employee.Code && a.Inserted == date &&
+                                                               a.DepartureTime != DateTime.Now && logScore == 3).SingleOrDefault();
 
                 if (scoreDepartureTime != null)
                 {
@@ -120,23 +142,23 @@ namespace Sis_Vendas_Mega
                     viewModel.Worked = (viewModel.DepartureTime - scoreDepartureTime.EntryTime - scoreDepartureTime.FullRange);
                     viewModel.Id = scoreDepartureTime.Id;
 
-                    viewModel.Minutes = Convert.ToInt32(viewModel.Worked.TotalMinutes);
-
+                    viewModel.Minutes = viewModel.Worked.TotalMinutes;
 
                     var result = _context.Scores.Find(viewModel.Id);
 
-
-                    var horaInicial = new TimeSpan(8, 0, 0);
-                    var horaFinal = new TimeSpan(18, 0, 0);
-                    var result1 = horaFinal - horaInicial;
-
-                    var x = result1.TotalMinutes.ToString();
-                    Console.WriteLine(x);
-
                     result.UpdateDepartureTime(departureTime: viewModel.DepartureTime,
-                        worked: viewModel.Worked);
+                        worked: viewModel.Worked,
+                        minutes: viewModel.Minutes);
+
+                    logViewModel.Log = (int)StatusLog.ELog.FinalizouTrabalho;
+                    logViewModel.EmployeeId = employee.Id;
+
+                    var logModel = new LogScore(log: logViewModel.Log, employeeId: logViewModel.EmployeeId);
 
                     _context.Scores.Update(result);
+                    _context.SaveChanges();
+
+                    _context.Add(logModel);
                     _context.SaveChanges();
 
                     GetAll();

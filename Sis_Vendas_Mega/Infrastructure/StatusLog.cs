@@ -7,7 +7,7 @@
             InicioTrabalho = 1,
             SaidaAlmoco = 2,
             RetornoAlmoco = 3,
-            FinaliziiuTrabalho = 4
+            FinalizouTrabalho = 4
         }
     }
 }

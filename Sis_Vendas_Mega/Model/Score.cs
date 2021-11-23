@@ -12,7 +12,7 @@ namespace Sis_Vendas_Mega.Model
         public DateTime DepartureTime { get; private set; }
         public TimeSpan FullRange { get; private set; }
         public TimeSpan Worked { get; private set; }
-        public long Minutes { get; private set; }
+        public double Minutes { get; private set; }
         public virtual Employee Employee { get; private set; }
 
         public Score(int employeeId, long code, DateTime entryTime)
@@ -38,10 +38,11 @@ namespace Sis_Vendas_Mega.Model
             FullRange = fullRange;
         }
 
-        public void UpdateDepartureTime(DateTime departureTime, TimeSpan worked)
+        public void UpdateDepartureTime(DateTime departureTime, TimeSpan worked, double minutes)
         {
             DepartureTime = departureTime;
             Worked = worked;
+            Minutes = minutes;
             UpdateAt = DateTime.Now;
         }
     }
