@@ -1,5 +1,4 @@
 ﻿using Sis_Vendas_Mega.Data;
-using Sis_Vendas_Mega.Data.DAL;
 using Sis_Vendas_Mega.Relatorio;
 using System;
 using System.Data;
@@ -40,7 +39,6 @@ namespace Sis_Vendas_Mega
 
         public void GetById(int id, DateTime dtInicio, DateTime dtFim)
         {
-            string x = "00:00:01";
 
             if (!string.IsNullOrEmpty(txtCode.Text))
             {
@@ -67,6 +65,14 @@ namespace Sis_Vendas_Mega
                       .OrderBy(o => o.Inserted)
                       .ToList();
 
+                var totalHours = _context.Scores
+                    .Where(w => w.EmployeeId == id &&
+                           w.Inserted >= dtInicio &&
+                           w.Inserted <= dtFim)
+                    .Sum(w => w.Minutes);
+
+                var horasTrabalhada = TimeSpan.FromMinutes(totalHours);
+
                 dgvScoreMonth.DataSource = employee;
 
                 dgvScoreMonth.Columns[0].HeaderText = "Data";
@@ -89,8 +95,11 @@ namespace Sis_Vendas_Mega
 
                 dgvScoreMonth.Columns[2].Visible = false;
 
-                var result = new ListScoreDal();
-                txtSaldoMes.Text = result.GetAllScoreEmployee(id, dtInicio, dtFim).Rows[0]["WORKED"].ToString();
+                //var result = new ListScoreDal();
+                //txtSaldoMes.Text = result.GetAllScoreEmployee(id, dtInicio, dtFim).Rows[0]["WORKED"].ToString();
+
+                var result = horasTrabalhada.ToString();
+                txtSaldoMes.Text = result.Remove(result.Length -8);
             }
             else
             {
