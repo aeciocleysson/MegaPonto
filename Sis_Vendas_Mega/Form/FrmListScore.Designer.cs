@@ -307,11 +307,11 @@ namespace Sis_Vendas_Mega
         public System.Windows.Forms.TextBox txtName;
         public System.Windows.Forms.TextBox txtCode;
         public System.Windows.Forms.DataGridView dgvScoreMonth;
-        private System.Windows.Forms.TextBox txtSaldoMes;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtSaldoNegativo;
         private System.Windows.Forms.TextBox txtSaldoPositivo;
+        public System.Windows.Forms.TextBox txtSaldoMes;
     }
 }

@@ -99,7 +99,7 @@ namespace Sis_Vendas_Mega
                 //txtSaldoMes.Text = result.GetAllScoreEmployee(id, dtInicio, dtFim).Rows[0]["WORKED"].ToString();
 
                 var result = horasTrabalhada.ToString();
-                txtSaldoMes.Text = result.Remove(result.Length -8);
+                txtSaldoMes.Text = result;
             }
             else
             {
@@ -129,7 +129,7 @@ namespace Sis_Vendas_Mega
         {
             var data = GerarDadosRelatorio();
 
-            var relat = new FrmRelatorioMensal(data);
+            var relat = new FrmRelatorioMensal(data, txtSaldoMes.Text, dpDtInicio.Value, dpDtFim.Value);
             relat.ShowDialog();
         }
 
