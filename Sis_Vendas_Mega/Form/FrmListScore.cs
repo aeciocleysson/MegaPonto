@@ -55,9 +55,9 @@ namespace Sis_Vendas_Mega
                           s.Inserted,
                           Dia = s.Inserted.ToString("dddd", new CultureInfo("pt-BR")),
                           s.Employee.Name,
-                          s.EntryTime,
-                          s.OutLanch,
-                          s.ReturnLunch,
+                          Entrada = s.EntryTime.ToString("HH:mm"),
+                          Almoco = s.OutLanch.ToString("HH:mm"),
+                          Retorno = s.ReturnLunch.ToString("HH:mm"),
                           s.FullRange,
                           s.DepartureTime,
                           s.Worked
@@ -69,9 +69,7 @@ namespace Sis_Vendas_Mega
                     .Where(w => w.EmployeeId == id &&
                            w.Inserted >= dtInicio &&
                            w.Inserted <= dtFim)
-                    .Sum(w => w.Minutes);
-
-                var horasTrabalhada = TimeSpan.FromMinutes(totalHours);
+                    .Sum(w => w.Minutes / 60);
 
                 dgvScoreMonth.DataSource = employee;
 
@@ -95,10 +93,7 @@ namespace Sis_Vendas_Mega
 
                 dgvScoreMonth.Columns[2].Visible = false;
 
-                //var result = new ListScoreDal();
-                //txtSaldoMes.Text = result.GetAllScoreEmployee(id, dtInicio, dtFim).Rows[0]["WORKED"].ToString();
-
-                var result = horasTrabalhada.ToString();
+                var result = totalHours.ToString("#.##");
                 txtSaldoMes.Text = result;
             }
             else

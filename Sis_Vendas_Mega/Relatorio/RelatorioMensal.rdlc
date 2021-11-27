@@ -761,7 +761,7 @@
                   <TextRun>
                     <Value>=Parameters!totalTrabalhado.Value</Value>
                     <Style>
-                      <FontSize>8pt</FontSize>
+                      <FontSize>7pt</FontSize>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -793,7 +793,7 @@
                   <TextRun>
                     <Value>Total:</Value>
                     <Style>
-                      <FontSize>9pt</FontSize>
+                      <FontSize>8pt</FontSize>
                     </Style>
                   </TextRun>
                 </TextRuns>
