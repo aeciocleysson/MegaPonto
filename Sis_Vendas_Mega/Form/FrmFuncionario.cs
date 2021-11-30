@@ -32,7 +32,7 @@ namespace Sis_Vendas_Mega
         public void Insert(EmployeeViewModel viewModel)
         {
             Random randNum = new Random();
-            var startCode = randNum.Next(100, 500);
+            var startCode = randNum.Next(10, 50);
 
             if (string.IsNullOrEmpty(txtCodigo.Text))
             {

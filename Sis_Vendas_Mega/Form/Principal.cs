@@ -68,7 +68,7 @@ namespace Sis_Vendas_Mega
             registro.Show();
         }
 
-        private void cadastroHorario_Click(object sender, EventArgs e)
+        private void manutencaoHorario_Click(object sender, EventArgs e)
         {
             var hours = new FrmHours();
             hours.MdiParent = this;

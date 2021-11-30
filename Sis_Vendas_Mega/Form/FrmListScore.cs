@@ -59,7 +59,7 @@ namespace Sis_Vendas_Mega
                           Almoco = s.OutLanch.ToString("HH:mm"),
                           Retorno = s.ReturnLunch.ToString("HH:mm"),
                           s.FullRange,
-                          s.DepartureTime,
+                          Saida = s.DepartureTime.ToString("HH:mm"),
                           s.Worked
                       })
                       .OrderBy(o => o.Inserted)

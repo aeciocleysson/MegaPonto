@@ -53,11 +53,10 @@
             this.scoreEntry = new System.Windows.Forms.ToolStripMenuItem();
             this.menuUtilitario = new System.Windows.Forms.ToolStripMenuItem();
             this.menuManutencao = new System.Windows.Forms.ToolStripMenuItem();
-            this.manutencaoUsuario = new System.Windows.Forms.ToolStripMenuItem();
+            this.manutencaoHorario = new System.Windows.Forms.ToolStripMenuItem();
             this.registroMensal = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_sair = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastroHorario = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -180,8 +179,7 @@
             this.menuCadastrar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrarFuncionario,
             this.CadatrarUsuario,
-            this.cadastroFuncao,
-            this.cadastroHorario});
+            this.cadastroFuncao});
             this.menuCadastrar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuCadastrar.Name = "menuCadastrar";
             this.menuCadastrar.Size = new System.Drawing.Size(76, 20);
@@ -225,7 +223,7 @@
             // 
             this.scoreEntry.Name = "scoreEntry";
             this.scoreEntry.ShortcutKeys = System.Windows.Forms.Keys.F6;
-            this.scoreEntry.Size = new System.Drawing.Size(180, 22);
+            this.scoreEntry.Size = new System.Drawing.Size(133, 22);
             this.scoreEntry.Text = "Ponto";
             this.scoreEntry.Click += new System.EventHandler(this.scoreEntry_Click);
             // 
@@ -242,21 +240,24 @@
             // menuManutencao
             // 
             this.menuManutencao.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.manutencaoUsuario});
+            this.manutencaoHorario});
             this.menuManutencao.Name = "menuManutencao";
-            this.menuManutencao.Size = new System.Drawing.Size(180, 22);
+            this.menuManutencao.Size = new System.Drawing.Size(215, 22);
             this.menuManutencao.Text = "Manutenção";
             // 
-            // manutencaoUsuario
+            // manutencaoHorario
             // 
-            this.manutencaoUsuario.Name = "manutencaoUsuario";
-            this.manutencaoUsuario.Size = new System.Drawing.Size(127, 22);
-            this.manutencaoUsuario.Text = "Usuários";
+            this.manutencaoHorario.Name = "manutencaoHorario";
+            this.manutencaoHorario.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
+            this.manutencaoHorario.Size = new System.Drawing.Size(180, 22);
+            this.manutencaoHorario.Text = "Horarios";
+            this.manutencaoHorario.Click += new System.EventHandler(this.manutencaoHorario_Click);
             // 
             // registroMensal
             // 
             this.registroMensal.Name = "registroMensal";
-            this.registroMensal.Size = new System.Drawing.Size(180, 22);
+            this.registroMensal.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.registroMensal.Size = new System.Drawing.Size(215, 22);
             this.registroMensal.Text = "Registro Mensal";
             this.registroMensal.Click += new System.EventHandler(this.registroMensal_Click);
             // 
@@ -276,14 +277,6 @@
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
-            // 
-            // cadastroHorario
-            // 
-            this.cadastroHorario.Name = "cadastroHorario";
-            this.cadastroHorario.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.cadastroHorario.Size = new System.Drawing.Size(180, 22);
-            this.cadastroHorario.Text = "Horario";
-            this.cadastroHorario.Click += new System.EventHandler(this.cadastroHorario_Click);
             // 
             // FrmPrincipal
             // 
@@ -331,13 +324,12 @@
         private System.Windows.Forms.ToolStripMenuItem scoreEntry;
         public System.Windows.Forms.ToolStripMenuItem menuUtilitario;
         public System.Windows.Forms.ToolStripMenuItem menuManutencao;
-        public System.Windows.Forms.ToolStripMenuItem manutencaoUsuario;
+        public System.Windows.Forms.ToolStripMenuItem manutencaoHorario;
         private System.Windows.Forms.ToolStripMenuItem cadastrarFuncionario;
         private System.Windows.Forms.ToolStripMenuItem CadatrarUsuario;
         private System.Windows.Forms.ToolStripMenuItem cadastroFuncao;
         private System.Windows.Forms.ToolStripMenuItem registroMensal;
         public System.Windows.Forms.ToolStripMenuItem menuCadastrar;
-        private System.Windows.Forms.ToolStripMenuItem cadastroHorario;
     }
 }
 

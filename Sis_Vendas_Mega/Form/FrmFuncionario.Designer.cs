@@ -30,6 +30,7 @@ namespace Sis_Vendas_Mega
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.mtbDataNascimento = new System.Windows.Forms.MaskedTextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnListFunction = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -38,13 +39,12 @@ namespace Sis_Vendas_Mega
             this.txtCodeFunction = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtFunction = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvEmployees = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.mtbDataNascimento = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
             this.SuspendLayout();
@@ -72,6 +72,16 @@ namespace Sis_Vendas_Mega
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // mtbDataNascimento
+            // 
+            this.mtbDataNascimento.Location = new System.Drawing.Point(7, 87);
+            this.mtbDataNascimento.Mask = "00/00/0000";
+            this.mtbDataNascimento.Name = "mtbDataNascimento";
+            this.mtbDataNascimento.Size = new System.Drawing.Size(100, 20);
+            this.mtbDataNascimento.TabIndex = 7;
+            this.mtbDataNascimento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mtbDataNascimento.ValidatingType = typeof(System.DateTime);
+            // 
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(675, 105);
@@ -85,7 +95,7 @@ namespace Sis_Vendas_Mega
             // btnListFunction
             // 
             this.btnListFunction.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListFunction.Location = new System.Drawing.Point(689, 43);
+            this.btnListFunction.Location = new System.Drawing.Point(701, 44);
             this.btnListFunction.Name = "btnListFunction";
             this.btnListFunction.Size = new System.Drawing.Size(65, 23);
             this.btnListFunction.TabIndex = 2;
@@ -156,11 +166,21 @@ namespace Sis_Vendas_Mega
             this.label2.TabIndex = 1;
             this.label2.Text = "Código";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(7, 68);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(108, 16);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Data Nascimento";
+            // 
             // txtFunction
             // 
             this.txtFunction.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtFunction.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFunction.Location = new System.Drawing.Point(533, 44);
+            this.txtFunction.Location = new System.Drawing.Point(539, 44);
             this.txtFunction.Name = "txtFunction";
             this.txtFunction.ReadOnly = true;
             this.txtFunction.Size = new System.Drawing.Size(156, 22);
@@ -205,26 +225,6 @@ namespace Sis_Vendas_Mega
             this.dgvEmployees.Size = new System.Drawing.Size(825, 298);
             this.dgvEmployees.TabIndex = 0;
             this.dgvEmployees.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployees_CellDoubleClick);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(7, 68);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 16);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Data Nascimento";
-            // 
-            // mtbDataNascimento
-            // 
-            this.mtbDataNascimento.Location = new System.Drawing.Point(7, 87);
-            this.mtbDataNascimento.Mask = "00/00/0000";
-            this.mtbDataNascimento.Name = "mtbDataNascimento";
-            this.mtbDataNascimento.Size = new System.Drawing.Size(100, 20);
-            this.mtbDataNascimento.TabIndex = 7;
-            this.mtbDataNascimento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.mtbDataNascimento.ValidatingType = typeof(System.DateTime);
             // 
             // FrmFuncionario
             // 

@@ -45,6 +45,14 @@ namespace Sis_Vendas_Mega.Model
             Minutes = minutes;
             UpdateAt = DateTime.Now;
         }
+
+        public void UpdateHours(DateTime entryTime, DateTime outLanch, DateTime returnLanch, DateTime departureTime)
+        {
+            EntryTime = entryTime;
+            OutLanch = outLanch;
+            ReturnLunch = returnLanch;
+            DepartureTime = departureTime;
+        }
     }
 }
 
