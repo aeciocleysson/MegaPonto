@@ -4,6 +4,7 @@ namespace Sis_Vendas_Mega.ViewModel
 {
     public class ScoreViewModel : BaseViewModel
     {
+        public DateTime Inserted { get; set; }
         public TimeSpan EntryTime { get; set; }
         public TimeSpan OutLanch { get; set; }
         public TimeSpan ReturnLunch { get; set; }

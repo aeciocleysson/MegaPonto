@@ -56,12 +56,17 @@ namespace Sis_Vendas_Mega
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.dgvHours = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rbManual = new System.Windows.Forms.RadioButton();
+            this.rbCorrecao = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHours)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.txtData);
             this.groupBox1.Controls.Add(this.txtSaida);
             this.groupBox1.Controls.Add(this.txtRetorno);
@@ -353,6 +358,41 @@ namespace Sis_Vendas_Mega
             this.dgvHours.TabIndex = 0;
             this.dgvHours.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHours_CellDoubleClick);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rbCorrecao);
+            this.groupBox2.Controls.Add(this.rbManual);
+            this.groupBox2.Location = new System.Drawing.Point(218, 19);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(258, 36);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Ação";
+            // 
+            // rbManual
+            // 
+            this.rbManual.AutoSize = true;
+            this.rbManual.Location = new System.Drawing.Point(40, 13);
+            this.rbManual.Name = "rbManual";
+            this.rbManual.Size = new System.Drawing.Size(90, 17);
+            this.rbManual.TabIndex = 0;
+            this.rbManual.TabStop = true;
+            this.rbManual.Text = "Ponto manual";
+            this.rbManual.UseVisualStyleBackColor = true;
+            this.rbManual.CheckedChanged += new System.EventHandler(this.rbManual_CheckedChanged);
+            // 
+            // rbCorrecao
+            // 
+            this.rbCorrecao.AutoSize = true;
+            this.rbCorrecao.Location = new System.Drawing.Point(141, 12);
+            this.rbCorrecao.Name = "rbCorrecao";
+            this.rbCorrecao.Size = new System.Drawing.Size(113, 17);
+            this.rbCorrecao.TabIndex = 1;
+            this.rbCorrecao.TabStop = true;
+            this.rbCorrecao.Text = "Correção de ponto";
+            this.rbCorrecao.UseVisualStyleBackColor = true;
+            this.rbCorrecao.CheckedChanged += new System.EventHandler(this.rbCorrecao_CheckedChanged);
+            // 
             // FrmHours
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,6 +406,8 @@ namespace Sis_Vendas_Mega
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHours)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -399,5 +441,8 @@ namespace Sis_Vendas_Mega
         private System.Windows.Forms.MaskedTextBox txtSaidaAlmoco;
         private System.Windows.Forms.MaskedTextBox txtEntrada;
         private System.Windows.Forms.MaskedTextBox txtData;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton rbCorrecao;
+        private System.Windows.Forms.RadioButton rbManual;
     }
 }

@@ -56,6 +56,21 @@ namespace Sis_Vendas_Mega.Model
             FullRange = fullRange;
             Minutes = minutes;
         }
+
+        public void InsertHoursManual(DateTime inserted,TimeSpan entryTime, TimeSpan outLanch, TimeSpan returnLanch, TimeSpan departureTime, TimeSpan fullRange, TimeSpan worked, 
+            double minutes, int employeeId, long code)
+        {
+            Inserted = inserted;
+            EntryTime = entryTime;
+            OutLanch = outLanch;
+            ReturnLunch = returnLanch;
+            DepartureTime = departureTime;
+            FullRange = fullRange;
+            Worked = worked;
+            Minutes = minutes;
+            EmployeeId = employeeId;
+            Code = code;
+        }
     }
 }
 

@@ -75,8 +75,7 @@ namespace Sis_Vendas_Mega
 
                 var logScore = _context.LogScores.Where(w => w.EmployeeId == employee.Id && w.Inserted == DateTime.Today).Max(w => w.Log);
 
-                var scoreOutLanch = _context.Scores.Where(a => a.EmployeeId == employee.Id && a.Code == employee.Code && a.Inserted == date 
-                                                          /*a.OutLanch != DateTime.Now*/ && logScore == 1).SingleOrDefault();
+                var scoreOutLanch = _context.Scores.Where(a => a.EmployeeId == employee.Id && a.Code == employee.Code && a.Inserted == date && logScore == 1).SingleOrDefault();
 
                 if (scoreOutLanch != null)
                 {
@@ -103,8 +102,7 @@ namespace Sis_Vendas_Mega
                     return;
                 }
 
-                var scoreReturnLanch = _context.Scores.Where(a => a.EmployeeId == employee.Id && a.Code == employee.Code && a.Inserted == date 
-                                                             /*a.ReturnLunch != DateTime.Now*/ && logScore == 2).SingleOrDefault();
+                var scoreReturnLanch = _context.Scores.Where(a => a.EmployeeId == employee.Id && a.Code == employee.Code && a.Inserted == date && logScore == 2).SingleOrDefault();
 
                 if (scoreReturnLanch != null)
                 {
@@ -133,8 +131,7 @@ namespace Sis_Vendas_Mega
                     return;
                 }
 
-                var scoreDepartureTime = _context.Scores.Where(a => a.EmployeeId == employee.Id && a.Code == employee.Code && a.Inserted == date 
-                                                               /*a.DepartureTime != DateTime.Now*/ && logScore == 3).SingleOrDefault();
+                var scoreDepartureTime = _context.Scores.Where(a => a.EmployeeId == employee.Id && a.Code == employee.Code && a.Inserted == date && logScore == 3).SingleOrDefault();
 
                 if (scoreDepartureTime != null)
                 {

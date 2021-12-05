@@ -14,6 +14,7 @@ namespace Sis_Vendas_Mega
         {
             InitializeComponent();
             _context = new DataContext();
+            CleanFields();
         }
 
         private void CleanFields()
@@ -27,6 +28,9 @@ namespace Sis_Vendas_Mega
             txtRetorno.Clear();
             txtSaida.Clear();
             dgvHours.DataSource = null;
+            rbManual.Checked = false;
+            rbCorrecao.Checked = false;
+            btnPesquisar.Enabled = true;
         }
 
         public void SelectEmployee()
@@ -85,36 +89,101 @@ namespace Sis_Vendas_Mega
             }
         }
 
-        public void UpdateHour(ScoreViewModel viewModel)
+        public void UpdateOrInsertHour(ScoreViewModel viewModel)
         {
-            if (!string.IsNullOrEmpty(txtId.Text))
+            if (rbManual.Checked)
             {
-                viewModel.Id = Convert.ToInt32(txtId.Text);
-                var result = _context.Scores.Find(viewModel.Id);
+                if (!string.IsNullOrEmpty(txtCode.Text))
+                {
+                    if(!txtData.Text.Equals("  /  /") && !txtEntrada.Text.Equals(":") && !txtSaidaAlmoco.Text.Equals(":") && 
+                        !txtRetorno.Text.Equals(":") && !txtSaida.Text.Equals(":"))
+                    {
+                        var employee = _context.Employees.Find(Convert.ToInt32(txtCode.Text));
 
-                viewModel.EntryTime = TimeSpan.Parse(txtEntrada.Text);
-                viewModel.OutLanch = TimeSpan.Parse(txtSaidaAlmoco.Text);
-                viewModel.ReturnLunch = TimeSpan.Parse(txtRetorno.Text);
-                viewModel.DepartureTime = TimeSpan.Parse(txtSaida.Text);
-                viewModel.FullRange = (viewModel.ReturnLunch - viewModel.OutLanch);
-                viewModel.Worked = (viewModel.DepartureTime - viewModel.EntryTime - viewModel.FullRange);
-                viewModel.Minutes = viewModel.Worked.TotalMinutes;
-                viewModel.EmployeeId = Convert.ToInt32(txtCode.Text);
+                        viewModel.Inserted = Convert.ToDateTime(txtData.Text);
+                        viewModel.EntryTime = TimeSpan.Parse(txtEntrada.Text);
+                        viewModel.OutLanch = TimeSpan.Parse(txtSaidaAlmoco.Text);
+                        viewModel.ReturnLunch = TimeSpan.Parse(txtRetorno.Text);
+                        viewModel.DepartureTime = TimeSpan.Parse(txtSaida.Text);
+                        viewModel.FullRange = (viewModel.ReturnLunch - viewModel.OutLanch);
+                        viewModel.Worked = (viewModel.DepartureTime - viewModel.EntryTime - viewModel.FullRange);
+                        viewModel.Minutes = viewModel.Worked.TotalMinutes;
+                        viewModel.EmployeeId = employee.Id;
+                        viewModel.Code = employee.Code;
 
-                result.UpdateHours(entryTime: viewModel.EntryTime,
-                    outLanch: viewModel.OutLanch,
-                    returnLanch: viewModel.ReturnLunch,
-                    departureTime: viewModel.DepartureTime,
-                    worked: viewModel.Worked,
-                    fullRange: viewModel.FullRange,
-                    minutes: viewModel.Minutes);
+                        var model = new Model.Score();
+                        model.InsertHoursManual(inserted: viewModel.Inserted,
+                            entryTime: viewModel.EntryTime,
+                            outLanch: viewModel.OutLanch,
+                            returnLanch: viewModel.ReturnLunch,
+                            departureTime: viewModel.DepartureTime,
+                            fullRange: viewModel.FullRange,
+                            worked: viewModel.Worked,
+                            minutes: viewModel.Minutes,
+                            employeeId: viewModel.EmployeeId,
+                            code:viewModel.Code);
 
-                _context.Scores.Update(result);
-                _context.SaveChanges();
+                        _context.Scores.Add(model);
+                        _context.SaveChanges();
 
-                MessageBox.Show("Editado com sucesso!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Registro inserido com sucesso.", "Sucesso", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
 
-                CleanFields();
+                        CleanFields();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Preencha os campos obrigátorios.", "Alerta", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Selecione um funcionário.", "Alerta", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+               
+            }else if (rbCorrecao.Checked)
+            {
+                if (!string.IsNullOrEmpty(txtId.Text))
+                {
+                    viewModel.Id = Convert.ToInt32(txtId.Text);
+                    var result = _context.Scores.Find(viewModel.Id);
+
+                    viewModel.EntryTime = TimeSpan.Parse(txtEntrada.Text);
+                    viewModel.OutLanch = TimeSpan.Parse(txtSaidaAlmoco.Text);
+                    viewModel.ReturnLunch = TimeSpan.Parse(txtRetorno.Text);
+                    viewModel.DepartureTime = TimeSpan.Parse(txtSaida.Text);
+                    viewModel.FullRange = (viewModel.ReturnLunch - viewModel.OutLanch);
+                    viewModel.Worked = (viewModel.DepartureTime - viewModel.EntryTime - viewModel.FullRange);
+                    viewModel.Minutes = viewModel.Worked.TotalMinutes;
+                    viewModel.EmployeeId = Convert.ToInt32(txtCode.Text);
+
+                    result.UpdateHours(entryTime: viewModel.EntryTime,
+                        outLanch: viewModel.OutLanch,
+                        returnLanch: viewModel.ReturnLunch,
+                        departureTime: viewModel.DepartureTime,
+                        worked: viewModel.Worked,
+                        fullRange: viewModel.FullRange,
+                        minutes: viewModel.Minutes);
+
+                    _context.Scores.Update(result);
+                    _context.SaveChanges();
+
+                    MessageBox.Show("Editado com sucesso!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    CleanFields();
+                }
+                else
+                {
+                    MessageBox.Show("Selecione um registro para editar.", "Alerta", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma Ação.", "Alerta", MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
             }
         }
 
@@ -148,7 +217,7 @@ namespace Sis_Vendas_Mega
         private void btnSave_Click(object sender, EventArgs e)
         {
             var viewModel = new ScoreViewModel();
-            UpdateHour(viewModel);
+            UpdateOrInsertHour(viewModel);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -159,6 +228,18 @@ namespace Sis_Vendas_Mega
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void rbManual_CheckedChanged(object sender, EventArgs e)
+        {
+            btnPesquisar.Enabled = false;
+            txtData.Enabled = true;
+        }
+
+        private void rbCorrecao_CheckedChanged(object sender, EventArgs e)
+        {
+            txtData.Enabled = false;
+            btnPesquisar.Enabled = true;
         }
     }
 }

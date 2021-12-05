@@ -55,11 +55,11 @@ namespace Sis_Vendas_Mega
                           s.Inserted,
                           Dia = s.Inserted.ToString("dddd", new CultureInfo("pt-BR")),
                           s.Employee.Name,
-                          Entrada = s.EntryTime.ToString("HH:mm"),
-                          Almoco = s.OutLanch.ToString("HH:mm"),
-                          Retorno = s.ReturnLunch.ToString("HH:mm"),
+                          Entrada = s.EntryTime,
+                          Almoco = s.OutLanch,
+                          Retorno = s.ReturnLunch,
                           s.FullRange,
-                          Saida = s.DepartureTime.ToString("HH:mm"),
+                          Saida = s.DepartureTime,
                           s.Worked
                       })
                       .OrderBy(o => o.Inserted)
@@ -93,8 +93,7 @@ namespace Sis_Vendas_Mega
 
                 dgvScoreMonth.Columns[2].Visible = false;
 
-                var result = totalHours.ToString("#.##");
-                txtSaldoMes.Text = result;
+                txtSaldoMes.Text = totalHours.ToString("#.##");
             }
             else
             {
