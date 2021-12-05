@@ -16,6 +16,19 @@ namespace Sis_Vendas_Mega
             _context = new DataContext();
         }
 
+        private void CleanFields()
+        {
+            txtCode.Clear();
+            txtName.Clear();
+            txtId.Clear();
+            txtData.Clear();
+            txtEntrada.Clear();
+            txtSaidaAlmoco.Clear();
+            txtRetorno.Clear();
+            txtSaida.Clear();
+            dgvHours.DataSource = null;
+        }
+
         public void SelectEmployee()
         {
             var employees = new FrmListEmployees();
@@ -47,10 +60,10 @@ namespace Sis_Vendas_Mega
                           Codigo = s.Id,
                           Data = s.Inserted,
                           Dia = s.Inserted.ToString("dddd", new CultureInfo("pt-BR")),
-                          Entrada = s.EntryTime.ToString("HH:mm"),
-                          Almoco = s.OutLanch.ToString("HH:mm"),
-                          Retorno = s.ReturnLunch.ToString("HH:mm"),
-                          Saida = s.DepartureTime.ToString("HH:mm")
+                          Entrada = s.EntryTime,
+                          Almoco = s.OutLanch,
+                          Retorno = s.ReturnLunch,
+                          Saida = s.DepartureTime
                       })
                       .OrderBy(o => o.Data)
                       .ToList();               
@@ -72,16 +85,36 @@ namespace Sis_Vendas_Mega
             }
         }
 
-        public void UpdateHour(HoursViewModel viewModel)
+        public void UpdateHour(ScoreViewModel viewModel)
         {
             if (!string.IsNullOrEmpty(txtId.Text))
             {
                 viewModel.Id = Convert.ToInt32(txtId.Text);
+                var result = _context.Scores.Find(viewModel.Id);
 
-                viewModel.EntryTime = Convert.ToDateTime(txtEntrada.Text);
-                viewModel.OutLanch = Convert.ToDateTime(txtSaidaAlmoco.Text);
-                viewModel.ReturnLunch = Convert.ToDateTime(txtRetorno.Text);
-                viewModel.DepartureTime = Convert.ToDateTime(txtSaida.Text);
+                viewModel.EntryTime = TimeSpan.Parse(txtEntrada.Text);
+                viewModel.OutLanch = TimeSpan.Parse(txtSaidaAlmoco.Text);
+                viewModel.ReturnLunch = TimeSpan.Parse(txtRetorno.Text);
+                viewModel.DepartureTime = TimeSpan.Parse(txtSaida.Text);
+                viewModel.FullRange = (viewModel.ReturnLunch - viewModel.OutLanch);
+                viewModel.Worked = (viewModel.DepartureTime - viewModel.EntryTime - viewModel.FullRange);
+                viewModel.Minutes = viewModel.Worked.TotalMinutes;
+                viewModel.EmployeeId = Convert.ToInt32(txtCode.Text);
+
+                result.UpdateHours(entryTime: viewModel.EntryTime,
+                    outLanch: viewModel.OutLanch,
+                    returnLanch: viewModel.ReturnLunch,
+                    departureTime: viewModel.DepartureTime,
+                    worked: viewModel.Worked,
+                    fullRange: viewModel.FullRange,
+                    minutes: viewModel.Minutes);
+
+                _context.Scores.Update(result);
+                _context.SaveChanges();
+
+                MessageBox.Show("Editado com sucesso!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                CleanFields();
             }
         }
 
@@ -114,8 +147,18 @@ namespace Sis_Vendas_Mega
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            var viewModel = new HoursViewModel();
+            var viewModel = new ScoreViewModel();
             UpdateHour(viewModel);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            CleanFields();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

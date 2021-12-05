@@ -383,37 +383,9 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Infrastructure\BaseModel.cs" />
     <Compile Include="Infrastructure\StatusLog.cs" />
-    <Compile Include="Migrations\20211122020110_v1.0.0.cs" />
-    <Compile Include="Migrations\20211122020110_v1.0.0.designer.cs">
-      <DependentUpon>20211122020110_v1.0.0.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20211122020628_v1.0.1.cs" />
-    <Compile Include="Migrations\20211122020628_v1.0.1.designer.cs">
-      <DependentUpon>20211122020628_v1.0.1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20211122025011_v1.0.2.cs" />
-    <Compile Include="Migrations\20211122025011_v1.0.2.designer.cs">
-      <DependentUpon>20211122025011_v1.0.2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20211122025231_v1.0.3.cs" />
-    <Compile Include="Migrations\20211122025231_v1.0.3.designer.cs">
-      <DependentUpon>20211122025231_v1.0.3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20211123024912_v1.0.4.cs" />
-    <Compile Include="Migrations\20211123024912_v1.0.4.designer.cs">
-      <DependentUpon>20211123024912_v1.0.4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20211123030955_v1.0.5.cs" />
-    <Compile Include="Migrations\20211123030955_v1.0.5.designer.cs">
-      <DependentUpon>20211123030955_v1.0.5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20211123032501_v1.0.6.cs" />
-    <Compile Include="Migrations\20211123032501_v1.0.6.designer.cs">
-      <DependentUpon>20211123032501_v1.0.6.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20211123033603_v1.0.7.cs" />
-    <Compile Include="Migrations\20211123033603_v1.0.7.designer.cs">
-      <DependentUpon>20211123033603_v1.0.7.cs</DependentUpon>
+    <Compile Include="Migrations\20211203210340_c1.0.0.cs" />
+    <Compile Include="Migrations\20211203210340_c1.0.0.designer.cs">
+      <DependentUpon>20211203210340_c1.0.0.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DataContextModelSnapshot.cs" />
     <Compile Include="Model\Employee.cs" />

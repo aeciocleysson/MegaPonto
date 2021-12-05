@@ -6,16 +6,16 @@ namespace Sis_Vendas_Mega.Model
     {
         public int EmployeeId { get; private set; }
         public long Code { get; private set; }
-        public DateTime EntryTime { get; private set; }
-        public DateTime OutLanch { get; private set; }
-        public DateTime ReturnLunch { get; private set; }
-        public DateTime DepartureTime { get; private set; }
+        public TimeSpan EntryTime { get; private set; }
+        public TimeSpan OutLanch { get; private set; }
+        public TimeSpan ReturnLunch { get; private set; }
+        public TimeSpan DepartureTime { get; private set; }
         public TimeSpan FullRange { get; private set; }
         public TimeSpan Worked { get; private set; }
         public double Minutes { get; private set; }
         public virtual Employee Employee { get; private set; }
 
-        public Score(int employeeId, long code, DateTime entryTime)
+        public Score(int employeeId, long code, TimeSpan entryTime)
         {
             EmployeeId = employeeId;
             Code = code;
@@ -27,18 +27,18 @@ namespace Sis_Vendas_Mega.Model
 
         }
 
-        public void UpdateOutLanch(DateTime outLanch)
+        public void UpdateOutLanch(TimeSpan outLanch)
         {
             OutLanch = outLanch;
         }
 
-        public void UpdateReturnLanch(DateTime returnLanch, TimeSpan fullRange)
+        public void UpdateReturnLanch(TimeSpan returnLanch, TimeSpan fullRange)
         {
             ReturnLunch = returnLanch;
             FullRange = fullRange;
         }
 
-        public void UpdateDepartureTime(DateTime departureTime, TimeSpan worked, double minutes)
+        public void UpdateDepartureTime(TimeSpan departureTime, TimeSpan worked, double minutes)
         {
             DepartureTime = departureTime;
             Worked = worked;
@@ -46,12 +46,15 @@ namespace Sis_Vendas_Mega.Model
             UpdateAt = DateTime.Now;
         }
 
-        public void UpdateHours(DateTime entryTime, DateTime outLanch, DateTime returnLanch, DateTime departureTime)
+        public void UpdateHours(TimeSpan entryTime, TimeSpan outLanch, TimeSpan returnLanch, TimeSpan departureTime, TimeSpan worked, TimeSpan fullRange, double minutes)
         {
             EntryTime = entryTime;
             OutLanch = outLanch;
             ReturnLunch = returnLanch;
             DepartureTime = departureTime;
+            Worked = worked;
+            FullRange = fullRange;
+            Minutes = minutes;
         }
     }
 }

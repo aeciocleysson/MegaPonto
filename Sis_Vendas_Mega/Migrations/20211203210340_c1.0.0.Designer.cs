@@ -9,8 +9,8 @@ using Sis_Vendas_Mega.Data;
 namespace Sis_Vendas_Mega.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20211123033603_v1.0.7")]
-    partial class v107
+    [Migration("20211203210340_c1.0.0")]
+    partial class c100
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -158,14 +158,14 @@ namespace Sis_Vendas_Mega.Migrations
                     b.Property<long>("Code")
                         .HasColumnType("bigint");
 
-                    b.Property<DateTime>("DepartureTime")
-                        .HasColumnType("datetime(6)");
+                    b.Property<TimeSpan>("DepartureTime")
+                        .HasColumnType("time(6)");
 
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("EntryTime")
-                        .HasColumnType("datetime(6)");
+                    b.Property<TimeSpan>("EntryTime")
+                        .HasColumnType("time(6)");
 
                     b.Property<TimeSpan>("FullRange")
                         .HasColumnType("time(6)");
@@ -179,11 +179,11 @@ namespace Sis_Vendas_Mega.Migrations
                     b.Property<double>("Minutes")
                         .HasColumnType("double(12,2)");
 
-                    b.Property<DateTime>("OutLanch")
-                        .HasColumnType("datetime(6)");
+                    b.Property<TimeSpan>("OutLanch")
+                        .HasColumnType("time(6)");
 
-                    b.Property<DateTime>("ReturnLunch")
-                        .HasColumnType("datetime(6)");
+                    b.Property<TimeSpan>("ReturnLunch")
+                        .HasColumnType("time(6)");
 
                     b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("datetime(6)");

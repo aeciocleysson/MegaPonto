@@ -51,7 +51,7 @@ namespace Sis_Vendas_Mega
                 {
                     viewModel.EmployeeId = employee.Id;
                     viewModel.Code = employee.Code;
-                    viewModel.EntryTime = Convert.ToDateTime(lblHoraAtual.Text);
+                    viewModel.EntryTime = TimeSpan.Parse(lblHoraAtual.Text);
 
                     var model = new Model.Score(entryTime: viewModel.EntryTime,
                         employeeId: viewModel.EmployeeId,
@@ -75,12 +75,12 @@ namespace Sis_Vendas_Mega
 
                 var logScore = _context.LogScores.Where(w => w.EmployeeId == employee.Id && w.Inserted == DateTime.Today).Max(w => w.Log);
 
-                var scoreOutLanch = _context.Scores.Where(a => a.EmployeeId == employee.Id && a.Code == employee.Code && a.Inserted == date &&
-                                                          a.OutLanch != DateTime.Now && logScore == 1).SingleOrDefault();
+                var scoreOutLanch = _context.Scores.Where(a => a.EmployeeId == employee.Id && a.Code == employee.Code && a.Inserted == date 
+                                                          /*a.OutLanch != DateTime.Now*/ && logScore == 1).SingleOrDefault();
 
                 if (scoreOutLanch != null)
                 {
-                    viewModel.OutLanch = Convert.ToDateTime(lblHoraAtual.Text);
+                    viewModel.OutLanch = TimeSpan.Parse(lblHoraAtual.Text);
                     viewModel.Id = scoreOutLanch.Id;
 
                     var result = _context.Scores.Find(viewModel.Id);
@@ -103,12 +103,12 @@ namespace Sis_Vendas_Mega
                     return;
                 }
 
-                var scoreReturnLanch = _context.Scores.Where(a => a.EmployeeId == employee.Id && a.Code == employee.Code && a.Inserted == date && 
-                                                             a.ReturnLunch != DateTime.Now && logScore == 2).SingleOrDefault();
+                var scoreReturnLanch = _context.Scores.Where(a => a.EmployeeId == employee.Id && a.Code == employee.Code && a.Inserted == date 
+                                                             /*a.ReturnLunch != DateTime.Now*/ && logScore == 2).SingleOrDefault();
 
                 if (scoreReturnLanch != null)
                 {
-                    viewModel.ReturnLunch = Convert.ToDateTime(lblHoraAtual.Text);
+                    viewModel.ReturnLunch = TimeSpan.Parse(lblHoraAtual.Text);
                     viewModel.Id = scoreReturnLanch.Id;
                     viewModel.Code = scoreReturnLanch.Code;
                     viewModel.FullRange = (viewModel.ReturnLunch - scoreReturnLanch.OutLanch);
@@ -133,12 +133,12 @@ namespace Sis_Vendas_Mega
                     return;
                 }
 
-                var scoreDepartureTime = _context.Scores.Where(a => a.EmployeeId == employee.Id && a.Code == employee.Code && a.Inserted == date &&
-                                                               a.DepartureTime != DateTime.Now && logScore == 3).SingleOrDefault();
+                var scoreDepartureTime = _context.Scores.Where(a => a.EmployeeId == employee.Id && a.Code == employee.Code && a.Inserted == date 
+                                                               /*a.DepartureTime != DateTime.Now*/ && logScore == 3).SingleOrDefault();
 
                 if (scoreDepartureTime != null)
                 {
-                    viewModel.DepartureTime = Convert.ToDateTime(lblHoraAtual.Text);
+                    viewModel.DepartureTime = TimeSpan.Parse(lblHoraAtual.Text);
                     viewModel.Worked = (viewModel.DepartureTime - scoreDepartureTime.EntryTime - scoreDepartureTime.FullRange);
                     viewModel.Id = scoreDepartureTime.Id;
 

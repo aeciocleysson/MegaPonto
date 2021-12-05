@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Sis_Vendas_Mega.Migrations
 {
-    public partial class v100 : Migration
+    public partial class c100 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -89,6 +89,29 @@ namespace Sis_Vendas_Mega.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "LogScore",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Inserted = table.Column<DateTime>(nullable: false),
+                    UpdateAt = table.Column<DateTime>(nullable: true),
+                    IsDelete = table.Column<int>(nullable: false),
+                    Log = table.Column<int>(nullable: false),
+                    EmployeeId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LogScore", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_LogScore_Employee_EmployeeId",
+                        column: x => x.EmployeeId,
+                        principalTable: "Employee",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Score",
                 columns: table => new
                 {
@@ -99,13 +122,13 @@ namespace Sis_Vendas_Mega.Migrations
                     IsDelete = table.Column<int>(nullable: false),
                     EmployeeId = table.Column<int>(nullable: false),
                     Code = table.Column<long>(nullable: false),
-                    EntryTime = table.Column<DateTime>(nullable: false),
-                    OutLanch = table.Column<DateTime>(nullable: false),
-                    ReturnLunch = table.Column<DateTime>(nullable: false),
-                    DepartureTime = table.Column<DateTime>(nullable: false),
+                    EntryTime = table.Column<TimeSpan>(nullable: false),
+                    OutLanch = table.Column<TimeSpan>(nullable: false),
+                    ReturnLunch = table.Column<TimeSpan>(nullable: false),
+                    DepartureTime = table.Column<TimeSpan>(nullable: false),
                     FullRange = table.Column<TimeSpan>(nullable: false),
                     Worked = table.Column<TimeSpan>(nullable: false),
-                    Minutes = table.Column<long>(nullable: false)
+                    Minutes = table.Column<double>(type: "double(12,2)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -134,6 +157,11 @@ namespace Sis_Vendas_Mega.Migrations
                 column: "Description");
 
             migrationBuilder.CreateIndex(
+                name: "IX_LogScore_EmployeeId",
+                table: "LogScore",
+                column: "EmployeeId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Score_EmployeeId",
                 table: "Score",
                 column: "EmployeeId");
@@ -158,6 +186,9 @@ namespace Sis_Vendas_Mega.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Hours");
+
+            migrationBuilder.DropTable(
+                name: "LogScore");
 
             migrationBuilder.DropTable(
                 name: "Score");
