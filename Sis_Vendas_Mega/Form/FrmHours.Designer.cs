@@ -30,6 +30,9 @@ namespace Sis_Vendas_Mega
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rbCorrecao = new System.Windows.Forms.RadioButton();
+            this.rbManual = new System.Windows.Forms.RadioButton();
             this.txtData = new System.Windows.Forms.MaskedTextBox();
             this.txtSaida = new System.Windows.Forms.MaskedTextBox();
             this.txtRetorno = new System.Windows.Forms.MaskedTextBox();
@@ -56,12 +59,9 @@ namespace Sis_Vendas_Mega
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.dgvHours = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbManual = new System.Windows.Forms.RadioButton();
-            this.rbCorrecao = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHours)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHours)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -99,6 +99,41 @@ namespace Sis_Vendas_Mega
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rbCorrecao);
+            this.groupBox2.Controls.Add(this.rbManual);
+            this.groupBox2.Location = new System.Drawing.Point(218, 19);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(258, 36);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Ação";
+            // 
+            // rbCorrecao
+            // 
+            this.rbCorrecao.AutoSize = true;
+            this.rbCorrecao.Location = new System.Drawing.Point(141, 12);
+            this.rbCorrecao.Name = "rbCorrecao";
+            this.rbCorrecao.Size = new System.Drawing.Size(113, 17);
+            this.rbCorrecao.TabIndex = 1;
+            this.rbCorrecao.TabStop = true;
+            this.rbCorrecao.Text = "Correção de ponto";
+            this.rbCorrecao.UseVisualStyleBackColor = true;
+            this.rbCorrecao.CheckedChanged += new System.EventHandler(this.rbCorrecao_CheckedChanged);
+            // 
+            // rbManual
+            // 
+            this.rbManual.AutoSize = true;
+            this.rbManual.Location = new System.Drawing.Point(40, 13);
+            this.rbManual.Name = "rbManual";
+            this.rbManual.Size = new System.Drawing.Size(90, 17);
+            this.rbManual.TabIndex = 0;
+            this.rbManual.TabStop = true;
+            this.rbManual.Text = "Ponto manual";
+            this.rbManual.UseVisualStyleBackColor = true;
+            this.rbManual.CheckedChanged += new System.EventHandler(this.rbManual_CheckedChanged);
+            // 
             // txtData
             // 
             this.txtData.Location = new System.Drawing.Point(112, 115);
@@ -108,6 +143,7 @@ namespace Sis_Vendas_Mega
             this.txtData.TabIndex = 5;
             this.txtData.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtData.ValidatingType = typeof(System.DateTime);
+            this.txtData.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtData_KeyPress);
             // 
             // txtSaida
             // 
@@ -118,6 +154,7 @@ namespace Sis_Vendas_Mega
             this.txtSaida.TabIndex = 9;
             this.txtSaida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSaida.ValidatingType = typeof(System.DateTime);
+            this.txtSaida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSaida_KeyPress);
             // 
             // txtRetorno
             // 
@@ -128,6 +165,7 @@ namespace Sis_Vendas_Mega
             this.txtRetorno.TabIndex = 8;
             this.txtRetorno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtRetorno.ValidatingType = typeof(System.DateTime);
+            this.txtRetorno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRetorno_KeyPress);
             // 
             // txtSaidaAlmoco
             // 
@@ -138,6 +176,7 @@ namespace Sis_Vendas_Mega
             this.txtSaidaAlmoco.TabIndex = 7;
             this.txtSaidaAlmoco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSaidaAlmoco.ValidatingType = typeof(System.DateTime);
+            this.txtSaidaAlmoco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSaidaAlmoco_KeyPress);
             // 
             // txtEntrada
             // 
@@ -148,6 +187,7 @@ namespace Sis_Vendas_Mega
             this.txtEntrada.TabIndex = 6;
             this.txtEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtEntrada.ValidatingType = typeof(System.DateTime);
+            this.txtEntrada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEntrada_KeyPress);
             // 
             // label9
             // 
@@ -358,41 +398,6 @@ namespace Sis_Vendas_Mega
             this.dgvHours.TabIndex = 0;
             this.dgvHours.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHours_CellDoubleClick);
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.rbCorrecao);
-            this.groupBox2.Controls.Add(this.rbManual);
-            this.groupBox2.Location = new System.Drawing.Point(218, 19);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(258, 36);
-            this.groupBox2.TabIndex = 13;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Ação";
-            // 
-            // rbManual
-            // 
-            this.rbManual.AutoSize = true;
-            this.rbManual.Location = new System.Drawing.Point(40, 13);
-            this.rbManual.Name = "rbManual";
-            this.rbManual.Size = new System.Drawing.Size(90, 17);
-            this.rbManual.TabIndex = 0;
-            this.rbManual.TabStop = true;
-            this.rbManual.Text = "Ponto manual";
-            this.rbManual.UseVisualStyleBackColor = true;
-            this.rbManual.CheckedChanged += new System.EventHandler(this.rbManual_CheckedChanged);
-            // 
-            // rbCorrecao
-            // 
-            this.rbCorrecao.AutoSize = true;
-            this.rbCorrecao.Location = new System.Drawing.Point(141, 12);
-            this.rbCorrecao.Name = "rbCorrecao";
-            this.rbCorrecao.Size = new System.Drawing.Size(113, 17);
-            this.rbCorrecao.TabIndex = 1;
-            this.rbCorrecao.TabStop = true;
-            this.rbCorrecao.Text = "Correção de ponto";
-            this.rbCorrecao.UseVisualStyleBackColor = true;
-            this.rbCorrecao.CheckedChanged += new System.EventHandler(this.rbCorrecao_CheckedChanged);
-            // 
             // FrmHours
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -405,9 +410,9 @@ namespace Sis_Vendas_Mega
             this.Text = "Horários";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHours)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHours)).EndInit();
             this.ResumeLayout(false);
 
         }

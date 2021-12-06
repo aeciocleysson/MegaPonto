@@ -30,6 +30,8 @@ namespace Sis_Vendas_Mega
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbPonto = new System.Windows.Forms.RadioButton();
+            this.rbTotal = new System.Windows.Forms.RadioButton();
             this.dgvUser = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,12 +44,16 @@ namespace Sis_Vendas_Mega
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rbPadrao = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.dgvUser);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -62,15 +68,37 @@ namespace Sis_Vendas_Mega
             this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(485, 314);
+            this.groupBox1.Size = new System.Drawing.Size(493, 326);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // rbPonto
+            // 
+            this.rbPonto.AutoSize = true;
+            this.rbPonto.Location = new System.Drawing.Point(71, 23);
+            this.rbPonto.Name = "rbPonto";
+            this.rbPonto.Size = new System.Drawing.Size(53, 17);
+            this.rbPonto.TabIndex = 8;
+            this.rbPonto.TabStop = true;
+            this.rbPonto.Text = "Ponto";
+            this.rbPonto.UseVisualStyleBackColor = true;
+            // 
+            // rbTotal
+            // 
+            this.rbTotal.AutoSize = true;
+            this.rbTotal.Location = new System.Drawing.Point(130, 23);
+            this.rbTotal.Name = "rbTotal";
+            this.rbTotal.Size = new System.Drawing.Size(49, 17);
+            this.rbTotal.TabIndex = 7;
+            this.rbTotal.TabStop = true;
+            this.rbTotal.Text = "Total";
+            this.rbTotal.UseVisualStyleBackColor = true;
             // 
             // dgvUser
             // 
             this.dgvUser.BackgroundColor = System.Drawing.Color.White;
             this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUser.Location = new System.Drawing.Point(9, 167);
+            this.dgvUser.Location = new System.Drawing.Point(9, 176);
             this.dgvUser.Name = "dgvUser";
             this.dgvUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUser.Size = new System.Drawing.Size(470, 141);
@@ -156,7 +184,7 @@ namespace Sis_Vendas_Mega
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(242, 138);
+            this.btnSave.Location = new System.Drawing.Point(208, 147);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 0;
@@ -167,7 +195,7 @@ namespace Sis_Vendas_Mega
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(404, 138);
+            this.btnClose.Location = new System.Drawing.Point(370, 147);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 0;
@@ -178,7 +206,7 @@ namespace Sis_Vendas_Mega
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(323, 138);
+            this.btnClear.Location = new System.Drawing.Point(289, 147);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 0;
@@ -186,11 +214,34 @@ namespace Sis_Vendas_Mega
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rbPonto);
+            this.groupBox2.Controls.Add(this.rbTotal);
+            this.groupBox2.Controls.Add(this.rbPadrao);
+            this.groupBox2.Location = new System.Drawing.Point(9, 127);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(192, 46);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Nivel de Acesso";
+            // 
+            // rbPadrao
+            // 
+            this.rbPadrao.AutoSize = true;
+            this.rbPadrao.Location = new System.Drawing.Point(6, 23);
+            this.rbPadrao.Name = "rbPadrao";
+            this.rbPadrao.Size = new System.Drawing.Size(59, 17);
+            this.rbPadrao.TabIndex = 10;
+            this.rbPadrao.TabStop = true;
+            this.rbPadrao.Text = "Padrão";
+            this.rbPadrao.UseVisualStyleBackColor = true;
+            // 
             // FrmUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(509, 338);
+            this.ClientSize = new System.Drawing.Size(513, 350);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.Name = "FrmUser";
@@ -199,6 +250,8 @@ namespace Sis_Vendas_Mega
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -218,5 +271,9 @@ namespace Sis_Vendas_Mega
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.RadioButton rbPonto;
+        private System.Windows.Forms.RadioButton rbTotal;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton rbPadrao;
     }
 }

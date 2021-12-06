@@ -21,6 +21,8 @@ namespace Sis_Vendas_Mega
         {
             txtCode.Clear();
             txtName.Clear();
+            txtName.Focus();
+            txtName.Select();
             txtId.Clear();
             txtData.Clear();
             txtEntrada.Clear();
@@ -240,6 +242,46 @@ namespace Sis_Vendas_Mega
         {
             txtData.Enabled = false;
             btnPesquisar.Enabled = true;
+        }
+
+        private void txtData_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtEntrada.Focus();
+            }
+        }
+
+        private void txtEntrada_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtSaidaAlmoco.Focus();
+            }
+        }
+
+        private void txtSaidaAlmoco_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtRetorno.Focus();
+            }
+        }
+
+        private void txtRetorno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtSaida.Focus();
+            }
+        }
+
+        private void txtSaida_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnSave.Focus();
+            }
         }
     }
 }

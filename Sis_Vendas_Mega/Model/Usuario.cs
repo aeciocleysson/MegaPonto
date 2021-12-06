@@ -3,16 +3,16 @@
     public class Usuario : BaseModel
     {
         public string Nome { get; private set; }
-        public string Tipo { get; private set; }
         public string Login { get; private set; }
         public string Senha { get; private set; }
+        public int NivelAcesso { get; private set; }
 
-        public Usuario(string nome, string tipo, string login, string senha)
+        public Usuario(string nome,  string login, string senha, int nivelAcesso)
         {
             Nome = nome;
-            Tipo = tipo;
             Login = login;
             Senha = senha;
+            NivelAcesso = nivelAcesso;
         }
     }
 }

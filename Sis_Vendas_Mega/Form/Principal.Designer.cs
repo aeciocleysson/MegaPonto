@@ -51,6 +51,7 @@
             this.cadastroFuncao = new System.Windows.Forms.ToolStripMenuItem();
             this.servicos = new System.Windows.Forms.ToolStripMenuItem();
             this.scoreEntry = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuTrocas = new System.Windows.Forms.ToolStripMenuItem();
             this.menuUtilitario = new System.Windows.Forms.ToolStripMenuItem();
             this.menuManutencao = new System.Windows.Forms.ToolStripMenuItem();
             this.manutencaoHorario = new System.Windows.Forms.ToolStripMenuItem();
@@ -189,7 +190,7 @@
             // 
             this.cadastrarFuncionario.Name = "cadastrarFuncionario";
             this.cadastrarFuncionario.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.cadastrarFuncionario.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarFuncionario.Size = new System.Drawing.Size(166, 22);
             this.cadastrarFuncionario.Text = "Funcionário";
             this.cadastrarFuncionario.Click += new System.EventHandler(this.cadastrarFuncionario_Click);
             // 
@@ -197,7 +198,7 @@
             // 
             this.CadatrarUsuario.Name = "CadatrarUsuario";
             this.CadatrarUsuario.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.CadatrarUsuario.Size = new System.Drawing.Size(180, 22);
+            this.CadatrarUsuario.Size = new System.Drawing.Size(166, 22);
             this.CadatrarUsuario.Text = "Usuario";
             this.CadatrarUsuario.Click += new System.EventHandler(this.CadatrarUsuario_Click);
             // 
@@ -205,14 +206,15 @@
             // 
             this.cadastroFuncao.Name = "cadastroFuncao";
             this.cadastroFuncao.ShortcutKeys = System.Windows.Forms.Keys.F4;
-            this.cadastroFuncao.Size = new System.Drawing.Size(180, 22);
+            this.cadastroFuncao.Size = new System.Drawing.Size(166, 22);
             this.cadastroFuncao.Text = "Função";
             this.cadastroFuncao.Click += new System.EventHandler(this.cadastroFuncao_Click);
             // 
             // servicos
             // 
             this.servicos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.scoreEntry});
+            this.scoreEntry,
+            this.menuTrocas});
             this.servicos.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.servicos.Name = "servicos";
             this.servicos.ShortcutKeys = System.Windows.Forms.Keys.F5;
@@ -223,9 +225,15 @@
             // 
             this.scoreEntry.Name = "scoreEntry";
             this.scoreEntry.ShortcutKeys = System.Windows.Forms.Keys.F6;
-            this.scoreEntry.Size = new System.Drawing.Size(133, 22);
+            this.scoreEntry.Size = new System.Drawing.Size(180, 22);
             this.scoreEntry.Text = "Ponto";
             this.scoreEntry.Click += new System.EventHandler(this.scoreEntry_Click);
+            // 
+            // menuTrocas
+            // 
+            this.menuTrocas.Name = "menuTrocas";
+            this.menuTrocas.Size = new System.Drawing.Size(180, 22);
+            this.menuTrocas.Text = "Trocas";
             // 
             // menuUtilitario
             // 
@@ -249,7 +257,7 @@
             // 
             this.manutencaoHorario.Name = "manutencaoHorario";
             this.manutencaoHorario.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
-            this.manutencaoHorario.Size = new System.Drawing.Size(180, 22);
+            this.manutencaoHorario.Size = new System.Drawing.Size(169, 22);
             this.manutencaoHorario.Text = "Horarios";
             this.manutencaoHorario.Click += new System.EventHandler(this.manutencaoHorario_Click);
             // 
@@ -321,7 +329,6 @@
         private System.Windows.Forms.ToolStripMenuItem servicos;
         private System.Windows.Forms.ToolStripMenuItem menu_sair;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem scoreEntry;
         public System.Windows.Forms.ToolStripMenuItem menuUtilitario;
         public System.Windows.Forms.ToolStripMenuItem menuManutencao;
         public System.Windows.Forms.ToolStripMenuItem manutencaoHorario;
@@ -330,6 +337,8 @@
         private System.Windows.Forms.ToolStripMenuItem cadastroFuncao;
         private System.Windows.Forms.ToolStripMenuItem registroMensal;
         public System.Windows.Forms.ToolStripMenuItem menuCadastrar;
+        public System.Windows.Forms.ToolStripMenuItem menuTrocas;
+        public System.Windows.Forms.ToolStripMenuItem scoreEntry;
     }
 }
 

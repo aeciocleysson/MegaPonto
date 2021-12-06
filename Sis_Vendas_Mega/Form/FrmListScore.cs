@@ -2,6 +2,7 @@
 using Sis_Vendas_Mega.Relatorio;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
@@ -11,6 +12,7 @@ namespace Sis_Vendas_Mega
     public partial class FrmListScore : Form
     {
         private DataContext _context;
+        private const double totalHorasMes = 220;
         public FrmListScore()
         {
             InitializeComponent();
@@ -52,15 +54,15 @@ namespace Sis_Vendas_Mega
                              w.Inserted <= dtFim)
                       .Select(s => new
                       {
-                          s.Inserted,
+                          Inserted = s.Inserted,
                           Dia = s.Inserted.ToString("dddd", new CultureInfo("pt-BR")),
-                          s.Employee.Name,
-                          Entrada = s.EntryTime,
-                          Almoco = s.OutLanch,
-                          Retorno = s.ReturnLunch,
-                          s.FullRange,
-                          Saida = s.DepartureTime,
-                          s.Worked
+                          Name = s.Employee.Name,
+                          EntryTime = s.EntryTime,
+                          OutLanch = s.OutLanch,
+                          ReturnLunch = s.ReturnLunch,
+                          FullRange = s.FullRange,
+                          DepartureTime = s.DepartureTime,
+                          Worked = s.Worked
                       })
                       .OrderBy(o => o.Inserted)
                       .ToList();
@@ -94,6 +96,13 @@ namespace Sis_Vendas_Mega
                 dgvScoreMonth.Columns[2].Visible = false;
 
                 txtSaldoMes.Text = totalHours.ToString("#.##");
+
+                var total = Convert.ToDouble(txtSaldoMes.Text) - totalHorasMes;
+
+                if (total > totalHorasMes)
+                    txtSaldoPositivo.Text = total.ToString();
+                else
+                    txtSaldoNegativo.Text = total.ToString();
             }
             else
             {
@@ -141,12 +150,12 @@ namespace Sis_Vendas_Mega
 
             foreach (DataGridViewRow item in dgvScoreMonth.Rows)
             {
-                dt.Rows.Add(item.Cells["Inserted"].Value.ToString().Substring(0, 10),
+                dt.Rows.Add(item.Cells["Inserted"].Value.ToString(),
                             item.Cells["Name"].Value.ToString(),
-                            item.Cells["EntryTime"].Value.ToString().Substring(10),
-                            item.Cells["OutLanch"].Value.ToString().Substring(10),
-                            item.Cells["ReturnLunch"].Value.ToString().Substring(10),
-                            item.Cells["DepartureTime"].Value.ToString().Substring(10),
+                            item.Cells["EntryTime"].Value.ToString(),
+                            item.Cells["OutLanch"].Value.ToString(),
+                            item.Cells["ReturnLunch"].Value.ToString(),
+                            item.Cells["DepartureTime"].Value.ToString(),
                             item.Cells["Worked"].Value.ToString());
             }
 

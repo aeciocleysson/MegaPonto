@@ -33,13 +33,18 @@ namespace Sis_Vendas_Mega
                 {
                     if (user.Login == txtUsuario.Text.Trim() && user.Senha == txtSenha.Text.Trim().ToLower())
                     {
-                        switch (user.Tipo)
+                        switch (user.NivelAcesso)
                         {
-                            case "Vendedor":
-                            case "VENDEDOR":
-                            case "vendedor":
+                            case 2:
                                 principal.menuUtilitario.Visible = false;
                                 principal.menuCadastrar.Visible = false;
+                                principal.menuTrocas.Visible = false;
+                                break;
+                            case 3:
+                                principal.menuUtilitario.Visible = false;
+                                principal.menuCadastrar.Visible = false;
+                                principal.scoreEntry.Visible = false;
+                                principal.menuTrocas.Visible = true;
                                 break;
                         }
 

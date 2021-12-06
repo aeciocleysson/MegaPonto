@@ -102,6 +102,7 @@ namespace Sis_Vendas_Mega
             // 
             // txtSaldoNegativo
             // 
+            this.txtSaldoNegativo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSaldoNegativo.Location = new System.Drawing.Point(1082, 242);
             this.txtSaldoNegativo.Name = "txtSaldoNegativo";
             this.txtSaldoNegativo.ReadOnly = true;
@@ -111,6 +112,7 @@ namespace Sis_Vendas_Mega
             // 
             // txtSaldoPositivo
             // 
+            this.txtSaldoPositivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSaldoPositivo.Location = new System.Drawing.Point(1083, 192);
             this.txtSaldoPositivo.Name = "txtSaldoPositivo";
             this.txtSaldoPositivo.ReadOnly = true;
@@ -129,6 +131,7 @@ namespace Sis_Vendas_Mega
             // 
             // txtSaldoMes
             // 
+            this.txtSaldoMes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSaldoMes.Location = new System.Drawing.Point(1083, 143);
             this.txtSaldoMes.Name = "txtSaldoMes";
             this.txtSaldoMes.ReadOnly = true;
