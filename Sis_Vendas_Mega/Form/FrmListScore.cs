@@ -97,12 +97,21 @@ namespace Sis_Vendas_Mega
 
                 txtSaldoMes.Text = totalHours.ToString("#.##");
 
-                var total = Convert.ToDouble(txtSaldoMes.Text) - totalHorasMes;
-
-                if (total > totalHorasMes)
-                    txtSaldoPositivo.Text = total.ToString();
+                if (string.IsNullOrEmpty(txtSaldoMes.Text))
+                {
+                    txtSaldoMes.Text = "0.00";
+                    txtSaldoPositivo.Text = "0.00";
+                    txtSaldoNegativo.Text = "0.00";
+                }
                 else
-                    txtSaldoNegativo.Text = total.ToString();
+                {
+                    var total = Convert.ToDouble(txtSaldoMes.Text) - totalHorasMes;
+
+                    if (total > totalHorasMes)
+                        txtSaldoPositivo.Text = total.ToString();
+                    else
+                        txtSaldoNegativo.Text = total.ToString();
+                }
             }
             else
             {
