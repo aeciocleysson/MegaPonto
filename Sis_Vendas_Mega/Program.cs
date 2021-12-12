@@ -18,8 +18,8 @@ namespace Sis_Vendas_Mega
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmLogin());            
-            //Application.Run(new FrmPrincipal());            
+            //Application.Run(new FrmLogin());            
+            Application.Run(new FrmPrincipal());
         }
     }
 }

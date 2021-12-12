@@ -64,7 +64,7 @@ namespace Sis_Vendas_Mega
             this.btnSave.Location = new System.Drawing.Point(312, 102);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 5;
+            this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Salvar";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -75,7 +75,7 @@ namespace Sis_Vendas_Mega
             this.btnClear.Location = new System.Drawing.Point(393, 102);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 5;
+            this.btnClear.TabIndex = 3;
             this.btnClear.Text = "Cancelar";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -86,7 +86,7 @@ namespace Sis_Vendas_Mega
             this.btnClose.Location = new System.Drawing.Point(474, 102);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 5;
+            this.btnClose.TabIndex = 4;
             this.btnClose.Text = "Sair";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -98,7 +98,7 @@ namespace Sis_Vendas_Mega
             this.txtDescricao.Location = new System.Drawing.Point(115, 64);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(297, 22);
-            this.txtDescricao.TabIndex = 4;
+            this.txtDescricao.TabIndex = 1;
             // 
             // txtCode
             // 
@@ -107,7 +107,7 @@ namespace Sis_Vendas_Mega
             this.txtCode.Name = "txtCode";
             this.txtCode.ReadOnly = true;
             this.txtCode.Size = new System.Drawing.Size(100, 22);
-            this.txtCode.TabIndex = 3;
+            this.txtCode.TabIndex = 0;
             this.txtCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2

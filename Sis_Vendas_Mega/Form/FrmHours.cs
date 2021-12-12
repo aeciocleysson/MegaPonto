@@ -72,7 +72,7 @@ namespace Sis_Vendas_Mega
                           Saida = s.DepartureTime
                       })
                       .OrderBy(o => o.Data)
-                      .ToList();               
+                      .ToList();
 
                 dgvHours.DataSource = employee;
 
@@ -97,7 +97,7 @@ namespace Sis_Vendas_Mega
             {
                 if (!string.IsNullOrEmpty(txtCode.Text))
                 {
-                    if(!txtData.Text.Equals("  /  /") && !txtEntrada.Text.Equals(":") && !txtSaidaAlmoco.Text.Equals(":") && 
+                    if (!txtData.Text.Equals("  /  /") && !txtEntrada.Text.Equals(":") && !txtSaidaAlmoco.Text.Equals(":") &&
                         !txtRetorno.Text.Equals(":") && !txtSaida.Text.Equals(":"))
                     {
                         var employee = _context.Employees.Find(Convert.ToInt32(txtCode.Text));
@@ -123,7 +123,7 @@ namespace Sis_Vendas_Mega
                             worked: viewModel.Worked,
                             minutes: viewModel.Minutes,
                             employeeId: viewModel.EmployeeId,
-                            code:viewModel.Code);
+                            code: viewModel.Code);
 
                         _context.Scores.Add(model);
                         _context.SaveChanges();
@@ -144,8 +144,9 @@ namespace Sis_Vendas_Mega
                     MessageBox.Show("Selecione um funcionário.", "Alerta", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 }
-               
-            }else if (rbCorrecao.Checked)
+
+            }
+            else if (rbCorrecao.Checked)
             {
                 if (!string.IsNullOrEmpty(txtId.Text))
                 {

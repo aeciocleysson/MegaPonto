@@ -40,7 +40,6 @@ namespace Sis_Vendas_Mega
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.txtCodeEmployee = new System.Windows.Forms.TextBox();
             this.dgvScore = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
@@ -114,7 +113,6 @@ namespace Sis_Vendas_Mega
             // 
             this.groupBox2.Controls.Add(this.pictureBox2);
             this.groupBox2.Controls.Add(this.btnClose);
-            this.groupBox2.Controls.Add(this.btnCancel);
             this.groupBox2.Controls.Add(this.txtCodeEmployee);
             this.groupBox2.Location = new System.Drawing.Point(12, 73);
             this.groupBox2.Name = "groupBox2";
@@ -142,17 +140,6 @@ namespace Sis_Vendas_Mega
             this.btnClose.Text = "Sair";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(795, 25);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 6;
-            this.btnCancel.Text = "Cancelar";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txtCodeEmployee
             // 
@@ -203,7 +190,6 @@ namespace Sis_Vendas_Mega
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvScore;
         private System.Windows.Forms.TextBox txtCodeEmployee;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblDateDay;

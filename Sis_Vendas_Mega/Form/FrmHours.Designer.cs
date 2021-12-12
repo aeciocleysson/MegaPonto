@@ -116,7 +116,7 @@ namespace Sis_Vendas_Mega
             this.rbCorrecao.Location = new System.Drawing.Point(141, 12);
             this.rbCorrecao.Name = "rbCorrecao";
             this.rbCorrecao.Size = new System.Drawing.Size(113, 17);
-            this.rbCorrecao.TabIndex = 1;
+            this.rbCorrecao.TabIndex = 4;
             this.rbCorrecao.TabStop = true;
             this.rbCorrecao.Text = "Correção de ponto";
             this.rbCorrecao.UseVisualStyleBackColor = true;
@@ -128,7 +128,7 @@ namespace Sis_Vendas_Mega
             this.rbManual.Location = new System.Drawing.Point(40, 13);
             this.rbManual.Name = "rbManual";
             this.rbManual.Size = new System.Drawing.Size(90, 17);
-            this.rbManual.TabIndex = 0;
+            this.rbManual.TabIndex = 3;
             this.rbManual.TabStop = true;
             this.rbManual.Text = "Ponto manual";
             this.rbManual.UseVisualStyleBackColor = true;
@@ -140,7 +140,7 @@ namespace Sis_Vendas_Mega
             this.txtData.Mask = "00/00/0000";
             this.txtData.Name = "txtData";
             this.txtData.Size = new System.Drawing.Size(100, 20);
-            this.txtData.TabIndex = 5;
+            this.txtData.TabIndex = 7;
             this.txtData.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtData.ValidatingType = typeof(System.DateTime);
             this.txtData.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtData_KeyPress);
@@ -151,7 +151,7 @@ namespace Sis_Vendas_Mega
             this.txtSaida.Mask = "00:00";
             this.txtSaida.Name = "txtSaida";
             this.txtSaida.Size = new System.Drawing.Size(100, 20);
-            this.txtSaida.TabIndex = 9;
+            this.txtSaida.TabIndex = 11;
             this.txtSaida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSaida.ValidatingType = typeof(System.DateTime);
             this.txtSaida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSaida_KeyPress);
@@ -162,7 +162,7 @@ namespace Sis_Vendas_Mega
             this.txtRetorno.Mask = "00:00";
             this.txtRetorno.Name = "txtRetorno";
             this.txtRetorno.Size = new System.Drawing.Size(100, 20);
-            this.txtRetorno.TabIndex = 8;
+            this.txtRetorno.TabIndex = 10;
             this.txtRetorno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtRetorno.ValidatingType = typeof(System.DateTime);
             this.txtRetorno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRetorno_KeyPress);
@@ -173,7 +173,7 @@ namespace Sis_Vendas_Mega
             this.txtSaidaAlmoco.Mask = "00:00";
             this.txtSaidaAlmoco.Name = "txtSaidaAlmoco";
             this.txtSaidaAlmoco.Size = new System.Drawing.Size(100, 20);
-            this.txtSaidaAlmoco.TabIndex = 7;
+            this.txtSaidaAlmoco.TabIndex = 9;
             this.txtSaidaAlmoco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSaidaAlmoco.ValidatingType = typeof(System.DateTime);
             this.txtSaidaAlmoco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSaidaAlmoco_KeyPress);
@@ -184,7 +184,7 @@ namespace Sis_Vendas_Mega
             this.txtEntrada.Mask = "00:00";
             this.txtEntrada.Name = "txtEntrada";
             this.txtEntrada.Size = new System.Drawing.Size(100, 20);
-            this.txtEntrada.TabIndex = 6;
+            this.txtEntrada.TabIndex = 8;
             this.txtEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtEntrada.ValidatingType = typeof(System.DateTime);
             this.txtEntrada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEntrada_KeyPress);
@@ -299,7 +299,7 @@ namespace Sis_Vendas_Mega
             this.btnClose.Location = new System.Drawing.Point(811, 112);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 12;
+            this.btnClose.TabIndex = 14;
             this.btnClose.Text = "Sair";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -310,7 +310,7 @@ namespace Sis_Vendas_Mega
             this.btnCancel.Location = new System.Drawing.Point(730, 112);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 11;
+            this.btnCancel.TabIndex = 13;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -321,7 +321,7 @@ namespace Sis_Vendas_Mega
             this.btnPesquisar.Location = new System.Drawing.Point(484, 69);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
-            this.btnPesquisar.TabIndex = 4;
+            this.btnPesquisar.TabIndex = 6;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
@@ -332,7 +332,7 @@ namespace Sis_Vendas_Mega
             this.txtBuscar.Location = new System.Drawing.Point(403, 69);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(75, 23);
-            this.txtBuscar.TabIndex = 3;
+            this.txtBuscar.TabIndex = 5;
             this.txtBuscar.Text = "Buscar";
             this.txtBuscar.UseVisualStyleBackColor = true;
             this.txtBuscar.Click += new System.EventHandler(this.txtBuscar_Click);
@@ -343,7 +343,7 @@ namespace Sis_Vendas_Mega
             this.btnSave.Location = new System.Drawing.Point(649, 112);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 10;
+            this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Salvar";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);

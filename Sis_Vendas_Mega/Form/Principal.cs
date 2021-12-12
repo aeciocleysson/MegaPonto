@@ -74,5 +74,24 @@ namespace Sis_Vendas_Mega
             hours.MdiParent = this;
             hours.Show();
         }
+
+        private void menuProvider_Click(object sender, EventArgs e)
+        {
+            var provider = new FrmProvider();
+            provider.MdiParent = this;
+            provider.Show();
+        }
+
+        private void menuProduct_Click(object sender, EventArgs e)
+        {
+            var product = new FrmProduct();
+            product.MdiParent = this;
+            product.Show();
+        }
+
+        private void menuRegister_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

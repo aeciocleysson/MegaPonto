@@ -30,8 +30,10 @@ namespace Sis_Vendas_Mega
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rbPonto = new System.Windows.Forms.RadioButton();
             this.rbTotal = new System.Windows.Forms.RadioButton();
+            this.rbPadrao = new System.Windows.Forms.RadioButton();
             this.dgvUser = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,11 +46,9 @@ namespace Sis_Vendas_Mega
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbPadrao = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -72,13 +72,25 @@ namespace Sis_Vendas_Mega
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rbPonto);
+            this.groupBox2.Controls.Add(this.rbTotal);
+            this.groupBox2.Controls.Add(this.rbPadrao);
+            this.groupBox2.Location = new System.Drawing.Point(9, 127);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(192, 46);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Nivel de Acesso";
+            // 
             // rbPonto
             // 
             this.rbPonto.AutoSize = true;
             this.rbPonto.Location = new System.Drawing.Point(71, 23);
             this.rbPonto.Name = "rbPonto";
             this.rbPonto.Size = new System.Drawing.Size(53, 17);
-            this.rbPonto.TabIndex = 8;
+            this.rbPonto.TabIndex = 5;
             this.rbPonto.TabStop = true;
             this.rbPonto.Text = "Ponto";
             this.rbPonto.UseVisualStyleBackColor = true;
@@ -89,10 +101,21 @@ namespace Sis_Vendas_Mega
             this.rbTotal.Location = new System.Drawing.Point(130, 23);
             this.rbTotal.Name = "rbTotal";
             this.rbTotal.Size = new System.Drawing.Size(49, 17);
-            this.rbTotal.TabIndex = 7;
+            this.rbTotal.TabIndex = 6;
             this.rbTotal.TabStop = true;
             this.rbTotal.Text = "Total";
             this.rbTotal.UseVisualStyleBackColor = true;
+            // 
+            // rbPadrao
+            // 
+            this.rbPadrao.AutoSize = true;
+            this.rbPadrao.Location = new System.Drawing.Point(6, 23);
+            this.rbPadrao.Name = "rbPadrao";
+            this.rbPadrao.Size = new System.Drawing.Size(59, 17);
+            this.rbPadrao.TabIndex = 4;
+            this.rbPadrao.TabStop = true;
+            this.rbPadrao.Text = "Padrão";
+            this.rbPadrao.UseVisualStyleBackColor = true;
             // 
             // dgvUser
             // 
@@ -152,7 +175,7 @@ namespace Sis_Vendas_Mega
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(195, 22);
-            this.txtSenha.TabIndex = 2;
+            this.txtSenha.TabIndex = 3;
             // 
             // txtLogin
             // 
@@ -170,7 +193,7 @@ namespace Sis_Vendas_Mega
             this.txtName.Location = new System.Drawing.Point(112, 50);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(290, 22);
-            this.txtName.TabIndex = 2;
+            this.txtName.TabIndex = 1;
             // 
             // txtCodeUser
             // 
@@ -179,7 +202,7 @@ namespace Sis_Vendas_Mega
             this.txtCodeUser.Name = "txtCodeUser";
             this.txtCodeUser.ReadOnly = true;
             this.txtCodeUser.Size = new System.Drawing.Size(100, 22);
-            this.txtCodeUser.TabIndex = 1;
+            this.txtCodeUser.TabIndex = 0;
             // 
             // btnSave
             // 
@@ -187,7 +210,7 @@ namespace Sis_Vendas_Mega
             this.btnSave.Location = new System.Drawing.Point(208, 147);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 0;
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Salvar";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -198,7 +221,7 @@ namespace Sis_Vendas_Mega
             this.btnClose.Location = new System.Drawing.Point(370, 147);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
-            this.btnClose.TabIndex = 0;
+            this.btnClose.TabIndex = 9;
             this.btnClose.Text = "Sair";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -209,33 +232,10 @@ namespace Sis_Vendas_Mega
             this.btnClear.Location = new System.Drawing.Point(289, 147);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 0;
+            this.btnClear.TabIndex = 8;
             this.btnClear.Text = "Cancelar";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.rbPonto);
-            this.groupBox2.Controls.Add(this.rbTotal);
-            this.groupBox2.Controls.Add(this.rbPadrao);
-            this.groupBox2.Location = new System.Drawing.Point(9, 127);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(192, 46);
-            this.groupBox2.TabIndex = 9;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Nivel de Acesso";
-            // 
-            // rbPadrao
-            // 
-            this.rbPadrao.AutoSize = true;
-            this.rbPadrao.Location = new System.Drawing.Point(6, 23);
-            this.rbPadrao.Name = "rbPadrao";
-            this.rbPadrao.Size = new System.Drawing.Size(59, 17);
-            this.rbPadrao.TabIndex = 10;
-            this.rbPadrao.TabStop = true;
-            this.rbPadrao.Text = "Padrão";
-            this.rbPadrao.UseVisualStyleBackColor = true;
             // 
             // FrmUser
             // 
@@ -249,9 +249,9 @@ namespace Sis_Vendas_Mega
             this.Text = "Cadastro de Usuário";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
             this.ResumeLayout(false);
 
         }

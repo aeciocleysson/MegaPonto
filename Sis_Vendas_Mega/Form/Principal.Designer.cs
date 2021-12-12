@@ -52,12 +52,15 @@
             this.servicos = new System.Windows.Forms.ToolStripMenuItem();
             this.scoreEntry = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTrocas = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuProvider = new System.Windows.Forms.ToolStripMenuItem();
             this.menuUtilitario = new System.Windows.Forms.ToolStripMenuItem();
             this.menuManutencao = new System.Windows.Forms.ToolStripMenuItem();
             this.manutencaoHorario = new System.Windows.Forms.ToolStripMenuItem();
             this.registroMensal = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_sair = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuProduct = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuRegister = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -231,9 +234,20 @@
             // 
             // menuTrocas
             // 
+            this.menuTrocas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuProvider,
+            this.menuProduct,
+            this.menuRegister});
             this.menuTrocas.Name = "menuTrocas";
             this.menuTrocas.Size = new System.Drawing.Size(180, 22);
             this.menuTrocas.Text = "Trocas";
+            // 
+            // menuProvider
+            // 
+            this.menuProvider.Name = "menuProvider";
+            this.menuProvider.Size = new System.Drawing.Size(180, 22);
+            this.menuProvider.Text = "Fornecedor";
+            this.menuProvider.Click += new System.EventHandler(this.menuProvider_Click);
             // 
             // menuUtilitario
             // 
@@ -285,6 +299,20 @@
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            // 
+            // menuProduct
+            // 
+            this.menuProduct.Name = "menuProduct";
+            this.menuProduct.Size = new System.Drawing.Size(180, 22);
+            this.menuProduct.Text = "Produto";
+            this.menuProduct.Click += new System.EventHandler(this.menuProduct_Click);
+            // 
+            // menuRegister
+            // 
+            this.menuRegister.Name = "menuRegister";
+            this.menuRegister.Size = new System.Drawing.Size(180, 22);
+            this.menuRegister.Text = "RegistrarTroca";
+            this.menuRegister.Click += new System.EventHandler(this.menuRegister_Click);
             // 
             // FrmPrincipal
             // 
@@ -339,6 +367,9 @@
         public System.Windows.Forms.ToolStripMenuItem menuCadastrar;
         public System.Windows.Forms.ToolStripMenuItem menuTrocas;
         public System.Windows.Forms.ToolStripMenuItem scoreEntry;
+        private System.Windows.Forms.ToolStripMenuItem menuProvider;
+        private System.Windows.Forms.ToolStripMenuItem menuProduct;
+        private System.Windows.Forms.ToolStripMenuItem menuRegister;
     }
 }
 

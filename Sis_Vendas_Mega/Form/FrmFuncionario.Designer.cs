@@ -78,7 +78,7 @@ namespace Sis_Vendas_Mega
             this.mtbDataNascimento.Mask = "00/00/0000";
             this.mtbDataNascimento.Name = "mtbDataNascimento";
             this.mtbDataNascimento.Size = new System.Drawing.Size(100, 20);
-            this.mtbDataNascimento.TabIndex = 7;
+            this.mtbDataNascimento.TabIndex = 3;
             this.mtbDataNascimento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbDataNascimento.ValidatingType = typeof(System.DateTime);
             // 
@@ -109,7 +109,7 @@ namespace Sis_Vendas_Mega
             this.btnSalvar.Location = new System.Drawing.Point(513, 105);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 2;
+            this.btnSalvar.TabIndex = 4;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -120,7 +120,7 @@ namespace Sis_Vendas_Mega
             this.brnCancelar.Location = new System.Drawing.Point(594, 105);
             this.brnCancelar.Name = "brnCancelar";
             this.brnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.brnCancelar.TabIndex = 3;
+            this.brnCancelar.TabIndex = 5;
             this.brnCancelar.Text = "Cancelar";
             this.brnCancelar.UseVisualStyleBackColor = true;
             this.brnCancelar.Click += new System.EventHandler(this.brnCancelar_Click);
@@ -131,7 +131,7 @@ namespace Sis_Vendas_Mega
             this.btnSair.Location = new System.Drawing.Point(756, 105);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 23);
-            this.btnSair.TabIndex = 4;
+            this.btnSair.TabIndex = 7;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
@@ -143,7 +143,7 @@ namespace Sis_Vendas_Mega
             this.txtCodeFunction.Name = "txtCodeFunction";
             this.txtCodeFunction.ReadOnly = true;
             this.txtCodeFunction.Size = new System.Drawing.Size(98, 22);
-            this.txtCodeFunction.TabIndex = 5;
+            this.txtCodeFunction.TabIndex = 0;
             this.txtCodeFunction.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtCodigo
@@ -153,7 +153,7 @@ namespace Sis_Vendas_Mega
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.ReadOnly = true;
             this.txtCodigo.Size = new System.Drawing.Size(98, 22);
-            this.txtCodigo.TabIndex = 5;
+            this.txtCodigo.TabIndex = 0;
             this.txtCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
@@ -184,7 +184,7 @@ namespace Sis_Vendas_Mega
             this.txtFunction.Name = "txtFunction";
             this.txtFunction.ReadOnly = true;
             this.txtFunction.Size = new System.Drawing.Size(156, 22);
-            this.txtFunction.TabIndex = 1;
+            this.txtFunction.TabIndex = 0;
             // 
             // label4
             // 

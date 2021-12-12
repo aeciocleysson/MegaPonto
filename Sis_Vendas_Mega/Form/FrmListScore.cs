@@ -2,7 +2,6 @@
 using Sis_Vendas_Mega.Relatorio;
 using System;
 using System.Data;
-using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;

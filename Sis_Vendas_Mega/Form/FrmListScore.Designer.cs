@@ -144,7 +144,7 @@ namespace Sis_Vendas_Mega
             this.btnPesquisar.Location = new System.Drawing.Point(533, 81);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
-            this.btnPesquisar.TabIndex = 9;
+            this.btnPesquisar.TabIndex = 4;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
@@ -184,7 +184,7 @@ namespace Sis_Vendas_Mega
             this.btnEmployees.Location = new System.Drawing.Point(452, 81);
             this.btnEmployees.Name = "btnEmployees";
             this.btnEmployees.Size = new System.Drawing.Size(75, 23);
-            this.btnEmployees.TabIndex = 7;
+            this.btnEmployees.TabIndex = 3;
             this.btnEmployees.Text = "Buscar";
             this.btnEmployees.UseVisualStyleBackColor = true;
             this.btnEmployees.Click += new System.EventHandler(this.btnEmployees_Click);
@@ -206,7 +206,7 @@ namespace Sis_Vendas_Mega
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(324, 20);
-            this.txtName.TabIndex = 5;
+            this.txtName.TabIndex = 0;
             // 
             // txtCode
             // 
@@ -215,7 +215,7 @@ namespace Sis_Vendas_Mega
             this.txtCode.Name = "txtCode";
             this.txtCode.ReadOnly = true;
             this.txtCode.Size = new System.Drawing.Size(100, 20);
-            this.txtCode.TabIndex = 4;
+            this.txtCode.TabIndex = 0;
             this.txtCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
@@ -255,7 +255,7 @@ namespace Sis_Vendas_Mega
             this.dpDtFim.Location = new System.Drawing.Point(137, 39);
             this.dpDtFim.Name = "dpDtFim";
             this.dpDtFim.Size = new System.Drawing.Size(115, 20);
-            this.dpDtFim.TabIndex = 1;
+            this.dpDtFim.TabIndex = 2;
             // 
             // dpDtInicio
             // 
