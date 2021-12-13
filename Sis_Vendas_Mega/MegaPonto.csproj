@@ -361,10 +361,10 @@
     <Compile Include="Form\FrmProduct.Designer.cs">
       <DependentUpon>FrmProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRegister.cs">
+    <Compile Include="Form\FrmRegister.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRegister.Designer.cs">
+    <Compile Include="Form\FrmRegister.Designer.cs">
       <DependentUpon>FrmRegister.cs</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\FormCloseButtonDisabler.cs" />
@@ -477,7 +477,7 @@
     <EmbeddedResource Include="Form\FrmProduct.resx">
       <DependentUpon>FrmProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRegister.resx">
+    <EmbeddedResource Include="Form\FrmRegister.resx">
       <DependentUpon>FrmRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

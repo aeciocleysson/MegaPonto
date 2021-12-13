@@ -91,7 +91,9 @@ namespace Sis_Vendas_Mega
 
         private void menuRegister_Click(object sender, EventArgs e)
         {
-
+            var register = new FrmRegister();
+            register.MdiParent = this;
+            register.Show();
         }
     }
 }
