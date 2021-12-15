@@ -17,8 +17,6 @@ namespace Sis_Vendas_Mega
 
         public void GetAll()
         {
-            _context = new DataContext();
-
             var employees = _context.Employees
                 .Where(w => w.IsDelete == 0)
                 .Select(s => new

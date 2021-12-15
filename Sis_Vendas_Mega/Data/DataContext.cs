@@ -16,6 +16,7 @@ namespace Sis_Vendas_Mega.Data
         public DbSet<LogScore> LogScores { get; set; }
         public DbSet<Provider> Providers { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Register> Registers { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -32,6 +33,7 @@ namespace Sis_Vendas_Mega.Data
             modelBuilder.ApplyConfiguration(new LogScoreConfiguration());
             modelBuilder.ApplyConfiguration(new ProviderConfiguration());
             modelBuilder.ApplyConfiguration(new ProductConfiguration());
+            modelBuilder.ApplyConfiguration(new RegisterConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

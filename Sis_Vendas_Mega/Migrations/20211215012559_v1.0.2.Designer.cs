@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Sis_Vendas_Mega.Data;
 
 namespace Sis_Vendas_Mega.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20211215012559_v1.0.2")]
+    partial class v102
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -132,15 +134,10 @@ namespace Sis_Vendas_Mega.Migrations
                     b.Property<int>("IsDelete")
                         .HasColumnType("int");
 
-                    b.Property<int?>("RegisterId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("RegisterId");
 
                     b.ToTable("Product");
                 });
@@ -167,37 +164,6 @@ namespace Sis_Vendas_Mega.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Provider");
-                });
-
-            modelBuilder.Entity("Sis_Vendas_Mega.Model.Register", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("Inserted")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("IsDelete")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProviderId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantidade")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("UpdateAt")
-                        .HasColumnType("datetime(6)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProviderId");
-
-                    b.ToTable("Register");
                 });
 
             modelBuilder.Entity("Sis_Vendas_Mega.Model.Score", b =>
@@ -304,22 +270,6 @@ namespace Sis_Vendas_Mega.Migrations
                     b.HasOne("Sis_Vendas_Mega.Model.Employee", "Employee")
                         .WithMany("LogScores")
                         .HasForeignKey("EmployeeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Sis_Vendas_Mega.Model.Product", b =>
-                {
-                    b.HasOne("Sis_Vendas_Mega.Model.Register", null)
-                        .WithMany("Products")
-                        .HasForeignKey("RegisterId");
-                });
-
-            modelBuilder.Entity("Sis_Vendas_Mega.Model.Register", b =>
-                {
-                    b.HasOne("Sis_Vendas_Mega.Model.Provider", "Provider")
-                        .WithMany()
-                        .HasForeignKey("ProviderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
