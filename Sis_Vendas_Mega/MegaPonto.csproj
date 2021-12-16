@@ -323,6 +323,7 @@
     <Compile Include="Data\Configuration\ProductConfiguration.cs" />
     <Compile Include="Data\Configuration\ProviderConfiguration.cs" />
     <Compile Include="Data\Configuration\RegisterConfiguration.cs" />
+    <Compile Include="Data\Configuration\RegisterItensConfiguration.cs" />
     <Compile Include="Data\Configuration\ScoreConfiguration.cs" />
     <Compile Include="Data\Configuration\UsuarioConfiguration.cs" />
     <Compile Include="Data\DataContext.cs" />
@@ -422,6 +423,14 @@
     <Compile Include="Migrations\20211215013408_v1.0.4.designer.cs">
       <DependentUpon>20211215013408_v1.0.4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20211216014434_v1.0.5.cs" />
+    <Compile Include="Migrations\20211216014434_v1.0.5.designer.cs">
+      <DependentUpon>20211216014434_v1.0.5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20211216015139_v1.0.6.cs" />
+    <Compile Include="Migrations\20211216015139_v1.0.6.designer.cs">
+      <DependentUpon>20211216015139_v1.0.6.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\DataContextModelSnapshot.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Function.cs" />
@@ -429,6 +438,7 @@
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\Provider.cs" />
     <Compile Include="Model\Register.cs" />
+    <Compile Include="Model\RegisterItens.cs" />
     <Compile Include="Model\Score.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Form\Principal.cs">
@@ -462,6 +472,7 @@
     <Compile Include="ViewModel\LogScoreViewModel.cs" />
     <Compile Include="ViewModel\ProductViewModel.cs" />
     <Compile Include="ViewModel\ProviderViewModel.cs" />
+    <Compile Include="ViewModel\RegisterItensViewModel.cs" />
     <Compile Include="ViewModel\RegisterViewModel.cs" />
     <Compile Include="ViewModel\ScoreViewModel.cs" />
     <Compile Include="ViewModel\UsuarioViewModel.cs" />

@@ -6,7 +6,6 @@ namespace Sis_Vendas_Mega.Model
     {
         public string Brand { get; private set; }
         public string Description { get; private set; }
-
         public Product(string brand, string description)
         {
             Brand = brand;

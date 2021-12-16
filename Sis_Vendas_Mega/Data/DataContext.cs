@@ -17,6 +17,7 @@ namespace Sis_Vendas_Mega.Data
         public DbSet<Provider> Providers { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Register> Registers { get; set; }
+        public DbSet<RegisterItens> RegisterItens { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -34,6 +35,7 @@ namespace Sis_Vendas_Mega.Data
             modelBuilder.ApplyConfiguration(new ProviderConfiguration());
             modelBuilder.ApplyConfiguration(new ProductConfiguration());
             modelBuilder.ApplyConfiguration(new RegisterConfiguration());
+            modelBuilder.ApplyConfiguration(new RegisterItensConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }
