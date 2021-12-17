@@ -31,20 +31,31 @@ namespace Sis_Vendas_Mega
                                    }).OrderBy(o => o.Marca)
                                    .ToList();
 
-            var textboxColumn = new DataGridViewTextBoxColumn();
+            //DataGridViewTextBoxColumn textboxColumn = new DataGridViewTextBoxColumn();
 
-            textboxColumn.Name = "Quantidade";
-            textboxColumn.HeaderText = "Qtd.";
-            textboxColumn.Width = 50;
+            //textboxColumn.Name = "Quantidade";
+            //textboxColumn.HeaderText = "Qtd.";
+            //textboxColumn.Width = 50;
+            //textboxColumn.DisplayIndex = 3;
+            //textboxColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            DataGridViewColumn dgvIndex = new DataGridViewTextBoxColumn();
+            {
+                dgvIndex.HeaderText = "Slot";
+                dgvIndex.DisplayIndex = 3;
+                dgvIndex.Width = 25;
+                dgvIndex.ReadOnly = false;
+                dgvIndex.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
 
             dgvProducts.DataSource = products;
-            //dgvProducts.Columns[0].HeaderText = "Codigo";
-            //dgvProducts.Columns[1].HeaderText = "Marca";
-            //dgvProducts.Columns[2].HeaderText = "Descrição";
-            //dgvProducts.Columns.Insert(3, textboxColumn);
+            dgvProducts.Columns[0].HeaderText = "Codigo";
+            dgvProducts.Columns[1].HeaderText = "Marca";
+            dgvProducts.Columns[2].HeaderText = "Descrição";
+            dgvProducts.Columns.Insert(3, dgvIndex);
 
-            dgvProducts.Columns[1].Width = 50;
-            dgvProducts.Columns[3].Width = 250;
+            //dgvProducts.Columns[1].Width = 50;
+            //dgvProducts.Columns[3].Width = 250;
         }
 
         private void GetByDate(DateTime date)
@@ -76,10 +87,7 @@ namespace Sis_Vendas_Mega
                 var model = new Register(providerId: viewModel.ProviderId);
 
                 _context.AddRange(model);
-                _context.SaveChanges();
-
-                GetAllProducts();
-            }
+                _context.SaveChanges();            }
             else
             {
                 MessageBox.Show("Selecione um ornecedor!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -93,36 +101,35 @@ namespace Sis_Vendas_Mega
             viewModel.RegisterId = result.Id;
             var listItens = new List<RegisterItens>();
 
-            for (int i = 0; i <= dgvProducts.Rows.Count - 1; i++)
-            {
-                var a = dgvProducts.Rows[i].Cells[0].Value;
-                var b = dgvProducts.Rows[i].Cells[1].Value;
-                var c = dgvProducts.Rows[i].Cells[2].Value;
-                var d = dgvProducts.Rows[i].Cells[3].Value;
-            }
-
-            //foreach (DataGridViewRow item in dgvProducts.Rows)
+            //for (int i = 0; i <= dgvProducts.Rows.Count; i++)
             //{
-            //    //if (item.Cells[0].Value != null)
-            //    //{
-            //    var c = item.Cells[1].Value.ToString();
-            //    var d = item.Cells[2].Value.ToString();
-            //    //var e = item.Cells[3].Value.ToString();
-            //    var f = item.Cells[4].Value.ToString();
-            //    var g = item.Cells[5].Value.ToString();
-
-            //    //viewModel.ProductId = Convert.ToInt32(item.Cells[1].Value.ToString());
-            //    //    viewModel.Quantidade = Convert.ToInt32(item.Cells[2].Value.ToString());
-
-            //    //    var model = new RegisterItens(registerId: viewModel.RegisterId, quantidade: viewModel.Quantidade, productId: viewModel.ProductId);
-
-            //    //listItens.Add(model);
-            //    //}
-            //    //else
-            //    //{
-            //    //    continue;
-            //    //}
+            //    var a = dgvProducts.Rows[i].Cells[0].Value;
+            //    var b = dgvProducts.Rows[i].Cells[1].Value;
+            //    var c = dgvProducts.Rows[i].Cells[2].Value;
+            //    var d = dgvProducts.Rows[i].Cells[3].Value;
             //}
+
+            foreach (DataGridViewRow item in dgvProducts.Rows)
+            {
+                //if (item.Cells[0].Value != null)
+                //{
+                var c = item.Cells[0].Value.ToString();
+                var d = item.Cells[1].Value.ToString();
+                var f = item.Cells[2].Value.ToString();
+                var g = item.Cells[3].Value.ToString();
+
+                //viewModel.ProductId = Convert.ToInt32(item.Cells[1].Value.ToString());
+                //    viewModel.Quantidade = Convert.ToInt32(item.Cells[2].Value.ToString());
+
+                //    var model = new RegisterItens(registerId: viewModel.RegisterId, quantidade: viewModel.Quantidade, productId: viewModel.ProductId);
+
+                //listItens.Add(model);
+                //}
+                //else
+                //{
+                //    continue;
+                //}
+            }
         }
 
         private void btnClose_Click(object sender, System.EventArgs e)

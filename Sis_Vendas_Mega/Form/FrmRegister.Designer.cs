@@ -48,7 +48,6 @@ namespace Sis_Vendas_Mega
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dgvRegisters = new System.Windows.Forms.DataGridView();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
-            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegisters)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
@@ -247,18 +246,11 @@ namespace Sis_Vendas_Mega
             // 
             this.dgvProducts.BackgroundColor = System.Drawing.Color.White;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Quantidade});
             this.dgvProducts.Location = new System.Drawing.Point(10, 162);
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvProducts.Size = new System.Drawing.Size(569, 309);
             this.dgvProducts.TabIndex = 0;
-            // 
-            // Quantidade
-            // 
-            this.Quantidade.HeaderText = "Quantidade";
-            this.Quantidade.Name = "Quantidade";
             // 
             // FrmRegister
             // 
@@ -299,6 +291,5 @@ namespace Sis_Vendas_Mega
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.DataGridView dgvRegisters;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
     }
 }
