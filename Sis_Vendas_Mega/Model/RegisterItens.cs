@@ -8,6 +8,7 @@ namespace Sis_Vendas_Mega.Model
         public int Quantidade { get; private set; }
         public int ProductId { get; private set; }
         public Register Register { get; private set; }
+        public Product Product { get; private set; }
         public List<Product> Products { get; set; } = new List<Product>();
 
         public RegisterItens(int registerId, int quantidade, int productId)
