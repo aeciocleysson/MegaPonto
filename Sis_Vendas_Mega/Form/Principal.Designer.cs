@@ -55,6 +55,7 @@
             this.menuProvider = new System.Windows.Forms.ToolStripMenuItem();
             this.menuProduct = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRegister = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuTrocasAll = new System.Windows.Forms.ToolStripMenuItem();
             this.menuUtilitario = new System.Windows.Forms.ToolStripMenuItem();
             this.menuManutencao = new System.Windows.Forms.ToolStripMenuItem();
             this.manutencaoHorario = new System.Windows.Forms.ToolStripMenuItem();
@@ -237,7 +238,8 @@
             this.menuTrocas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuProvider,
             this.menuProduct,
-            this.menuRegister});
+            this.menuRegister,
+            this.menuTrocasAll});
             this.menuTrocas.Name = "menuTrocas";
             this.menuTrocas.Size = new System.Drawing.Size(180, 22);
             this.menuTrocas.Text = "Trocas";
@@ -246,14 +248,14 @@
             // 
             this.menuProvider.Name = "menuProvider";
             this.menuProvider.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.menuProvider.Size = new System.Drawing.Size(205, 22);
+            this.menuProvider.Size = new System.Drawing.Size(209, 22);
             this.menuProvider.Text = "Fornecedor";
             this.menuProvider.Click += new System.EventHandler(this.menuProvider_Click);
             // 
             // menuProduct
             // 
             this.menuProduct.Name = "menuProduct";
-            this.menuProduct.Size = new System.Drawing.Size(205, 22);
+            this.menuProduct.Size = new System.Drawing.Size(209, 22);
             this.menuProduct.Text = "Produto";
             this.menuProduct.Click += new System.EventHandler(this.menuProduct_Click);
             // 
@@ -261,9 +263,16 @@
             // 
             this.menuRegister.Name = "menuRegister";
             this.menuRegister.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.menuRegister.Size = new System.Drawing.Size(205, 22);
-            this.menuRegister.Text = "RegistrarTroca";
+            this.menuRegister.Size = new System.Drawing.Size(209, 22);
+            this.menuRegister.Text = "Registrar Troca";
             this.menuRegister.Click += new System.EventHandler(this.menuRegister_Click);
+            // 
+            // menuTrocasAll
+            // 
+            this.menuTrocasAll.Name = "menuTrocasAll";
+            this.menuTrocasAll.Size = new System.Drawing.Size(209, 22);
+            this.menuTrocasAll.Text = "Trocas";
+            this.menuTrocasAll.Click += new System.EventHandler(this.menuTrocasAll_Click);
             // 
             // menuUtilitario
             // 
@@ -372,6 +381,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuProvider;
         private System.Windows.Forms.ToolStripMenuItem menuProduct;
         private System.Windows.Forms.ToolStripMenuItem menuRegister;
+        private System.Windows.Forms.ToolStripMenuItem menuTrocasAll;
     }
 }
 

@@ -95,5 +95,12 @@ namespace Sis_Vendas_Mega
             register.MdiParent = this;
             register.Show();
         }
+
+        private void menuTrocasAll_Click(object sender, EventArgs e)
+        {
+            var trocas = new FrmTrocasAll();
+            trocas.MdiParent = this;
+            trocas.Show();
+        }
     }
 }

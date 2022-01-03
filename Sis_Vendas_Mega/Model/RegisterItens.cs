@@ -17,5 +17,10 @@ namespace Sis_Vendas_Mega.Model
             Quantidade = quantidade;
             ProductId = productId;
         }
+
+        public void Update(int quantidade)
+        {
+            Quantidade = quantidade;
+        }
     }
 }

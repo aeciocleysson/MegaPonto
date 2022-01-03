@@ -30,10 +30,7 @@ namespace Sis_Vendas_Mega
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtSeach = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnPrinter = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -48,6 +45,8 @@ namespace Sis_Vendas_Mega
             this.dgvRegisters = new System.Windows.Forms.DataGridView();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegisters)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
@@ -55,10 +54,9 @@ namespace Sis_Vendas_Mega
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtSeach);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.btnEdit);
             this.groupBox1.Controls.Add(this.btnSave);
-            this.groupBox1.Controls.Add(this.btnNew);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.btnPrinter);
             this.groupBox1.Controls.Add(this.btnCancel);
@@ -78,26 +76,10 @@ namespace Sis_Vendas_Mega
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 117);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Pesquisar";
-            // 
-            // txtSeach
-            // 
-            this.txtSeach.Location = new System.Drawing.Point(10, 133);
-            this.txtSeach.Name = "txtSeach";
-            this.txtSeach.Size = new System.Drawing.Size(279, 20);
-            this.txtSeach.TabIndex = 6;
-            // 
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(869, 132);
+            this.btnSave.Location = new System.Drawing.Point(788, 80);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 5;
@@ -105,23 +87,12 @@ namespace Sis_Vendas_Mega
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnNew
-            // 
-            this.btnNew.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(504, 79);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(75, 23);
-            this.btnNew.TabIndex = 5;
-            this.btnNew.Text = "Novo";
-            this.btnNew.UseVisualStyleBackColor = true;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
-            // 
             // btnBuscar
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(448, 79);
+            this.btnBuscar.Location = new System.Drawing.Point(448, 78);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(50, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 5;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -129,7 +100,7 @@ namespace Sis_Vendas_Mega
             // 
             // btnPrinter
             // 
-            this.btnPrinter.Location = new System.Drawing.Point(950, 133);
+            this.btnPrinter.Location = new System.Drawing.Point(950, 79);
             this.btnPrinter.Name = "btnPrinter";
             this.btnPrinter.Size = new System.Drawing.Size(75, 23);
             this.btnPrinter.TabIndex = 5;
@@ -139,7 +110,7 @@ namespace Sis_Vendas_Mega
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(1031, 133);
+            this.btnCancel.Location = new System.Drawing.Point(1031, 79);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 5;
@@ -150,7 +121,7 @@ namespace Sis_Vendas_Mega
             // btnClose
             // 
             this.btnClose.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(1112, 133);
+            this.btnClose.Location = new System.Drawing.Point(1112, 79);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 5;
@@ -227,10 +198,10 @@ namespace Sis_Vendas_Mega
             this.dgvRegisters.AllowUserToAddRows = false;
             this.dgvRegisters.BackgroundColor = System.Drawing.Color.White;
             this.dgvRegisters.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRegisters.Location = new System.Drawing.Point(620, 162);
+            this.dgvRegisters.Location = new System.Drawing.Point(620, 108);
             this.dgvRegisters.Name = "dgvRegisters";
             this.dgvRegisters.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRegisters.Size = new System.Drawing.Size(569, 309);
+            this.dgvRegisters.Size = new System.Drawing.Size(569, 363);
             this.dgvRegisters.TabIndex = 1;
             // 
             // dgvProducts
@@ -239,10 +210,10 @@ namespace Sis_Vendas_Mega
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Quantidade});
-            this.dgvProducts.Location = new System.Drawing.Point(10, 162);
+            this.dgvProducts.Location = new System.Drawing.Point(10, 108);
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvProducts.Size = new System.Drawing.Size(569, 309);
+            this.dgvProducts.Size = new System.Drawing.Size(569, 363);
             this.dgvProducts.TabIndex = 0;
             // 
             // Quantidade
@@ -250,6 +221,23 @@ namespace Sis_Vendas_Mega
             this.Quantidade.HeaderText = "Qtd";
             this.Quantidade.Name = "Quantidade";
             this.Quantidade.Width = 50;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(869, 79);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 6;
+            this.btnEdit.Text = "Editar";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(620, 82);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 7;
             // 
             // FrmRegister
             // 
@@ -276,8 +264,6 @@ namespace Sis_Vendas_Mega
         private System.Windows.Forms.DateTimePicker dtData;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCodeRegister;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtSeach;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnPrinter;
@@ -289,6 +275,7 @@ namespace Sis_Vendas_Mega
         private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.DataGridView dgvRegisters;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
-        private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnEdit;
     }
 }

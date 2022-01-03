@@ -32,7 +32,6 @@ namespace Sis_Vendas_Mega
             txtCodeRegister.Clear();
             txtCode.Clear();
             txtName.Clear();
-            txtSeach.Clear();
             GetAllProducts();
             dgvRegisters.DataSource = null;
         }
@@ -89,7 +88,7 @@ namespace Sis_Vendas_Mega
                 txtCode.Text = dataGrid.Cells[0].Value.ToString();
                 txtName.Text = dataGrid.Cells[1].Value.ToString();
             }
-        }
+        }    
 
         private void InsertRegister(RegisterViewModel viewModel, RegisterItensViewModel viewModelItens)
         {
@@ -142,7 +141,7 @@ namespace Sis_Vendas_Mega
             }
             else
             {
-                MessageBox.Show("Selecione um ornecedor!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Selecione um Fornecedor!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -160,6 +159,10 @@ namespace Sis_Vendas_Mega
         private void btnNew_Click(object sender, EventArgs e)
         {
             NewRegister();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
         }
     }
 }
