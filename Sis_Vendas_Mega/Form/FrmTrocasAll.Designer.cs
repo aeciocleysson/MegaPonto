@@ -281,6 +281,7 @@ namespace Sis_Vendas_Mega
             this.btnProduct.Text = "Buscar";
             this.btnProduct.UseVisualStyleBackColor = true;
             this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
+            this.btnProduct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnProduct_KeyPress);
             // 
             // txtCodeProduct
             // 

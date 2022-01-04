@@ -15,6 +15,12 @@ namespace Sis_Vendas_Mega
             _context = new DataContext();
         }
 
+        private void ClearFieldsProducts()
+        {
+            txtCodeProduct.Clear();
+            txtNameProduct.Clear();
+            txtQuantiti.Clear();
+        }
         public void SelectProvider()
         {
             var provider = new FrmListProvider();
@@ -87,9 +93,16 @@ namespace Sis_Vendas_Mega
 
         private void InsertGrid()
         {
-            dgvRegister.Rows.Add(txtCodeProduct.Text, txtNameProduct.Text, txtQuantiti.Text);
+            if (!string.IsNullOrEmpty(txtCodeProduct.Text) && !string.IsNullOrEmpty(txtQuantiti.Text))
+            {
+                dgvRegister.Rows.Add(txtCodeProduct.Text, txtNameProduct.Text, txtQuantiti.Text);
+                ClearFieldsProducts();
+            }
+            else
+            {
+                MessageBox.Show("Insira um produto e a quantidade.");
+            }
         }
-             
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -123,9 +136,17 @@ namespace Sis_Vendas_Mega
 
         private void txtQuantiti_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == 13)
+            if (e.KeyChar == 13)
             {
                 InsertGrid();
+            }
+        }
+        private void btnProduct_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 121)
+            {
+                SelectProducts();
+                e.Handled = true;
             }
         }
     }
