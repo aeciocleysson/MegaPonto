@@ -333,6 +333,12 @@
     <Compile Include="Form\FrmListFunction.Designer.cs">
       <DependentUpon>FrmListFunction.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form\FrmListProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FrmListProducts.Designer.cs">
+      <DependentUpon>FrmListProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\FrmListScore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -490,6 +496,9 @@
     <Compile Include="ViewModel\UsuarioViewModel.cs" />
     <EmbeddedResource Include="Form\FrmFuncionario.resx">
       <DependentUpon>FrmFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FrmListProducts.resx">
+      <DependentUpon>FrmListProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\FrmProvider.resx">
       <DependentUpon>FrmProvider.cs</DependentUpon>

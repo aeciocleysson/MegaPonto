@@ -15,9 +15,18 @@ namespace Sis_Vendas_Mega
             _context = new DataContext();
         }
 
-        private void GetById()
+        public void SelectProvider()
         {
+            var provider = new FrmListProvider();
+            provider.ShowDialog();
 
+            if (provider.DialogResult == DialogResult.OK)
+            {
+                var dataGrid = provider.dgvProviders.Rows[provider.dgvProviders.CurrentRow.Index];
+
+                txtCodeProvider.Text = dataGrid.Cells[0].Value.ToString();
+                txtNameProvider.Text = dataGrid.Cells[1].Value.ToString();
+            }
         }
 
         public void SelectRegisters()
@@ -29,14 +38,32 @@ namespace Sis_Vendas_Mega
             {
                 var dataGrid = register.dgvRegisters.Rows[register.dgvRegisters.CurrentRow.Index];
 
-                txtCodeRegister.Text = dataGrid.Cells[0].Value.ToString();
+                txtCodeExchange.Text = dataGrid.Cells[0].Value.ToString();
                 dtData.Text = dataGrid.Cells[1].Value.ToString();
                 txtCodeProvider.Text = dataGrid.Cells[2].Value.ToString();
-                txtName.Text = dataGrid.Cells[3].Value.ToString();
+                txtNameProvider.Text = dataGrid.Cells[3].Value.ToString();
             }
 
-            GetAll(Convert.ToInt32(txtCodeRegister.Text));
+            GetAll(Convert.ToInt32(txtCodeExchange.Text));
         }
+
+        public void SelectProducts()
+        {
+            var provider = new FrmListProducts();
+            provider.ShowDialog();
+
+            if (provider.DialogResult == DialogResult.OK)
+            {
+                var dataGrid = provider.dgvProducts.Rows[provider.dgvProducts.CurrentRow.Index];
+
+                txtCodeProduct.Text = dataGrid.Cells[0].Value.ToString();
+                txtNameProduct.Text = dataGrid.Cells[2].Value.ToString();
+
+                txtQuantiti.Focus();
+                txtQuantiti.Select();
+            }
+        }
+
 
         private void GetAll(int id)
         {
@@ -49,39 +76,20 @@ namespace Sis_Vendas_Mega
                                      s.Quantidade
                                  }).ToList();
 
-            dgvAllRegister.DataSource = result;
+            dgvRegister.DataSource = result;
 
-            dgvAllRegister.Columns[0].HeaderText = "Código";
-            dgvAllRegister.Columns[1].HeaderText = "Produto";
-            dgvAllRegister.Columns[2].HeaderText = "Quantidade";
+            dgvRegister.Columns[0].HeaderText = "Código";
+            dgvRegister.Columns[1].HeaderText = "Produto";
+            dgvRegister.Columns[2].HeaderText = "Quantidade";
 
-            dgvAllRegister.Columns[1].Width = 300;
+            dgvRegister.Columns[1].Width = 300;
         }
 
-        private void Update(RegisterItensViewModel viewModel)
+        private void InsertGrid()
         {
-            if(!string.IsNullOrEmpty(txtCodeRegister.Text) && !string.IsNullOrEmpty(txtCodeProvider.Text))
-            {
-                viewModel.Id = Convert.ToInt32(txtCodeRegister.Text);
-
-                foreach (DataGridViewRow item in dgvAllRegister.Rows)
-                {
-               //id     var a = item.Cells[0].Value   ;
-              //descrição      var b = item.Cells[1].Value;
-              //quantidade      var c = item.Cells[2].Value;
-                  
-                }
-            }
-            else
-            {
-                MessageBox.Show("Erro");
-            }
+            dgvRegister.Rows.Add(txtCodeProduct.Text, txtNameProduct.Text, txtQuantiti.Text);
         }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            SelectRegisters();
-        }
+             
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -90,18 +98,35 @@ namespace Sis_Vendas_Mega
 
         private void dgvAllRegister_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            dgvAllRegister.Rows[e.RowIndex].Cells[2].ReadOnly = false;
+            dgvRegister.Rows[e.RowIndex].Cells[2].ReadOnly = false;
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnExchange_Click(object sender, EventArgs e)
         {
-            var viewModel = new RegisterItensViewModel();
-            Update(viewModel);
+            SelectRegisters();
         }
 
-        private void dgvAllRegister_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        private void btnProvider_Click(object sender, EventArgs e)
         {
-          var x =   dgvAllRegister.Rows[e.RowIndex].Cells[2].Value.ToString();
+            SelectProvider();
+        }
+
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+            SelectProducts();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            InsertGrid();
+        }
+
+        private void txtQuantiti_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == 13)
+            {
+                InsertGrid();
+            }
         }
     }
 }
