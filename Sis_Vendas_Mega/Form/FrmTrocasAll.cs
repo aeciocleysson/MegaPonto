@@ -1,6 +1,8 @@
 ﻿using Sis_Vendas_Mega.Data;
+using Sis_Vendas_Mega.Model;
 using Sis_Vendas_Mega.ViewModel;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -14,7 +16,6 @@ namespace Sis_Vendas_Mega
             InitializeComponent();
             _context = new DataContext();
         }
-
         private void ClearFieldsProducts()
         {
             txtCodeProduct.Clear();
@@ -70,7 +71,6 @@ namespace Sis_Vendas_Mega
             }
         }
 
-
         private void GetAll(int id)
         {
             var result = _context.RegisterItens
@@ -101,6 +101,48 @@ namespace Sis_Vendas_Mega
             else
             {
                 MessageBox.Show("Insira um produto e a quantidade.");
+            }
+        }
+
+        public void InsertOrUpdate(RegisterViewModel registerViewModel, RegisterItensViewModel viewModelItens)
+        {
+            if (!string.IsNullOrEmpty(txtCodeProvider.Text))
+            {
+                registerViewModel.ProviderId = Convert.ToInt32(txtCodeProvider.Text);
+
+                var registerModel = new Register(providerId: registerViewModel.ProviderId);
+
+                _context.Add(registerModel);
+                _context.SaveChanges();
+
+                var result = _context.Registers.Where(w => w.IsDelete == 0).OrderBy(o => o.Id).Last();
+
+                viewModelItens.RegisterId = result.Id;
+
+                var listItens = new List<RegisterItens>();
+
+                foreach (DataGridViewRow item in dgvRegister.Rows)
+                {
+                    if (item.Cells[2].Value != null && Convert.ToInt32(item.Cells[2].Value) > 0)
+                    {
+                        viewModelItens.ProductId = Convert.ToInt32(item.Cells[0].Value.ToString());
+                        viewModelItens.Quantidade = Convert.ToInt32(item.Cells[2].Value.ToString());
+
+                        var modelItens = new RegisterItens(registerId: viewModelItens.RegisterId, quantidade: viewModelItens.Quantidade, productId: viewModelItens.ProductId);
+                        listItens.Add(modelItens);
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+
+                _context.AddRange(listItens);
+                _context.SaveChanges();
+            }
+            else
+            {
+                MessageBox.Show("Selecione um Fornecedor!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -148,6 +190,13 @@ namespace Sis_Vendas_Mega
                 SelectProducts();
                 e.Handled = true;
             }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+                var viewModel = new RegisterViewModel();
+                var itens = new RegisterItensViewModel();
+                InsertOrUpdate(viewModel, itens);
         }
     }
 }

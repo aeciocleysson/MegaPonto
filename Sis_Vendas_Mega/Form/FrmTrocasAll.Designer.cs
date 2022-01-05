@@ -223,6 +223,7 @@ namespace Sis_Vendas_Mega
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Salvar";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnPrinter
             // 
