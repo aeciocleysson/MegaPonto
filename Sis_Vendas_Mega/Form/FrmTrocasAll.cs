@@ -3,6 +3,7 @@ using Sis_Vendas_Mega.Model;
 using Sis_Vendas_Mega.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -82,12 +83,14 @@ namespace Sis_Vendas_Mega
                                      s.Quantidade
                                  }).ToList();
 
+            dgvRegister.Columns.Remove("Codigo");
+            dgvRegister.Columns.Remove("Descricao");
+            dgvRegister.Columns.Remove("Quantidade");
             dgvRegister.DataSource = result;
 
             dgvRegister.Columns[0].HeaderText = "Código";
-            dgvRegister.Columns[1].HeaderText = "Produto";
+            dgvRegister.Columns[1].HeaderText = "Descrição";
             dgvRegister.Columns[2].HeaderText = "Quantidade";
-
             dgvRegister.Columns[1].Width = 300;
         }
 
@@ -197,6 +200,27 @@ namespace Sis_Vendas_Mega
                 var viewModel = new RegisterViewModel();
                 var itens = new RegisterItensViewModel();
                 InsertOrUpdate(viewModel, itens);
+        }
+
+        private void btnPrinter_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void contextMenuGrid_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (dgvRegister.SelectedRows.Count > 0)
+                dgvRegister.Rows.RemoveAt(dgvRegister.CurrentRow.Index);
+            else
+                contextMenuGrid.Hide();
+        }
+
+        private void dgvRegister_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+                contextMenuGrid.Show();
+            else
+                contextMenuGrid.Hide();
         }
     }
 }

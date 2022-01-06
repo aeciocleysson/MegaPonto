@@ -29,6 +29,7 @@ namespace Sis_Vendas_Mega
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.txtQuantiti = new System.Windows.Forms.TextBox();
@@ -56,8 +57,11 @@ namespace Sis_Vendas_Mega
             this.txtCodeExchange = new System.Windows.Forms.TextBox();
             this.txtNameProduct = new System.Windows.Forms.TextBox();
             this.txtCodeProvider = new System.Windows.Forms.TextBox();
+            this.contextMenuGrid = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripExcluir = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegister)).BeginInit();
+            this.contextMenuGrid.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -171,11 +175,14 @@ namespace Sis_Vendas_Mega
             this.Codigo,
             this.Descricao,
             this.Quantidade});
+            this.dgvRegister.ContextMenuStrip = this.contextMenuGrid;
             this.dgvRegister.Location = new System.Drawing.Point(8, 186);
             this.dgvRegister.Name = "dgvRegister";
+            this.dgvRegister.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRegister.Size = new System.Drawing.Size(804, 317);
             this.dgvRegister.TabIndex = 4;
             this.dgvRegister.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvAllRegister_RowsAdded);
+            this.dgvRegister.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvRegister_MouseDown);
             // 
             // Codigo
             // 
@@ -233,6 +240,7 @@ namespace Sis_Vendas_Mega
             this.btnPrinter.TabIndex = 2;
             this.btnPrinter.Text = "Imprimir";
             this.btnPrinter.UseVisualStyleBackColor = true;
+            this.btnPrinter.Click += new System.EventHandler(this.btnPrinter_Click);
             // 
             // btnCancel
             // 
@@ -327,6 +335,20 @@ namespace Sis_Vendas_Mega
             this.txtCodeProvider.TabIndex = 0;
             this.txtCodeProvider.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // contextMenuGrid
+            // 
+            this.contextMenuGrid.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripExcluir});
+            this.contextMenuGrid.Name = "contextMenuGrid";
+            this.contextMenuGrid.Size = new System.Drawing.Size(110, 26);
+            this.contextMenuGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.contextMenuGrid_MouseClick);
+            // 
+            // toolStripExcluir
+            // 
+            this.toolStripExcluir.Name = "toolStripExcluir";
+            this.toolStripExcluir.Size = new System.Drawing.Size(180, 22);
+            this.toolStripExcluir.Text = "Excluir";
+            // 
             // FrmTrocasAll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,6 +362,7 @@ namespace Sis_Vendas_Mega
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegister)).EndInit();
+            this.contextMenuGrid.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -373,5 +396,7 @@ namespace Sis_Vendas_Mega
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
+        private System.Windows.Forms.ContextMenuStrip contextMenuGrid;
+        private System.Windows.Forms.ToolStripMenuItem toolStripExcluir;
     }
 }
