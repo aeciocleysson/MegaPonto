@@ -91,16 +91,9 @@ namespace Sis_Vendas_Mega
 
         private void menuRegister_Click(object sender, EventArgs e)
         {
-            var register = new FrmRegister();
+            var register = new FrmTrocasAll();
             register.MdiParent = this;
             register.Show();
-        }
-
-        private void menuTrocasAll_Click(object sender, EventArgs e)
-        {
-            var trocas = new FrmTrocasAll();
-            trocas.MdiParent = this;
-            trocas.Show();
         }
     }
 }

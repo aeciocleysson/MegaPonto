@@ -31,6 +31,7 @@ namespace Sis_Vendas_Mega
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCodeItens = new System.Windows.Forms.TextBox();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.txtQuantiti = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,6 +44,8 @@ namespace Sis_Vendas_Mega
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuGrid = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripExcluir = new System.Windows.Forms.ToolStripMenuItem();
             this.dtData = new System.Windows.Forms.MaskedTextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -57,8 +60,6 @@ namespace Sis_Vendas_Mega
             this.txtCodeExchange = new System.Windows.Forms.TextBox();
             this.txtNameProduct = new System.Windows.Forms.TextBox();
             this.txtCodeProvider = new System.Windows.Forms.TextBox();
-            this.contextMenuGrid = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripExcluir = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegister)).BeginInit();
             this.contextMenuGrid.SuspendLayout();
@@ -66,6 +67,7 @@ namespace Sis_Vendas_Mega
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtCodeItens);
             this.groupBox1.Controls.Add(this.dtpDate);
             this.groupBox1.Controls.Add(this.txtQuantiti);
             this.groupBox1.Controls.Add(this.label4);
@@ -94,6 +96,15 @@ namespace Sis_Vendas_Mega
             this.groupBox1.Size = new System.Drawing.Size(822, 514);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // txtCodeItens
+            // 
+            this.txtCodeItens.Location = new System.Drawing.Point(115, 29);
+            this.txtCodeItens.Name = "txtCodeItens";
+            this.txtCodeItens.ReadOnly = true;
+            this.txtCodeItens.Size = new System.Drawing.Size(100, 20);
+            this.txtCodeItens.TabIndex = 8;
+            this.txtCodeItens.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dtpDate
             // 
@@ -181,12 +192,13 @@ namespace Sis_Vendas_Mega
             this.dgvRegister.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRegister.Size = new System.Drawing.Size(804, 317);
             this.dgvRegister.TabIndex = 4;
+            this.dgvRegister.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegister_CellDoubleClick);
             this.dgvRegister.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvAllRegister_RowsAdded);
             this.dgvRegister.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvRegister_MouseDown);
             // 
             // Codigo
             // 
-            this.Codigo.HeaderText = "Código";
+            this.Codigo.HeaderText = "Codigo";
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;
             // 
@@ -202,9 +214,23 @@ namespace Sis_Vendas_Mega
             this.Quantidade.HeaderText = "Quantidade";
             this.Quantidade.Name = "Quantidade";
             // 
+            // contextMenuGrid
+            // 
+            this.contextMenuGrid.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripExcluir});
+            this.contextMenuGrid.Name = "contextMenuGrid";
+            this.contextMenuGrid.Size = new System.Drawing.Size(110, 26);
+            this.contextMenuGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.contextMenuGrid_MouseClick);
+            // 
+            // toolStripExcluir
+            // 
+            this.toolStripExcluir.Name = "toolStripExcluir";
+            this.toolStripExcluir.Size = new System.Drawing.Size(109, 22);
+            this.toolStripExcluir.Text = "Excluir";
+            // 
             // dtData
             // 
-            this.dtData.Location = new System.Drawing.Point(115, 29);
+            this.dtData.Location = new System.Drawing.Point(221, 29);
             this.dtData.Mask = "00/00/0000";
             this.dtData.Name = "dtData";
             this.dtData.ReadOnly = true;
@@ -250,6 +276,7 @@ namespace Sis_Vendas_Mega
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnClose
             // 
@@ -263,7 +290,7 @@ namespace Sis_Vendas_Mega
             // 
             // btnExchange
             // 
-            this.btnExchange.Location = new System.Drawing.Point(221, 27);
+            this.btnExchange.Location = new System.Drawing.Point(327, 27);
             this.btnExchange.Name = "btnExchange";
             this.btnExchange.Size = new System.Drawing.Size(75, 23);
             this.btnExchange.TabIndex = 2;
@@ -335,20 +362,6 @@ namespace Sis_Vendas_Mega
             this.txtCodeProvider.TabIndex = 0;
             this.txtCodeProvider.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // contextMenuGrid
-            // 
-            this.contextMenuGrid.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripExcluir});
-            this.contextMenuGrid.Name = "contextMenuGrid";
-            this.contextMenuGrid.Size = new System.Drawing.Size(110, 26);
-            this.contextMenuGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.contextMenuGrid_MouseClick);
-            // 
-            // toolStripExcluir
-            // 
-            this.toolStripExcluir.Name = "toolStripExcluir";
-            this.toolStripExcluir.Size = new System.Drawing.Size(180, 22);
-            this.toolStripExcluir.Text = "Excluir";
-            // 
             // FrmTrocasAll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,10 +406,11 @@ namespace Sis_Vendas_Mega
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.Button btnExchange;
         public System.Windows.Forms.TextBox txtQuantiti;
+        private System.Windows.Forms.ContextMenuStrip contextMenuGrid;
+        private System.Windows.Forms.ToolStripMenuItem toolStripExcluir;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
-        private System.Windows.Forms.ContextMenuStrip contextMenuGrid;
-        private System.Windows.Forms.ToolStripMenuItem toolStripExcluir;
+        private System.Windows.Forms.TextBox txtCodeItens;
     }
 }

@@ -369,12 +369,6 @@
     <Compile Include="Form\FrmProduct.Designer.cs">
       <DependentUpon>FrmProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\FrmRegister.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\FrmRegister.Designer.cs">
-      <DependentUpon>FrmRegister.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form\FrmListProvider.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -484,6 +478,12 @@
     <Compile Include="Relatorio\FrmRelatorioMensal.Designer.cs">
       <DependentUpon>FrmRelatorioMensal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Relatorio\FrmRelatorioTroca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorio\FrmRelatorioTroca.Designer.cs">
+      <DependentUpon>FrmRelatorioTroca.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\EmployeeViewModel.cs" />
     <Compile Include="ViewModel\FunctionViewModel.cs" />
@@ -530,9 +530,6 @@
     <EmbeddedResource Include="Form\FrmProduct.resx">
       <DependentUpon>FrmProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\FrmRegister.resx">
-      <DependentUpon>FrmRegister.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form\FrmListProvider.resx">
       <DependentUpon>FrmListProvider.cs</DependentUpon>
     </EmbeddedResource>
@@ -553,9 +550,17 @@
     <EmbeddedResource Include="Relatorio\FrmRelatorioMensal.resx">
       <DependentUpon>FrmRelatorioMensal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\FrmRelatorioTroca.resx">
+      <DependentUpon>FrmRelatorioTroca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorio\RelatorioMensal.rdlc" />
+    <EmbeddedResource Include="Relatorio\RelatorioTroca.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Sis_Vendas_Mega.Model.Employee.datasource" />
+    <None Include="Properties\DataSources\Sis_Vendas_Mega.Model.Product.datasource" />
+    <None Include="Properties\DataSources\Sis_Vendas_Mega.Model.Provider.datasource" />
+    <None Include="Properties\DataSources\Sis_Vendas_Mega.Model.Register.datasource" />
+    <None Include="Properties\DataSources\Sis_Vendas_Mega.Model.RegisterItens.datasource" />
     <None Include="Properties\DataSources\Sis_Vendas_Mega.Model.Score.datasource" />
     <None Include="Properties\DataSources\Sis_Vendas_Mega.Relatorio.Entity.DadosRelatorio.datasource" />
     <None Include="Properties\DataSources\Sis_Vendas_Mega.Relatorios.DadosRelatorioMestre.datasource" />

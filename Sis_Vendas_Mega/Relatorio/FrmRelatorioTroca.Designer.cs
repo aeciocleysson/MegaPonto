@@ -1,7 +1,7 @@
 ﻿
 namespace Sis_Vendas_Mega.Relatorio
 {
-    partial class FrmRelatorioMensal
+    partial class FrmRelatorioTroca
     {
         /// <summary>
         /// Required designer variable.
@@ -29,35 +29,34 @@ namespace Sis_Vendas_Mega.Relatorio
         /// </summary>
         private void InitializeComponent()
         {
-            this.rvFechamentoMensal = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // rvFechamentoMensal
+            // reportViewer1
             // 
-            this.rvFechamentoMensal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rvFechamentoMensal.LocalReport.ReportEmbeddedResource = "Sis_Vendas_Mega.Relatorio.RelatorioTroca.rdlc";
-            this.rvFechamentoMensal.Location = new System.Drawing.Point(0, 0);
-            this.rvFechamentoMensal.Name = "rvFechamentoMensal";
-            this.rvFechamentoMensal.ServerReport.BearerToken = null;
-            this.rvFechamentoMensal.Size = new System.Drawing.Size(730, 538);
-            this.rvFechamentoMensal.TabIndex = 0;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(730, 538);
+            this.reportViewer1.TabIndex = 0;
             // 
-            // FrmRelatorioMensal
+            // FrmRelatorioTroca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(730, 538);
-            this.Controls.Add(this.rvFechamentoMensal);
-            this.Name = "FrmRelatorioMensal";
+            this.Controls.Add(this.reportViewer1);
+            this.Name = "FrmRelatorioTroca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Fechamento Mensal";
-            this.Load += new System.EventHandler(this.FrmRelatorioMensal_Load);
+            this.Text = "Relatorio Troca";
+            this.Load += new System.EventHandler(this.FrmRelatorioTroca_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer rvFechamentoMensal;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

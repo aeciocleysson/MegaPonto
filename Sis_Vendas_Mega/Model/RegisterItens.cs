@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Sis_Vendas_Mega.Model
 {
@@ -21,6 +22,7 @@ namespace Sis_Vendas_Mega.Model
         public void Update(int quantidade)
         {
             Quantidade = quantidade;
+            UpdateAt = DateTime.Now;
         }
     }
 }

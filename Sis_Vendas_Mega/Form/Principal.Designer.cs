@@ -55,7 +55,6 @@
             this.menuProvider = new System.Windows.Forms.ToolStripMenuItem();
             this.menuProduct = new System.Windows.Forms.ToolStripMenuItem();
             this.menuRegister = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuTrocasAll = new System.Windows.Forms.ToolStripMenuItem();
             this.menuUtilitario = new System.Windows.Forms.ToolStripMenuItem();
             this.menuManutencao = new System.Windows.Forms.ToolStripMenuItem();
             this.manutencaoHorario = new System.Windows.Forms.ToolStripMenuItem();
@@ -238,8 +237,7 @@
             this.menuTrocas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuProvider,
             this.menuProduct,
-            this.menuRegister,
-            this.menuTrocasAll});
+            this.menuRegister});
             this.menuTrocas.Name = "menuTrocas";
             this.menuTrocas.Size = new System.Drawing.Size(180, 22);
             this.menuTrocas.Text = "Trocas";
@@ -266,13 +264,6 @@
             this.menuRegister.Size = new System.Drawing.Size(209, 22);
             this.menuRegister.Text = "Registrar Troca";
             this.menuRegister.Click += new System.EventHandler(this.menuRegister_Click);
-            // 
-            // menuTrocasAll
-            // 
-            this.menuTrocasAll.Name = "menuTrocasAll";
-            this.menuTrocasAll.Size = new System.Drawing.Size(209, 22);
-            this.menuTrocasAll.Text = "Trocas";
-            this.menuTrocasAll.Click += new System.EventHandler(this.menuTrocasAll_Click);
             // 
             // menuUtilitario
             // 
@@ -381,7 +372,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuProvider;
         private System.Windows.Forms.ToolStripMenuItem menuProduct;
         private System.Windows.Forms.ToolStripMenuItem menuRegister;
-        private System.Windows.Forms.ToolStripMenuItem menuTrocasAll;
     }
 }
 
