@@ -444,6 +444,7 @@
       <DependentUpon>20211216015139_v1.0.6.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DataContextModelSnapshot.cs" />
+    <Compile Include="Model\DadosTrocas.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Function.cs" />
     <Compile Include="Model\LogScore.cs" />
@@ -556,6 +557,7 @@
     <EmbeddedResource Include="Relatorio\RelatorioMensal.rdlc" />
     <EmbeddedResource Include="Relatorio\RelatorioTroca.rdlc" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Sis_Vendas_Mega.Model.DadosTrocas.datasource" />
     <None Include="Properties\DataSources\Sis_Vendas_Mega.Model.Employee.datasource" />
     <None Include="Properties\DataSources\Sis_Vendas_Mega.Model.Product.datasource" />
     <None Include="Properties\DataSources\Sis_Vendas_Mega.Model.Provider.datasource" />

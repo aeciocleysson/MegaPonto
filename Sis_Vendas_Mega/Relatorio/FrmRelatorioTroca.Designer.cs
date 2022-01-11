@@ -29,34 +29,48 @@ namespace Sis_Vendas_Mega.Relatorio
         /// </summary>
         private void InitializeComponent()
         {
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.reportViewerTrocas = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.DadosTrocasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.DadosTrocasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // reportViewerTrocas
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(730, 538);
-            this.reportViewer1.TabIndex = 0;
+            this.reportViewerTrocas.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSetTrocas";
+            reportDataSource1.Value = this.DadosTrocasBindingSource;
+            this.reportViewerTrocas.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewerTrocas.LocalReport.ReportEmbeddedResource = "Sis_Vendas_Mega.Relatorio.RelatorioTroca.rdlc";
+            this.reportViewerTrocas.Location = new System.Drawing.Point(0, 0);
+            this.reportViewerTrocas.Name = "reportViewerTrocas";
+            this.reportViewerTrocas.ServerReport.BearerToken = null;
+            this.reportViewerTrocas.Size = new System.Drawing.Size(730, 538);
+            this.reportViewerTrocas.TabIndex = 0;
+            // 
+            // DadosTrocasBindingSource
+            // 
+            this.DadosTrocasBindingSource.DataSource = typeof(Sis_Vendas_Mega.Model.DadosTrocas);
             // 
             // FrmRelatorioTroca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(730, 538);
-            this.Controls.Add(this.reportViewer1);
+            this.Controls.Add(this.reportViewerTrocas);
             this.Name = "FrmRelatorioTroca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatorio Troca";
             this.Load += new System.EventHandler(this.FrmRelatorioTroca_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DadosTrocasBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerTrocas;
+        private System.Windows.Forms.BindingSource DadosTrocasBindingSource;
     }
 }
