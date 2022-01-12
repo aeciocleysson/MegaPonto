@@ -1,12 +1,7 @@
 ﻿using Sis_Vendas_Mega.Data;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sis_Vendas_Mega.Relatorio
@@ -14,16 +9,18 @@ namespace Sis_Vendas_Mega.Relatorio
     public partial class FrmRelatorioTroca : Form
     {
         private DataContext _context;
-        public FrmRelatorioTroca()
+        public int _code;
+        public FrmRelatorioTroca(int code)
         {
             InitializeComponent();
             _context = new DataContext();
+            _code = code;
         }
 
         private void FrmRelatorioTroca_Load(object sender, EventArgs e)
         {
             var result = _context.RegisterItens
-                              .Where(w => w.IsDelete == 0)
+                              .Where(w => w.IsDelete == 0 && w.Register.Id == _code)
                               .Select(s => new
                               {
                                   RegisterId = s.Register.Id,

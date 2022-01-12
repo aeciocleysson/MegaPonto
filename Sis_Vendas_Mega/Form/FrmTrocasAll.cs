@@ -171,7 +171,9 @@ namespace Sis_Vendas_Mega
                 _context.AddRange(listItens);
                 _context.SaveChanges();
 
-                var report = new FrmRelatorioTroca();
+                var code = _context.RegisterItens.Where(w => w.IsDelete == 0).OrderBy(o => o.RegisterId).Last();
+
+                var report = new FrmRelatorioTroca(code.RegisterId);
                 report.Show();
             }
             else if (!string.IsNullOrEmpty(txtCodeExchange.Text) && !string.IsNullOrEmpty(txtCodeProvider.Text))
@@ -258,7 +260,8 @@ namespace Sis_Vendas_Mega
 
         private void btnPrinter_Click(object sender, EventArgs e)
         {
-            var report = new FrmRelatorioTroca();
+            var code = _context.RegisterItens.Where(w => w.IsDelete == 0).OrderBy(o => o.RegisterId).Last();
+            var report = new FrmRelatorioTroca(code.RegisterId);
             report.Show();
         }
 
