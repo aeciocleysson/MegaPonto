@@ -61,6 +61,7 @@
             this.registroMensal = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_sair = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuRelaçãoDeTrocas = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -237,7 +238,8 @@
             this.menuTrocas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuProvider,
             this.menuProduct,
-            this.menuRegister});
+            this.menuRegister,
+            this.menuRelaçãoDeTrocas});
             this.menuTrocas.Name = "menuTrocas";
             this.menuTrocas.Size = new System.Drawing.Size(180, 22);
             this.menuTrocas.Text = "Trocas";
@@ -316,6 +318,13 @@
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
+            // menuRelaçãoDeTrocas
+            // 
+            this.menuRelaçãoDeTrocas.Name = "menuRelaçãoDeTrocas";
+            this.menuRelaçãoDeTrocas.Size = new System.Drawing.Size(209, 22);
+            this.menuRelaçãoDeTrocas.Text = "Relação de Trocas";
+            this.menuRelaçãoDeTrocas.Click += new System.EventHandler(this.menuRelaçãoDeTrocas_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -372,6 +381,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuProvider;
         private System.Windows.Forms.ToolStripMenuItem menuProduct;
         private System.Windows.Forms.ToolStripMenuItem menuRegister;
+        private System.Windows.Forms.ToolStripMenuItem menuRelaçãoDeTrocas;
     }
 }
 
