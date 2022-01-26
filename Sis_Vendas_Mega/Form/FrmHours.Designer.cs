@@ -66,7 +66,6 @@ namespace Sis_Vendas_Mega
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.txtData);
             this.groupBox1.Controls.Add(this.txtSaida);
             this.groupBox1.Controls.Add(this.txtRetorno);
@@ -446,8 +445,5 @@ namespace Sis_Vendas_Mega
         private System.Windows.Forms.MaskedTextBox txtSaidaAlmoco;
         private System.Windows.Forms.MaskedTextBox txtEntrada;
         private System.Windows.Forms.MaskedTextBox txtData;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton rbCorrecao;
-        private System.Windows.Forms.RadioButton rbManual;
     }
 }

@@ -8,7 +8,7 @@ namespace Sis_Vendas_Mega.Model
         [Key]
         public int Id { get; private set; }
 
-        public DateTime Inserted { get; set; }
+        public DateTime Inserted { get; private set; }
 
         public DateTime? UpdateAt { get; set; }
         public int IsDelete { get; set; }
